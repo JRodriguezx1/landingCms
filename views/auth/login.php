@@ -41,15 +41,11 @@
     </div>
 </main>-->
 
-<div class="h-screen w-screen flex justify-center items-center dark:bg-gray-900">
+<!--
+  <div class="h-screen w-screen flex justify-center items-center dark:bg-gray-900">
     <div class="grid gap-8">
-      <div
-        id="back-div"
-        class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-[26px] m-4"
-      >
-        <div
-          class="border-[20px] border-transparent rounded-[20px] dark:bg-gray-900 bg-white shadow-lg xl:p-10 2xl:p-10 lg:p-10 md:p-10 sm:p-2 m-2"
-        >
+      <div id="back-div" class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-[26px] m-4">
+        <div class="border-[20px] border-transparent rounded-[20px] dark:bg-gray-900 bg-white shadow-lg xl:p-10 2xl:p-10 lg:p-10 md:p-10 sm:p-2 m-2">
           <h1 class="pt-8 pb-6 font-bold dark:text-gray-400 text-5xl text-center cursor-default">
             Iniciar Session
           </h1>
@@ -110,7 +106,7 @@
           </div>
           <!-- Third Party Authentication Options -->
           
-
+          <!--
           <div
             class="text-gray-500 flex text-center flex-col mt-4 items-center text-lg"
           >
@@ -141,5 +137,45 @@
           </div>
         </div>
       </div>
-      </div>
     </div>
+  </div>-->
+
+  
+<div class="min-h-screen flex items-center justify-center w-full dark:bg-gray-950">
+	<div class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-8 max-w-md">
+		<h1 class="text-3xl font-bold text-center mb-4 text-gray-800 dark:text-gray-200">Iniciar Sesion</h1>
+		<form action="/login" method="post">
+			<div class="mb-4">
+				<label for="email" class="block text-xl font-medium text-gray-700 dark:text-gray-300 mb-2">Movil</label>
+				<input id="email" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-lg"
+          type="number"
+          placeholder="Tu movil"
+          name="movil"
+          required
+        >
+			</div>
+			<div class="mb-4">
+				<label for="password" class="block text-xl font-medium text-gray-700 dark:text-gray-300 mb-2">Password</label>
+				<input id="password" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-lg" 
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          name="password"
+          required
+        >
+				<a href="#"
+					class="text-lg text-gray-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Forgot
+					Password?</a>
+			</div>
+			<div class="flex items-center justify-between mb-4">
+				<div class="flex items-center">
+					<input type="checkbox" id="remember" class="h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 focus:outline-none" checked>
+					<label for="remember" class="ml-2 block text-base text-gray-700 dark:text-gray-300">Remember me</label>
+				</div>
+				<a href="#"
+					class="text-base text-indigo-500 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Create
+					Account</a>
+			</div>
+			<button onclick="alert("hello")" type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Login</button>
+		</form>
+	</div>
+</div>

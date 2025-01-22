@@ -55,7 +55,7 @@
     <nav class="sidebar-nav"> <!-- el tamaño de las letras de los links <a> estan definidos en 1.6rem en gloables.scss -->
         <a class="<?php echo ($titulo === 'Inicio')?'activo':''; ?>" href="/admin/dashboard"><span class="material-symbols-outlined">home</span> <label class="btnav"> Inicio</label> </a>
         <a class="<?php echo ($titulo === 'Contabilidad')?'activo':''; ?>" href="/admin/contabilidad"><span class="material-symbols-outlined"> article</span> <label class="btnav"> Headers</label></a>
-        <a class="<?php echo ($titulo === 'Reportes')?'activo':''; ?>" href="/admin/reportes"><span class="material-symbols-outlined">format_list_bulleted</span> <label class="btnav"> Reportes</label></a>
+        <a class="<?php echo ($titulo === 'Reportes')?'activo':''; ?>" href="/admin/reportes"><span class="material-symbols-outlined">view_compact_alt</span> <label class="btnav"> Paginas</label></a>
         <a class="<?php echo ($titulo === 'Clientes')?'activo':''; ?>" href="/admin/clientes"><span class="material-symbols-outlined">support_agent</span> <label class="btnav"> Clientes</label></a>
         <a class="<?php echo ($titulo === 'Perfil')?'activo':''; ?>" href="/admin/perfil"><span class="material-symbols-outlined">manage_accounts</span> <label class="btnav"> Perfil</label></a>
         <a class="<?php echo ($titulo === 'Configuracion')?'activo':''; ?>" href="/admin/configuracion"><span class="material-symbols-outlined">settings</span> <label class="btnav"> Configuracion</label></a>

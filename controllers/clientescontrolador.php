@@ -6,8 +6,7 @@ use Classes\Email;
 use MVC\Router;  //namespace\clase
 use Model\usuarios;
 use Model\clientes;
-use Model\empleados;
-use Model\direcciones;
+
 
  
 class clientescontrolador{
