@@ -142,19 +142,19 @@
 
   
 <div class="min-h-screen flex items-center justify-center w-full dark:bg-gray-950">
-	<div class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-8 max-w-md">
+	<div class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-8 w-[32rem]">
 		<h1 class="text-3xl font-bold text-center mb-4 text-gray-800 dark:text-gray-200">Iniciar Sesion</h1>
 		<form action="/login" method="post">
 			<div class="mb-4">
-				<label for="email" class="block text-xl font-medium text-gray-700 dark:text-gray-300 mb-2">Movil</label>
-				<input id="email" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-lg"
+				<label for="movil" class="block text-xl font-medium text-gray-700 dark:text-gray-300 mb-2">Movil</label>
+				<input id="movil" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-lg"
           type="number"
           placeholder="Tu movil"
           name="movil"
           required
         >
 			</div>
-			<div class="mb-4">
+			<div class="mb-8">
 				<label for="password" class="block text-xl font-medium text-gray-700 dark:text-gray-300 mb-2">Password</label>
 				<input id="password" class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-lg" 
           type="password"
@@ -162,14 +162,16 @@
           name="password"
           required
         >
-				<a href="#"
-					class="text-lg text-gray-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Forgot
-					Password?</a>
+				
 			</div>
 			<div class="flex items-center justify-between mb-4">
-				<div class="flex items-center">
-					<input type="checkbox" id="remember" class="h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 focus:outline-none" checked>
-					<label for="remember" class="ml-2 block text-base text-gray-700 dark:text-gray-300">Remember me</label>
+				<div class="flex items-center relative">
+          <span class="-top-7 left-1 absolute  w-5 h-5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+					
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-500 rotate-45" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 17 8 2L9 1 1 19l8-2Zm0 0V9"/>
+          </svg>
+					<a class="ml-2 block text-base text-gray-700 dark:text-gray-300" href="#">Recuperar Password</a>
 				</div>
 				<a href="#"
 					class="text-base text-indigo-500 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Create

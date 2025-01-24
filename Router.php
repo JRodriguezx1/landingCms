@@ -51,8 +51,8 @@ class Router
         //$url_actual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
         $url_actual = $_SERVER['REQUEST_URI'] ?? '/';
         //debuguear($_SERVER['REQUEST_URI']);
-        if(str_contains($url_actual, '/Cliente')){
-            include_once __DIR__ . '/views/cliente-layout.php'; //pagina maestra para el dashboard admin-cliente
+        if(str_contains($url_actual, '/login')){
+            include_once __DIR__ . '/views/login-layout.php'; //pagina maestra para el dashboard admin-cliente
         }else{
             if(str_contains($url_actual, '/admin')){  //busca /admin en la cadena o variable $url_admin
                 include_once __DIR__ . '/views/admin-layout.php';  //pagina maestra para el dashboard admin
