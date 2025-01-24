@@ -51,8 +51,8 @@ $router->get('/mensaje', [logincontrolador::class, 'mensaje']);
 $router->get('/confirmar-cuenta', [logincontrolador::class, 'confirmar_cuenta']);
 
 //area publica
-//$router->get('/', [paginacontrolador::class, 'index']);
-$router->get('/', [logincontrolador::class, 'login']);
+$router->get('/', [paginacontrolador::class, 'index']);
+//$router->get('/', [logincontrolador::class, 'login']);
 
 
 /////area dashboard/////
