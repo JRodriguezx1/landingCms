@@ -103,7 +103,7 @@
                 </span>
               </a>
             </h3>
-          </div>
+          </div>-->
           <!-- Third Party Authentication Options -->
           
           <!--
