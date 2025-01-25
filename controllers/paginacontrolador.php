@@ -16,7 +16,7 @@ class paginacontrolador{
         date_default_timezone_set('America/Bogota');
         $fechaactual = new \DateTime(date('Y-m-d'));
         
-    $router->render('paginas/index', ['titulo'=>'app salon'/*, 'logo'=>negocio::uncampo('id', 1, 'logo')*/]);
+    $router->render('paginas/index', ['titulo'=>'nombre pagina'/*, 'logo'=>negocio::uncampo('id', 1, 'logo')*/]);
     }
 
 

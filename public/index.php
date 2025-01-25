@@ -12,7 +12,7 @@ use Controllers\contabilidadcontrolador;
 use Controllers\almacencontrolador;
 use Controllers\cajacontrolador;
 use Controllers\ventascontrolador;
-use Controllers\reportescontrolador;
+use Controllers\editorpaginacontrolador;
 use Controllers\clientescontrolador;
 use Controllers\direccionescontrolador;
 use Controllers\configcontrolador;
@@ -66,11 +66,11 @@ $router->get('/admin/viewmobile', [dashboardcontrolador::class, 'viewmobile']);
 $router->get('/admin/contabilidad', [contabilidadcontrolador::class, 'index']);
 
 ///// area de reportes /////
-$router->get('/admin/reportes', [reportescontrolador::class, 'index']);
-$router->get('/admin/reportes/ventasgenerales', [reportescontrolador::class, 'ventasgenerales']);
-$router->get('/admin/reportes/cierrescaja', [reportescontrolador::class, 'cierrescaja']);
-$router->get('/admin/reportes/zdiario', [reportescontrolador::class, 'zdiario']);
-$router->get('/admin/reportes/ventasxtransaccion', [reportescontrolador::class, 'ventasxtransaccion']);
+$router->get('/admin/reportes', [editorpaginacontrolador::class, 'index']);
+$router->get('/admin/reportes/ventasgenerales', [editorpaginacontrolador::class, 'ventasgenerales']);
+$router->get('/admin/reportes/cierrescaja', [editorpaginacontrolador::class, 'cierrescaja']);
+$router->get('/admin/reportes/zdiario', [editorpaginacontrolador::class, 'zdiario']);
+$router->get('/admin/reportes/ventasxtransaccion', [editorpaginacontrolador::class, 'ventasxtransaccion']);
 ///// area de clientes /////
 $router->get('/admin/clientes', [clientescontrolador::class, 'index']);
 $router->post('/admin/clientes', [clientescontrolador::class, 'index']); //filtro de busqueda
