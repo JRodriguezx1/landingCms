@@ -4,14 +4,14 @@ namespace Controllers;
 
 use MVC\Router;  //namespace\clase
  
-class reportescontrolador{
+class editorpaginacontrolador{
 
     public static function index(Router $router){
         session_start();
         isadmin();
         $alertas = [];
 
-        $router->render('admin/reportes/index', ['titulo'=>'Reportes', 'user'=>$_SESSION, 'alertas'=>$alertas]);
+        $router->render('admin/paginas/index', ['titulo'=>'Reportes', 'user'=>$_SESSION, 'alertas'=>$alertas]);
     }
 
     ///////////////////////// Reportes ///////////////////////////////////
