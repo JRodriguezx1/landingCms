@@ -16,6 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `blocks`
+--
+
+DROP TABLE IF EXISTS `blocks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `blocks` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idsection` int NOT NULL,
+  `tipobloque` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `contenido` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `fechacreacion` datetime DEFAULT NULL,
+  `fechaupdaate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idsection_idx` (`idsection`),
+  CONSTRAINT `idsection` FOREIGN KEY (`idsection`) REFERENCES `sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `blocks`
+--
+
+LOCK TABLES `blocks` WRITE;
+/*!40000 ALTER TABLE `blocks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `blocks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `clientes`
 --
 
@@ -46,27 +75,32 @@ LOCK TABLES `clientes` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `headers`
+-- Table structure for table `configuraciones`
 --
 
-DROP TABLE IF EXISTS `headers`;
+DROP TABLE IF EXISTS `configuraciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `headers` (
+CREATE TABLE `configuraciones` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nombrepagina` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
-  `dato1` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `nombresitio` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `logo` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `favicon` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `idioma` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `opcion1` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `opcion2` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `opcion3` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `headers`
+-- Dumping data for table `configuraciones`
 --
 
-LOCK TABLES `headers` WRITE;
-/*!40000 ALTER TABLE `headers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `headers` ENABLE KEYS */;
+LOCK TABLES `configuraciones` WRITE;
+/*!40000 ALTER TABLE `configuraciones` DISABLE KEYS */;
+/*!40000 ALTER TABLE `configuraciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -106,27 +140,54 @@ LOCK TABLES `negocio` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `paginas`
+-- Table structure for table `sections`
 --
 
-DROP TABLE IF EXISTS `paginas`;
+DROP TABLE IF EXISTS `sections`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `paginas` (
+CREATE TABLE `sections` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `bloque1` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
-  `bloque2` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `nombre` varchar(44) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `fechacreacion` datetime DEFAULT NULL,
+  `fechaupdate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `paginas`
+-- Dumping data for table `sections`
 --
 
-LOCK TABLES `paginas` WRITE;
-/*!40000 ALTER TABLE `paginas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `paginas` ENABLE KEYS */;
+LOCK TABLES `sections` WRITE;
+/*!40000 ALTER TABLE `sections` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sections` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `testimoniales`
+--
+
+DROP TABLE IF EXISTS `testimoniales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `testimoniales` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(55) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `titulo` varchar(33) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `comentario` varchar(350) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `imagen` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `testimoniales`
+--
+
+LOCK TABLES `testimoniales` WRITE;
+/*!40000 ALTER TABLE `testimoniales` DISABLE KEYS */;
+/*!40000 ALTER TABLE `testimoniales` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -171,4 +232,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-22  0:44:21
+-- Dump completed on 2025-01-27 23:23:51
