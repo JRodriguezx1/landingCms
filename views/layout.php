@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- landing page -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!--<link rel="stylesheet" href="/build/css/app.css">
     <link rel="stylesheet" href="/build/css/tailwindapp.css">-->
-    <link rel="stylesheet" href="/build/css/style.css">  <!-- aqui esta el tipo de leta -->
+    <link rel="stylesheet" href="/build/css/style.css">  <!-- aqui esta el tipo de letra -->
     
     <link rel="icon" type="image/x-icon" href="/build/img/favicon.ico"/>
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="" defer></script>

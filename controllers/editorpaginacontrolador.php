@@ -11,36 +11,8 @@ class editorpaginacontrolador{
         isadmin();
         $alertas = [];
 
-        $router->render('admin/paginas/index', ['titulo'=>'Reportes', 'user'=>$_SESSION, 'alertas'=>$alertas]);
+        $router->render('admin/paginas/index', ['titulo'=>'Editarpagina', 'user'=>$_SESSION, 'alertas'=>$alertas]);
     }
 
-    ///////////////////////// Reportes ///////////////////////////////////
-    public static function ventasgenerales(Router $router){
-        session_start();
-        isadmin();
-        $alertas = [];
-
-        $router->render('admin/reportes/ventasgenerales', ['titulo'=>'Reportes', 'user'=>$_SESSION, 'alertas'=>$alertas]);
-    }
-    public static function cierrescaja(Router $router){
-        session_start();
-        isadmin();
-        $alertas = [];
-
-        $router->render('admin/reportes/cierrescaja', ['titulo'=>'Reportes', 'user'=>$_SESSION, 'alertas'=>$alertas]);
-    }
-    public static function zdiario(Router $router){
-        session_start();
-        isadmin();
-        $alertas = [];
-
-        $router->render('admin/reportes/zdiario', ['titulo'=>'Reportes', 'user'=>$_SESSION, 'alertas'=>$alertas]);
-    }
-    public static function ventasxtransaccion(Router $router){
-        session_start();
-        isadmin();
-        $alertas = [];
-
-        $router->render('admin/reportes/ventasxtransaccion', ['titulo'=>'Reportes', 'user'=>$_SESSION, 'alertas'=>$alertas]);
-    }
+   
 }
