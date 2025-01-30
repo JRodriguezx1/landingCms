@@ -18,7 +18,8 @@ class seccionescontrolador{
             
     }
     //$alertas = usuarios::getAlertas();
-    $router->render('admin/contabilidad/index', ['titulo'=>'Secciones', 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
+    $secciones = [];
+    $router->render('admin/secciones/index', ['titulo'=>'Secciones', 'secciones'=>$secciones, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
   }
 
 
