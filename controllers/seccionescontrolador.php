@@ -7,7 +7,7 @@ use Model\usuarios; //namespace\clase hija
 //use Model\negocio;
 use MVC\Router;  //namespace\clase
  
-class contabilidadcontrolador{
+class seccionescontrolador{
 
   public static function index(Router $router){
     session_start();
@@ -18,7 +18,7 @@ class contabilidadcontrolador{
             
     }
     //$alertas = usuarios::getAlertas();
-    $router->render('admin/contabilidad/index', ['titulo'=>'Contabilidad', 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
+    $router->render('admin/contabilidad/index', ['titulo'=>'Secciones', 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
   }
 
 
