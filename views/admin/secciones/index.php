@@ -29,35 +29,14 @@
     <dialog class="midialog-sm p-5" id="miDialogoSeccion">
         <h4 id="modalSeccion" class="font-semibold text-gray-700 mb-4">Crear seccion</h4>
         <div id="divmsjalerta1"></div>
-        <form id="formCrearUpdateseccion" class="formulario" action="/admin/seccion/crear_seccion" enctype="multipart/form-data" method="POST">
+        <form id="formCrearUpdateseccion" class="formulario" action="/admin/secciones/crear_seccion" enctype="multipart/form-data" method="POST">
             
             
             <div class="formulario__campo">
                 <label class="formulario__label" for="nombre">Nombre</label>
                 <div class="formulario__dato">
-                    <input class="formulario__input" type="text" placeholder="Nombre del producto" id="nombre" name="nombre" value="<?php echo $producto->nombre??'';?>" required>
-                    <label data-num="46" class="count-charts" for="">46</label>
-                </div>
-            </div>
-            <div class="">
-                <div class="formulario__campo">
-                    <label class="formulario__label" for="preciocompra">Precio Compra</label>
-                    <div class="formulario__dato">
-                        <input class="formulario__input" type="number" min="0" placeholder="Precio de venta" id="preciocompra" name="precio_compra" value="<?php echo $producto->precio_compra??'';?>">
-                    </div>
-                </div>
-                <div class="formulario__campo">
-                    <label class="formulario__label" for="precioventa">Precio venta</label>
-                    <div class="formulario__dato">
-                        <input class="formulario__input" type="number" min="0" placeholder="Precio de venta" id="precioventa" name="precio_venta" value="<?php echo $producto->precio_venta??'';?>" required>
-                    </div>
-                </div>
-            </div>
-            <div class="formulario__campo">
-                <label class="formulario__label" for="sku">SKU Producto</label>
-                <div class="formulario__dato">
-                    <input class="formulario__input" type="text" placeholder="Codigo del producto" id="sku" name="sku" value="<?php echo $producto->codigo??'';?>">
-                    <label data-num="36" class="count-charts" for="">36</label>
+                    <input class="formulario__input" type="text" placeholder="Nombre de la seccion" id="nombre" name="nombre" value="<?php echo $producto->nombre??'';?>" required>
+                    <label data-num="40" class="count-charts" for="">40</label>
                 </div>
             </div>
            
