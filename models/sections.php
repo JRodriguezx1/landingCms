@@ -1,16 +1,16 @@
 <?php
 namespace Model;
 
-class secciones extends ActiveRecord {
-    protected static $tabla = 'secciones';
+class sections extends ActiveRecord {
+    protected static $tabla = 'sections';
     protected static $columnasDB = ['id', 'nombre', 'fechacreacion', 'fechaupdate'];
     
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
-        $this->fechacreacion = $args['fechacreacion'] ?? '';
-        $this->fechaupdate = $args['fechaupdate'] ?? '';
+        $this->fechacreacion = $args['fechacreacion'] ?? date('Y-m-d H:i:s');
+        $this->fechaupdate = $args['fechaupdate'] ?? date('Y-m-d H:i:s');
     }
 
     // Validación para secciones nuevos
