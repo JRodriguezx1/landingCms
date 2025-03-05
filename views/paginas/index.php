@@ -23,10 +23,10 @@
       @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
 >
       <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
-        <div class="vd to/4 tc wf yf">
-          <a href="index.html">
-            <img class="om" src="/build/images/logo-light.svg" alt="Logo Light" />
-            <img class="xc nm" src="/build/images/logo-dark.svg" alt="Logo Dark" />
+        <div class="vd to/4 tc wf ">
+          <a class="w-16" href="index.html">
+          <img class="om" src="/build/images/tramites.png" alt="Logo Light" style="width: 225px; height: auto;" />
+            <img class="xc nm" src="/build/images/tramitesocsuro.png" alt="Logo Dark" style="width: 225px; height: auto;" />
           </a>
 
           <!-- Hamburger Toggle BTN -->
@@ -49,8 +49,8 @@
         <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
           <nav>
             <ul class="tc _o sf yo cg ep">
-              <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
-              <li><a href="index.html#features" class="xl">Features</a></li>
+              <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }">Inicio</a></li>
+              <li><a href="index.html#features" class="xl">Servicios</a></li>
               <li class="c i" x-data="{ dropdown: false }">
                 <a
                   href="#"
@@ -58,26 +58,26 @@
                   @click.prevent="dropdown = !dropdown"
                   :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
                 >
-                  Pages
+                  Contacto
 
-                  <svg
+                  <!-- <svg
                     :class="{ 'wh': dropdown }"
                     class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                  </svg>
+                  </svg> -->
                 </a>
 
                 <!-- Dropdown Start -->
-                <ul class="a" :class="{ 'tc': dropdown }">
+                <!-- <ul class="a" :class="{ 'tc': dropdown }">
                   <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Blog Grid</a></li>
                   <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Blog Single</a></li>
                   <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li>
                   <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li>
                   <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">404</a></li>
-                </ul>
+                </ul> -->
                 <!-- Dropdown End -->
               </li>
-              <li><a href="index.html#support" class="xl">Support</a></li>
+              <!-- <li><a href="index.html#support" class="xl">Support</a></li> -->
             </ul>
           </nav>
 
@@ -94,8 +94,8 @@
               </label>
             </div>
 
-            <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
-            <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Sign Up</a>
+            <!-- <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
+            <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Sign Up</a> -->
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@
     <!-- ===== Header End ===== -->
 
     <main>
-      <!-- ===== Hero Start ===== -->
+      <!-- ===== Hero Start ===== --> 
       <section class="gj do ir hj sp jr i pg">
         <!-- Hero Images -->
         <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
@@ -112,23 +112,23 @@
           <img src="/build/images/shape-02.svg" alt="shape" class="xc 2xl:ud-block h u p va" />
           <img src="/build/images/shape-03.svg" alt="shape" class="xc 2xl:ud-block h v w va" />
           <img src="/build/images/shape-04.svg" alt="shape" class="h q r" />
-          <img src="/build/images/hero.png" alt="Woman" class="h q r ua" />
+          <img src="/build/images/hero.png" alt="Woman" class="h q r ua rounded-b-lg " style="position: relative; top: 27px; left: 9px;" />
         </div>
 
         <!-- Hero Content -->
         <div class="bb ze ki xn 2xl:ud-px-0">
           <div class="tc _o">
             <div class="animate_left jn/2">
-              <h1 class="fk vj zp or kk wm wb">We specialize in UI/UX, Web Development, Digital Marketing.</h1>
+              <h1 class="fk vj zp or kk wm wb">Trámites Migratorios en Venezuela - Confianza y Eficiencia.</h1>
               <p class="fq">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla magna mauris. Nulla fermentum viverra sem eu rhoncus consequat varius nisi quis, posuere magna.
+              Llevamos a cabo tus gestiones con seriedad y profesionalismo, asegurándonos de obtener tus documentos de forma rápida y legalizada para que puedas realizar cualquier trámite necesario.
               </p>
 
               <div class="tc tf yo zf mb">
-                <a href="#" class="ek jk lk gh gi hi rg ml il vc _d _l">Get Started Now</a>
+                <a href="#" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
                 <span class="tc sf">
-                  <a href="#" class="inline-block ek xj kk wm"> Call us (0123) 456 – 789 </a>
-                  <span class="inline-block">For any question or concern</span>
+                  <a href="#" class="inline-block ek xj kk wm"> Llámanos (+58) 424 – 9128806 </a>
+                  <span class="inline-block">Para cualquier pregunta o inquietud</span>
                 </span>
               </div>
             </div>
@@ -147,8 +147,8 @@
                 <img src="/build/images/icon-01.svg" alt="Icon" />
               </div>
               <div>
-                <h4 class="ek yj go kk wm xb">24/7 Support</h4>
-                <p>Lorem ipsum dolor sit amet conse adipiscing elit.</p>
+                <h4 class="ek yj go kk wm xb"> Atención 24/7</h4>
+                <p>Estamos disponibles en todo momento para atender tus dudas y gestionar tus trámites sin importar el día o la hora.</p>
               </div>
             </div>
 
@@ -158,8 +158,8 @@
                 <img src="/build/images/icon-02.svg" alt="Icon" />
               </div>
               <div>
-                <h4 class="ek yj go kk wm xb">Take Ownership</h4>
-                <p>Lorem ipsum dolor sit amet conse adipiscing elit.</p>
+                <h4 class="ek yj go kk wm xb">Asesoria Personalizada</h4>
+                <p>Te guiamos paso a paso en cada trámite, brindándote la mejor solución según tu caso particular.</p>
               </div>
             </div>
 
@@ -169,8 +169,8 @@
                 <img src="/build/images/icon-03.svg" alt="Icon" />
               </div>
               <div>
-                <h4 class="ek yj go kk wm xb">Team Work</h4>
-                <p>Lorem ipsum dolor sit amet conse adipiscing elit.</p>
+                <h4 class="ek yj go kk wm xb">Garantía de Servicio</h4>
+                <p>Nos comprometemos a brindarte un servicio de calidad y eficiente, asegurando que cada trámite se realice de manera rápida y segura.</p>
               </div>
             </div>
           </div>
@@ -186,29 +186,29 @@
             <div class="animate_left xc gn gg jn/2 i">
               <div>
                 <img src="/build/images/shape-05.svg" alt="Shape" class="h -ud-left-5 x" />
-                <img src="/build/images/about-01.png" alt="About" class="ib" />
-                <img src="/build/images/about-02.png" alt="About" />
+                <img src="/build/images/about-01.jpg" alt="About" class="ib" />
+                <img src="/build/images/about-02.jpg" alt="About" />
               </div>
               <div>
                 <img src="/build/images/shape-06.svg" alt="Shape" />
-                <img src="/build/images/about-03.png" alt="About" class="ob gb" />
+                <img src="/build/images/about-03.jpg" alt="About" class="ob gb" />
                 <img src="/build/images/shape-07.svg" alt="Shape" class="bb" />
               </div>
             </div>
 
             <!-- About Content -->
             <div class="animate_right jn/2">
-              <h4 class="ek yj mk gb">Why Choose Us</h4>
-              <h2 class="fk vj zp pr kk wm qb">We Make Our customers happy by giving Best services.</h2>
-              <p class="uo">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
+              <h4 class="ek yj mk gb">¿Por qué elegirnos?</h4>
+              <h2 class="fk vj zp pr kk wm qb">Contamos con más de 10 años de experiencia en el área de gestoría en Venezuela</h2>
+              <p class="uo">Ofreciendo servicios confiables, eficientes y honestos para facilitar los trámites que muchas personas encuentran complicados o desconocen.</p>
 
-              <a href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
+              <div href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
                 <span class="tc wf xf be dd rg i gh ua">
                   <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
                   <img src="/build/images/icon-play.svg" alt="Play" />
                 </span>
-                <span class="kk">SEE HOW WE WORK</span>
-              </a>
+                <span class="kk">EXCELENCIA EN NUESTRO TRABAJO</span>
+              </div>
             </div>
           </div>
         </div>
@@ -225,7 +225,7 @@
         <img src="/build/images/shape-11.svg" alt="Shape" class="of h m ba" />
 
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Meet With Our Creative Dedicated Team`, sectionTitleText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}">
+        <div x-data="{ sectionTitle: `Soluciones Integrales para tu Tranquilidad`, sectionTitleText: `Te ofrecemos un conjunto de servicios diseñados para facilitar tus trámites y brindarte la tranquilidad que necesitas. Desde gestiones migratorias hasta servicios adicionales, nuestro equipo está listo para asesorarte en cada paso del proceso.`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -244,35 +244,13 @@
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
                   <div class="h s p vd ij jj xa">
-                    <ul class="tc xf wf gg">
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6.66634 10.25H8.74968L9.58301 6.91669H6.66634V5.25002C6.66634 4.39169 6.66634 3.58335 8.33301 3.58335H9.58301V0.783354C9.31134 0.74752 8.28551 0.666687 7.20218 0.666687C4.93968 0.666687 3.33301 2.04752 3.33301 4.58335V6.91669H0.833008V10.25H3.33301V17.3334H6.66634V10.25Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M17.4683 1.71333C16.8321 1.99475 16.1574 2.17956 15.4666 2.26167C16.1947 1.82619 16.7397 1.14085 16.9999 0.333333C16.3166 0.74 15.5674 1.025 14.7866 1.17917C14.2621 0.617982 13.5669 0.245803 12.809 0.120487C12.0512 -0.00482822 11.2732 0.123742 10.596 0.486211C9.91875 0.848679 9.38024 1.42474 9.06418 2.12483C8.74812 2.82492 8.67221 3.60982 8.84825 4.3575C7.46251 4.28805 6.10686 3.92794 4.86933 3.30055C3.63179 2.67317 2.54003 1.79254 1.66492 0.715833C1.35516 1.24788 1.19238 1.85269 1.19326 2.46833C1.19326 3.67667 1.80826 4.74417 2.74326 5.36917C2.18993 5.35175 1.64878 5.20232 1.16492 4.93333V4.97667C1.16509 5.78142 1.44356 6.56135 1.95313 7.18422C2.46269 7.80709 3.17199 8.23456 3.96075 8.39417C3.4471 8.53337 2.90851 8.55388 2.38576 8.45417C2.60814 9.14686 3.04159 9.75267 3.62541 10.1868C4.20924 10.6209 4.9142 10.8615 5.64159 10.875C4.91866 11.4428 4.0909 11.8625 3.20566 12.1101C2.32041 12.3578 1.39503 12.4285 0.482422 12.3183C2.0755 13.3429 3.93 13.8868 5.82409 13.885C12.2349 13.885 15.7408 8.57417 15.7408 3.96833C15.7408 3.81833 15.7366 3.66667 15.7299 3.51833C16.4123 3.02514 17.0013 2.41418 17.4691 1.71417L17.4683 1.71333Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M3.78353 2.16665C3.78331 2.60867 3.6075 3.03251 3.29478 3.34491C2.98207 3.65732 2.55806 3.8327 2.11603 3.83248C1.674 3.83226 1.25017 3.65645 0.937761 3.34373C0.625357 3.03102 0.449975 2.60701 0.450196 2.16498C0.450417 1.72295 0.626223 1.29912 0.93894 0.986712C1.25166 0.674307 1.67567 0.498925 2.1177 0.499146C2.55972 0.499367 2.98356 0.675173 3.29596 0.98789C3.60837 1.30061 3.78375 1.72462 3.78353 2.16665V2.16665ZM3.83353 5.06665H0.500195V15.5H3.83353V5.06665ZM9.1002 5.06665H5.78353V15.5H9.06686V10.025C9.06686 6.97498 13.0419 6.69165 13.0419 10.025V15.5H16.3335V8.89165C16.3335 3.74998 10.4502 3.94165 9.06686 6.46665L9.1002 5.06665V5.06665Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
+                    <!-- Se puede colocar un botón acá -->
                   </div>
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Olivia Andrium</h4>
-              <p>Product Manager</p>
+              <h4 class="yj go kk wm ob zb">Trámites Migratorios</h4>
+              <p></p>
             </div>
 
             <!-- Team Item -->
@@ -284,35 +262,13 @@
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
                   <div class="h s p vd ij jj xa">
-                    <ul class="tc xf wf gg">
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6.66634 10.25H8.74968L9.58301 6.91669H6.66634V5.25002C6.66634 4.39169 6.66634 3.58335 8.33301 3.58335H9.58301V0.783354C9.31134 0.74752 8.28551 0.666687 7.20218 0.666687C4.93968 0.666687 3.33301 2.04752 3.33301 4.58335V6.91669H0.833008V10.25H3.33301V17.3334H6.66634V10.25Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M17.4683 1.71333C16.8321 1.99475 16.1574 2.17956 15.4666 2.26167C16.1947 1.82619 16.7397 1.14085 16.9999 0.333333C16.3166 0.74 15.5674 1.025 14.7866 1.17917C14.2621 0.617982 13.5669 0.245803 12.809 0.120487C12.0512 -0.00482822 11.2732 0.123742 10.596 0.486211C9.91875 0.848679 9.38024 1.42474 9.06418 2.12483C8.74812 2.82492 8.67221 3.60982 8.84825 4.3575C7.46251 4.28805 6.10686 3.92794 4.86933 3.30055C3.63179 2.67317 2.54003 1.79254 1.66492 0.715833C1.35516 1.24788 1.19238 1.85269 1.19326 2.46833C1.19326 3.67667 1.80826 4.74417 2.74326 5.36917C2.18993 5.35175 1.64878 5.20232 1.16492 4.93333V4.97667C1.16509 5.78142 1.44356 6.56135 1.95313 7.18422C2.46269 7.80709 3.17199 8.23456 3.96075 8.39417C3.4471 8.53337 2.90851 8.55388 2.38576 8.45417C2.60814 9.14686 3.04159 9.75267 3.62541 10.1868C4.20924 10.6209 4.9142 10.8615 5.64159 10.875C4.91866 11.4428 4.0909 11.8625 3.20566 12.1101C2.32041 12.3578 1.39503 12.4285 0.482422 12.3183C2.0755 13.3429 3.93 13.8868 5.82409 13.885C12.2349 13.885 15.7408 8.57417 15.7408 3.96833C15.7408 3.81833 15.7366 3.66667 15.7299 3.51833C16.4123 3.02514 17.0013 2.41418 17.4691 1.71417L17.4683 1.71333Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M3.78353 2.16665C3.78331 2.60867 3.6075 3.03251 3.29478 3.34491C2.98207 3.65732 2.55806 3.8327 2.11603 3.83248C1.674 3.83226 1.25017 3.65645 0.937761 3.34373C0.625357 3.03102 0.449975 2.60701 0.450196 2.16498C0.450417 1.72295 0.626223 1.29912 0.93894 0.986712C1.25166 0.674307 1.67567 0.498925 2.1177 0.499146C2.55972 0.499367 2.98356 0.675173 3.29596 0.98789C3.60837 1.30061 3.78375 1.72462 3.78353 2.16665V2.16665ZM3.83353 5.06665H0.500195V15.5H3.83353V5.06665ZM9.1002 5.06665H5.78353V15.5H9.06686V10.025C9.06686 6.97498 13.0419 6.69165 13.0419 10.025V15.5H16.3335V8.89165C16.3335 3.74998 10.4502 3.94165 9.06686 6.46665L9.1002 5.06665V5.06665Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
+                    <!-- Se puede colocar un botón acá -->
                   </div>
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Jemse Kemorun</h4>
-              <p>Product Designer</p>
+              <h4 class="yj go kk wm ob zb">Asesoría Personalizada</h4>
+              <p></p>
             </div>
 
             <!-- Team Item -->
@@ -324,35 +280,13 @@
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
                   <div class="h s p vd ij jj xa">
-                    <ul class="tc xf wf gg">
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6.66634 10.25H8.74968L9.58301 6.91669H6.66634V5.25002C6.66634 4.39169 6.66634 3.58335 8.33301 3.58335H9.58301V0.783354C9.31134 0.74752 8.28551 0.666687 7.20218 0.666687C4.93968 0.666687 3.33301 2.04752 3.33301 4.58335V6.91669H0.833008V10.25H3.33301V17.3334H6.66634V10.25Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M17.4683 1.71333C16.8321 1.99475 16.1574 2.17956 15.4666 2.26167C16.1947 1.82619 16.7397 1.14085 16.9999 0.333333C16.3166 0.74 15.5674 1.025 14.7866 1.17917C14.2621 0.617982 13.5669 0.245803 12.809 0.120487C12.0512 -0.00482822 11.2732 0.123742 10.596 0.486211C9.91875 0.848679 9.38024 1.42474 9.06418 2.12483C8.74812 2.82492 8.67221 3.60982 8.84825 4.3575C7.46251 4.28805 6.10686 3.92794 4.86933 3.30055C3.63179 2.67317 2.54003 1.79254 1.66492 0.715833C1.35516 1.24788 1.19238 1.85269 1.19326 2.46833C1.19326 3.67667 1.80826 4.74417 2.74326 5.36917C2.18993 5.35175 1.64878 5.20232 1.16492 4.93333V4.97667C1.16509 5.78142 1.44356 6.56135 1.95313 7.18422C2.46269 7.80709 3.17199 8.23456 3.96075 8.39417C3.4471 8.53337 2.90851 8.55388 2.38576 8.45417C2.60814 9.14686 3.04159 9.75267 3.62541 10.1868C4.20924 10.6209 4.9142 10.8615 5.64159 10.875C4.91866 11.4428 4.0909 11.8625 3.20566 12.1101C2.32041 12.3578 1.39503 12.4285 0.482422 12.3183C2.0755 13.3429 3.93 13.8868 5.82409 13.885C12.2349 13.885 15.7408 8.57417 15.7408 3.96833C15.7408 3.81833 15.7366 3.66667 15.7299 3.51833C16.4123 3.02514 17.0013 2.41418 17.4691 1.71417L17.4683 1.71333Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <svg class="uh vl ml il" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M3.78353 2.16665C3.78331 2.60867 3.6075 3.03251 3.29478 3.34491C2.98207 3.65732 2.55806 3.8327 2.11603 3.83248C1.674 3.83226 1.25017 3.65645 0.937761 3.34373C0.625357 3.03102 0.449975 2.60701 0.450196 2.16498C0.450417 1.72295 0.626223 1.29912 0.93894 0.986712C1.25166 0.674307 1.67567 0.498925 2.1177 0.499146C2.55972 0.499367 2.98356 0.675173 3.29596 0.98789C3.60837 1.30061 3.78375 1.72462 3.78353 2.16665V2.16665ZM3.83353 5.06665H0.500195V15.5H3.83353V5.06665ZM9.1002 5.06665H5.78353V15.5H9.06686V10.025C9.06686 6.97498 13.0419 6.69165 13.0419 10.025V15.5H16.3335V8.89165C16.3335 3.74998 10.4502 3.94165 9.06686 6.46665L9.1002 5.06665V5.06665Z" fill=""/>
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
+                    <!-- Se puede colocar un botón acá -->
                   </div>
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Avi Pestarica</h4>
-              <p>Web Designer</p>
+              <h4 class="yj go kk wm ob zb">Servicios Adicionales</h4>
+              <p></p>
             </div>
           </div>
         </div>
@@ -362,7 +296,7 @@
       <!-- ===== Services Start ===== -->
       <section class="lj tp kr">
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `We Offer The Best Quality Service for You`, sectionTitleText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}">
+        <div x-data="{ sectionTitle: `Servicios Migratorios que Ofrecemos`, sectionTitleText: `Te ayudamos a gestionar trámites migratorios de forma rápida y segura. Confía en nuestros expertos para facilitar tu proceso.`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -375,43 +309,43 @@
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-04.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Crafted for Startups</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b">Solicitud de Acta de Nacimiento ante el Registro Civil</h4>
+              <p>Te gestionamos la solicitud de actas de nacimiento en cualquier registro civil en Venezuela, asegurándonos de que todo el proceso se realice correctamente.</p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-05.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">High-quality Design</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b">Solicitud de Acta de Matrimonio</h4>
+              <p>Solicitud de actas de matrimonio para que puedas obtener este documento legalizado de manera rápida y sin complicaciones.</p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-06.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">All Essential Sections</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b">Solicitud de Acta de Defunción</h4>
+              <p>Te ayudamos a obtener el acta de defunción, un documento fundamental para muchos trámites legales y administrativos.</p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-07.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Speed Optimized</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h4 class="ek zj kk wm nb _b">Solicitud de Carta de Soltería ante Notaría Pública</h4>
+              <p>Si necesitas una carta de soltería, nos encargamos de gestionarla ante la notaría pública, agilizando el proceso para ti.</p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="/build/images/icon-05.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Fully Customizable</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <img src="/build/images/icon-08.svg" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Solicitud de Fe de Vida</h4>
+              <p>Realizamos la solicitud de Fe de Vida para que puedas presentar este documento ante las autoridades correspondientes o para realizar trámites internacionales.</p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="/build/images/icon-06.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Regular Updates</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <img src="/build/images/icon-09.svg" alt="Icon" />
+              <h4 class="ek zj kk wm nb _b">Legalización por el Registro Principal</h4>
+              <p>Una vez obtenidos los documentos, nos encargamos de legalizarlos por el Registro Principal para darle validez oficial.</p>
             </div>
           </div>
         </div>
@@ -428,7 +362,7 @@
         <img src="/build/images/shape-13.svg" alt="Shape" class="h r q" />
 
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `We Offer Great Affordable Premium Prices.`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
+        <div x-data="{ sectionTitle: `Servicios adicionales para ti`, sectionTitleText: `Además de trámites migratorios, ofrecemos soluciones integrales para facilitar tu proceso. Descubre cómo podemos ayudarte.`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -437,14 +371,14 @@
         <!-- Section Title End -->
 
         <!-- Pricing switcher -->
-        <div class="tc wf xf jb og">
+        <!-- <div class="tc wf xf jb og">
           <span class="ek kk wm">Bill Monthly</span>
           <button class="i rg gm" x-cloak @click="billPlan == 'monthly' ? billPlan = 'annually' : billPlan = 'monthly'">
             <div class="fe id bl gh rg xk outline-none"></div>
             <div class="h vc wf xf ge jd cl jl ml mf hh rg yk ea fa" :class="{ 'ff': billPlan == 'monthly', 'gf': billPlan == 'annually' }"></div>
           </button>
           <span class="ek kk wm">Bill Annually</span>
-        </div>
+        </div> -->
 
         <!-- Pricing Table -->
         <div class="bb ze i va ki xn yq bc">
@@ -456,22 +390,22 @@
 
                 <div class="tc wf xf kg cc">
                   <h2 :class="plan.name == 'Basic' ? 'text-green-500' : ''" x-text="`$${billPlan == 'monthly' ? plan.price.monthly : plan.price.annually}`" class="fk _j kk wm"></h2>
-                  <span x-text="billPlan == 'monthly' ? '/per month' : '/per year'" class="sc ak kk wm"></span>
+                  <span x-text="billPlan == 'monthly' ? '' : '/per year'" class="sc ak kk wm"></span>
                 </div>
 
-                <p class="ur dc">No credit card required</p>
+                <p class="ur dc">Después de obtener los documentos, llevamos a cabo un proceso de legalización y apostilla, asegurándonos de que los documentos tengan validez en el extranjero</p>
 
                 <!-- Button -->
-                <a href="#" class="ek rg lk ml il gi ri" :class="plan.name == 'Growth Plan' ? 'gh sl' : 'mh tl'">Try for free</a>
+                <a href="#" class="ek rg lk ml il gi ri" :class="plan.name == 'Growth Plan' ? 'gh sl' : 'mh tl'">¡Solicita Tu Trámite Ahora!</a>
 
                 <!-- Features -->
-                <ul class="tc sf bg ob fb">
+                <!-- <ul class="tc sf bg ob fb">
                   <template x-for="(feature, i) in plan.features" x-key="i">
                     <li x-text="feature"></li>
                   </template>
-                </ul>
+                </ul> -->
 
-                <p class="kk wm">7-day free trial</p>
+                <!-- <p class="kk wm">7-day free trial</p> -->
               </div>
             </template>
           </div>
@@ -479,10 +413,10 @@
       </section>
       <!-- ===== Pricing Table End ===== -->
 
-      <!-- ===== Projects Start ===== -->
-      <section class="pg pj vp mr oj wp nr">
+      <!-- ===== Blog Start ===== -->
+      <section class="ji gp uq">
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `We Offer Great Affordable Premium Prices.`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
+        <div x-data="{ sectionTitle: `Tu Aliado en el Camino hacia un Nuevo Destino`, sectionTitleText: `Brindamos orientación especializada para personas que buscan emigrar, ayudándolos a cumplir con los requisitos legales y los trámites necesarios para una transición exitosa.`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -490,96 +424,82 @@
         </div>
         <!-- Section Title End -->
 
-        <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
-          <!-- Porject Tab -->
-          <div class="projects-tab _e bb tc uf wf xf cg rg hh rm vk xm si ti fc">
-            <button data-filter="*" @click="filterTab = 1" :class="{ 'gh lk' : filterTab === 1 }" class="project-tab-btn ek rg ml il vi mi">All</button>
-            <button data-filter=".branding" @click="filterTab = 2" :class="{ 'gh lk' : filterTab === 2 }" class="project-tab-btn ek rg ml il vi mi">
-              Branding Strategy
-            </button>
-            <button data-filter=".digital" @click="filterTab = 3" :class="{ 'gh lk' : filterTab === 3 }" class="project-tab-btn ek rg ml il vi mi">
-              Digital Experiences
-            </button>
-            <button data-filter=".ecommerce" @click="filterTab = 4" :class="{ 'gh lk' : filterTab === 4 }" class="project-tab-btn ek rg ml il vi mi">
-              Ecommerce
-            </button>
-          </div>
+        <div class="bb ye ki xn vq jb jo">
+          <div class="wc qf pn xo zf iq">
+            <!-- Blog Item -->
+            <div class="animate_top sg vk rm xm">
+              <div class="c rc i z-1 pg">
+                <img class="w-full" src="/build/images/blog-01.png" alt="Blog" />
 
-          <!-- Projects item wrapper -->
-          <div class="projects-wrapper tc -ud-mx-5">
-            <div class="project-sizer"></div>
-            <!-- Project Item -->
-            <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
-              <div class="c i pg sg z-1">
-                <img src="/build/images/project-01.png" alt="Project" />
-                <div class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10">
-                  <h4 class="ek tj kk hc">Photo Retouching</h4>
-                  <p>Branded Ecommerce</p>
-                  <a class="c tc wf xf ie ld rg _g dh ml il ph jm km jc" href="#">
-                    <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
-                    </svg>
-                  </a>
+                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                </div>
+              </div>
+
+              <div class="yh">
+                <h4 class="ek tj ml il kk wm xl eq lb">
+                  <a href="blog-single.html">Citas para Visado</a>
+                </h4>
+                <div class="tc uf wf ag jq">
+                  <div class="tc wf ag">
+                    <p>Gestionamos citas para visados en los consulados de Chile, México, Perú, España y Ecuador, asegurando un proceso rápido y efectivo.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Project Item -->
-            <div class="project-item wi fb vd jn/2 to/3 digital">
-              <div class="c i pg sg z-1">
-                <img src="/build/images/project-02.png" alt="Project" />
-                <div class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10">
-                  <h4 class="ek tj kk hc">Photo Retouching</h4>
-                  <p>Branded Ecommerce</p>
-                  <a class="c tc wf xf ie ld rg _g dh ml il ph jm km jc" href="#">
-                    <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
-                    </svg>
-                  </a>
+            <!-- Blog Item -->
+            <div class="animate_top sg vk rm xm">
+              <div class="c rc i z-1 pg">
+                <img class="w-full" src="/build/images/blog-02.png" alt="Blog" />
+                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                </div>
+              </div>
+
+              <div class="yh">
+                <h4 class="ek tj ml il kk wm xl eq lb">
+                  <a href="blog-single.html">Servicios de Tránsito Terrestre en Venezuela</a>
+                </h4>
+                <div class="tc uf wf ag jq">
+                  <div class="tc wf ag">
+                    <p>Tramitamos licencias de conducir de 2da, 3ra, 4ta y 5ta categoría, cartas consulares o certificaciones consulares y licencias internacionales, cumpliendo con todos los procedimientos exigidos.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Project Item -->
-            <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
-              <div class="c i pg sg z-1">
-                <img src="/build/images/project-04.png" alt="Project" />
-                <div class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10">
-                  <h4 class="ek tj kk hc">Photo Retouching</h4>
-                  <p>Branded Ecommerce</p>
-                  <a class="c tc wf xf ie ld rg _g dh ml il ph jm km jc" href="#">
-                    <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
-                    </svg>
-                  </a>
+            <!-- Blog Item -->
+            <div class="animate_top sg vk rm xm">
+              <div class="c rc i z-1 pg">
+                <img class="w-full" src="/build/images/blog-03.png" alt="Blog" />
+
+                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
+                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
                 </div>
               </div>
-            </div>
 
-            <!-- Project Item -->
-            <div class="project-item wi fb vd vo/3 digital ecommerce">
-              <div class="c i pg sg z-1">
-                <img src="/build/images/project-03.png" alt="Project" />
-                <div class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10">
-                  <h4 class="ek tj kk hc">Photo Retouching</h4>
-                  <p>Branded Ecommerce</p>
-                  <a class="c tc wf xf ie ld rg _g dh ml il ph jm km jc"  href="#">
-                    <svg class="th lm ml il" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.4763 6.16664L6.00634 1.69664L7.18467 0.518311L13.6663 6.99998L7.18467 13.4816L6.00634 12.3033L10.4763 7.83331H0.333008V6.16664H10.4763Z" />
-                    </svg>
-                  </a>
+              <div class="yh">
+                <h4 class="ek tj ml il kk wm xl eq lb">
+                  <a href="blog-single.html">Trámite y Apostilla de Antecedentes Penales</a>
+                </h4>
+                <div class="tc uf wf ag jq">
+                  <div class="tc wf ag">
+                    <p>Gestionamos la solicitud y apostilla de antecedentes penales, esenciales para procesos legales y migratorios en otros países.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- ===== Projects End ===== -->
+      <!-- ===== Blog End ===== -->
+      
 
       <!-- ===== Testimonials Start ===== -->
       <section class="hj rp hr">
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Client’s Testimonials`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
+        <div x-data="{ sectionTitle: `Voces que inspiran confianza`, sectionTitleText: `Las experiencias de quienes han confiado en nosotros son nuestra mejor carta de presentación. Conoce sus testimonios y descubre cómo hemos hecho posible cada trámite.`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -601,7 +521,7 @@
                     <span class="rc je md/2 mh yg h q p"></span>
 
                     <div class="tc sf rn tn un zf dp">
-                      <img class="bf" src="/build/images/testimonial.png" alt="User" />
+                      
 
                       <div>
                         <img src="/build/images/icon-quote.svg" alt="Quote" />
@@ -650,20 +570,20 @@
         <div class="bb ze i va ki xn br">
           <div class="tc uf sn tn xf un gg">
             <div class="animate_top me/5 ln rj">
-              <h2 class="gk vj zp or kk wm hc">785</h2>
-              <p class="ek bk aq">Global Brands</p>
+              <h2 class="gk vj zp or kk wm hc">450</h2>
+              <p class="ek bk aq">Total de trabajos realizados</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 class="gk vj zp or kk wm hc">533</h2>
-              <p class="ek bk aq">Happy Clients</p>
+              <h2 class="gk vj zp or kk wm hc">420</h2>
+              <p class="ek bk aq">Clientes satisfechos</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 class="gk vj zp or kk wm hc">865</h2>
-              <p class="ek bk aq">Winning Award</p>
+              <h2 class="gk vj zp or kk wm hc">10</h2>
+              <p class="ek bk aq">Países donde hemos gestionado trámites</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 class="gk vj zp or kk wm hc">346</h2>
-              <p class="ek bk aq">Happy Clients</p>
+              <h2 class="gk vj zp or kk wm hc">10</h2>
+              <p class="ek bk aq">Años de experiencia</p>
             </div>
           </div>
         </div>
@@ -671,143 +591,9 @@
       <!-- ===== Counter End ===== -->
 
       <!-- ===== Clients Start ===== -->
-      <section class="pj vp mr">
-        <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Trusted by Global Brands`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
-          <div class="animate_top bb ze rj ki xn vq">
-            <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
-            <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
-          </div>
-        </div>
-        <!-- Section Title End -->
+      
 
-        <div class="bb ze ah ch pm hj xp ki xn 2xl:ud-px-49 bc">
-          <div class="wc rf qn zf cp kq xf wf">
-            <a href="#" class="rc animate_top">
-              <img class="th wl ml il zl om" src="/build/images/brand-light-01.svg" alt="Clients" />
-              <img class="xc sk ml il zl nm" src="/build/images/brand-dark-01.svg" alt="Clients" />
-            </a>
-            <a href="#" class="rc animate_top">
-              <img class="tk ml il zl om" src="/build/images/brand-light-02.svg" alt="Clients" />
-              <img class="xc sk ml il zl nm" src="/build/images/brand-dark-02.svg" alt="Clients" />
-            </a>
-            <a href="#" class="rc animate_top">
-              <img class="tk ml il zl om" src="/build/images/brand-light-03.svg" alt="Clients" />
-              <img class="xc sk ml il zl nm" src="/build/images/brand-dark-03.svg" alt="Clients" />
-            </a>
-            <a href="#" class="rc animate_top">
-              <img class="tk ml il zl om" src="/build/images/brand-light-04.svg" alt="Clients" />
-              <img class="xc sk ml il zl nm" src="/build/images/brand-dark-04.svg" alt="Clients" />
-            </a>
-            <a href="#" class="rc animate_top">
-              <img class="tk ml il zl om" src="/build/images/brand-light-05.svg" alt="Clients" />
-              <img class="xc sk ml il zl nm" src="/build/images/brand-dark-05.svg" alt="Clients" />
-            </a>
-            <a href="#" class="rc animate_top">
-              <img class="tk ml il zl om" src="/build/images/brand-light-06.svg" alt="Clients" />
-              <img class="xc sk ml il zl nm" src="/build/images/brand-dark-06.svg" alt="Clients" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- ===== Clients End ===== -->
-
-      <!-- ===== Blog Start ===== -->
-      <section class="ji gp uq">
-        <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
-          <div class="animate_top bb ze rj ki xn vq">
-            <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
-            <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
-          </div>
-        </div>
-        <!-- Section Title End -->
-
-        <div class="bb ye ki xn vq jb jo">
-          <div class="wc qf pn xo zf iq">
-            <!-- Blog Item -->
-            <div class="animate_top sg vk rm xm">
-              <div class="c rc i z-1 pg">
-                <img class="w-full" src="/build/images/blog-01.png" alt="Blog" />
-
-                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-                </div>
-              </div>
-
-              <div class="yh">
-                <div class="tc uf wf ag jq">
-                  <div class="tc wf ag">
-                    <img src="/build/images/icon-man.svg" alt="User" />
-                    <p>Musharof Chy</p>
-                  </div>
-                  <div class="tc wf ag">
-                    <img src="/build/images/icon-calender.svg" alt="Calender" />
-                    <p>25 Dec, 2025</p>
-                  </div>
-                </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="blog-single.html">Free advertising for your online business</a>
-                </h4>
-              </div>
-            </div>
-
-            <!-- Blog Item -->
-            <div class="animate_top sg vk rm xm">
-              <div class="c rc i z-1 pg">
-                <img class="w-full" src="/build/images/blog-02.png" alt="Blog" />
-                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-                </div>
-              </div>
-
-              <div class="yh">
-                <div class="tc uf wf ag jq">
-                  <div class="tc wf ag">
-                    <img src="/build/images/icon-man.svg" alt="User" />
-                    <p>Musharof Chy</p>
-                  </div>
-                  <div class="tc wf ag">
-                    <img src="/build/images/icon-calender.svg" alt="Calender" />
-                    <p>25 Dec, 2025</p>
-                  </div>
-                </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="blog-single.html">9 simple ways to improve your design skills</a>
-                </h4>
-              </div>
-            </div>
-
-            <!-- Blog Item -->
-            <div class="animate_top sg vk rm xm">
-              <div class="c rc i z-1 pg">
-                <img class="w-full" src="/build/images/blog-03.png" alt="Blog" />
-
-                <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
-                </div>
-              </div>
-
-              <div class="yh">
-                <div class="tc uf wf ag jq">
-                  <div class="tc wf ag">
-                    <img src="/build/images/icon-man.svg" alt="User" />
-                    <p>Musharof Chy</p>
-                  </div>
-                  <div class="tc wf ag">
-                    <img src="/build/images/icon-calender.svg" alt="Calender" />
-                    <p>25 Dec, 2025</p>
-                  </div>
-                </div>
-                <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="blog-single.html">Tips to quickly improve your coding speed.</a>
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== Blog End ===== -->
+      
 
       <!-- ===== Contact Start ===== -->
       <section id="support" class="i pg fh rm ji gp uq">
@@ -819,7 +605,7 @@
         <img src="/build/images/shape-13.svg" alt="Shape" class="h r q" />
 
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Let’s Stay Connected`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
+        <div x-data="{ sectionTitle: `¡Contáctanos para tus trámites sin fronteras!`, sectionTitleText: `Estamos aquí para facilitar tus trámites migratorios entre Venezuela y Colombia. Completa el formulario y nos pondremos en contacto contigo lo antes posible para ayudarte.`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -835,26 +621,26 @@
               <img src="/build/images/shape-06.svg" alt="Shape" class="h la ma ne kf" />
 
               <div class="fb">
-                <h4 class="wj kk wm cc">Email Address</h4>
+                <h4 class="wj kk wm cc">Dirección de correo electrónico</h4>
                 <p><a href="#">support@startup.com</a></p>
               </div>
-              <div class="fb">
+              <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Office Location</h4>
                 <p>76/A, Green valle, Califonia USA.</p>
-              </div>
+              </div> -->
               <div class="fb">
-                <h4 class="wj kk wm cc">Phone Number</h4>
+                <h4 class="wj kk wm cc">Número de teléfono</h4>
                 <p><a href="#">+009 8754 3433 223</a></p>
               </div>
-              <div class="fb">
+              <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Skype Email</h4>
                 <p><a href="#">example@yourmail.com</a></p>
-              </div>
+              </div> -->
 
               <span class="rc nd rh tm lc fb"></span>
 
               <div>
-                <h4 class="wj kk wm qb">Social Media</h4>
+                <h4 class="wj kk wm qb">Redes Sociales</h4>
                 <ul class="tc wf fg">
                   <li>
                     <a href="#" class="c tc wf xf ie ld rg ml il tl">
@@ -892,18 +678,18 @@
               <form action="https://formbold.com/s/unique_form_id" method="POST">
                 <div class="tc sf yo ap zf ep qb">
                   <div class="vd to/2">
-                    <label class="rc ac" for="fullname">Full name</label>
+                    <label class="rc ac" for="fullname">Nombre</label>
                     <input
                       type="text"
                       name="fullname"
                       id="fullname"
-                      placeholder="Devid Wonder"
+                      placeholder="DEscribe tu nombre aquí"
                       class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
                     />
                   </div>
 
                   <div class="vd to/2">
-                    <label class="rc ac" for="email">Email address</label>
+                    <label class="rc ac" for="email">Dirección de correo electrónico</label>
                     <input
                       type="email"
                       name="email"
@@ -914,34 +700,24 @@
                   </div>
                 </div>
 
-                <div class="tc sf yo ap zf ep qb">
+                <div class="fb">
                   <div class="vd to/2">
-                    <label class="rc ac" for="phone">Phone number</label>
+                    <label class="rc ac" for="phone">Número de teléfono</label>
                     <input
                       type="text"
                       name="phone"
                       id="phone"
-                      placeholder="+009 3342 3432"
+                      placeholder="Escribe tú número de celular"
                       class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
                     />
                   </div>
 
-                  <div class="vd to/2">
-                    <label class="rc ac" for="subject">Subject</label>
-                    <input
-                      type="text"
-                      for="subject"
-                      id="subject"
-                      placeholder="Type your subject"
-                      class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
-                    />
-                  </div>
-                </div>
+            
 
                 <div class="fb">
-                  <label class="rc ac" for="message">Message</label>
+                  <label class="rc ac" for="message">Mensaje</label>
                   <textarea
-                    placeholder="Message"
+                    placeholder="Escribe tu mensaje aquí"
                     rows="4"
                     name="message"
                     id="message"
@@ -950,7 +726,7 @@
                 </div>
 
                 <div class="tc xf">
-                  <button class="vc rg lk gh ml il hi gi _l">Send Message</button>
+                  <button class="vc rg lk gh ml il hi gi _l">Envíar Mensaje</button>
                 </div>
               </form>
             </div>
@@ -967,11 +743,11 @@
         <div class="bb ye i z-10 ki xn dr">
           <div class="tc uf sn tn un gg">
             <div class="animate_left to/2">
-              <h2 class="fk vj zp pr lk ac">Join with 5000+ Startups Growing with Base.</h2>
-              <p class="lk">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur leo. Ut venenatis rhoncus.</p>
+              <h2 class="fk vj zp pr lk ac">Asesoría para renovación de visado y cédula de transeúnte o residente.</h2>
+              <p class="lk">Brindamos asesoría especializada para la renovación de visados en Venezuela, asegurándonos de que los residentes con visados vigentes puedan completar el proceso sin inconvenientes. Esto incluye la gestión del visado de transeúnte y la tramitación de la cédula correspondiente, con vigencia acorde al tiempo aprobado por extranjería (desde 1 hasta 5 años).</p>
             </div>
             <div class="animate_right bf">
-              <a href="#" class="vc ek kk hh rg ol il cm gi hi">Get Started Now</a>
+              <a href="#" class="vc ek kk hh rg ol il cm gi hi">¡Solicita tu Trámite Ahora!</a>
             </div>
           </div>
         </div>
@@ -983,146 +759,18 @@
     <footer>
       <div class="bb ze ki xn 2xl:ud-px-0">
         <!-- Footer Top -->
-        <div class="ji gp">
-          <div class="tc uf ap gg fp">
-            <div class="animate_top zd/2 to/4">
-              <a href="index.html">
-                <img src="/build/images/logo-light.svg" alt="Logo" class="om" />
-                <img src="/build/images/logo-dark.svg" alt="Logo" class="xc nm" />
-              </a>
-
-              <p class="lc fb">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-              <ul class="tc wf cg">
-                <li>
-                  <a href="#">
-                    <svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_48_1499)">
-                        <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z" fill="" />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1499">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_48_1502)">
-                        <path d="M22.162 5.65593C21.3985 5.99362 20.589 6.2154 19.76 6.31393C20.6337 5.79136 21.2877 4.96894 21.6 3.99993C20.78 4.48793 19.881 4.82993 18.944 5.01493C18.3146 4.34151 17.4803 3.89489 16.5709 3.74451C15.6615 3.59413 14.7279 3.74842 13.9153 4.18338C13.1026 4.61834 12.4564 5.30961 12.0771 6.14972C11.6978 6.98983 11.6067 7.93171 11.818 8.82893C10.1551 8.74558 8.52832 8.31345 7.04328 7.56059C5.55823 6.80773 4.24812 5.75098 3.19799 4.45893C2.82628 5.09738 2.63095 5.82315 2.63199 6.56193C2.63199 8.01193 3.36999 9.29293 4.49199 10.0429C3.828 10.022 3.17862 9.84271 2.59799 9.51993V9.57193C2.59819 10.5376 2.93236 11.4735 3.54384 12.221C4.15532 12.9684 5.00647 13.4814 5.95299 13.6729C5.33661 13.84 4.6903 13.8646 4.06299 13.7449C4.32986 14.5762 4.85 15.3031 5.55058 15.824C6.25117 16.345 7.09712 16.6337 7.96999 16.6499C7.10247 17.3313 6.10917 17.8349 5.04687 18.1321C3.98458 18.4293 2.87412 18.5142 1.77899 18.3819C3.69069 19.6114 5.91609 20.2641 8.18899 20.2619C15.882 20.2619 20.089 13.8889 20.089 8.36193C20.089 8.18193 20.084 7.99993 20.076 7.82193C20.8949 7.2301 21.6016 6.49695 22.163 5.65693L22.162 5.65593Z" fill=""/>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1502">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_48_1505)">
-                        <path d="M6.94 5.00002C6.93974 5.53046 6.72877 6.03906 6.35351 6.41394C5.97825 6.78883 5.46944 6.99929 4.939 6.99902C4.40857 6.99876 3.89997 6.78779 3.52508 6.41253C3.1502 6.03727 2.93974 5.52846 2.94 4.99802C2.94027 4.46759 3.15124 3.95899 3.5265 3.5841C3.90176 3.20922 4.41057 2.99876 4.941 2.99902C5.47144 2.99929 5.98004 3.21026 6.35492 3.58552C6.72981 3.96078 6.94027 4.46959 6.94 5.00002ZM7 8.48002H3V21H7V8.48002ZM13.32 8.48002H9.34V21H13.28V14.43C13.28 10.77 18.05 10.43 18.05 14.43V21H22V13.07C22 6.90002 14.94 7.13002 13.28 10.16L13.32 8.48002Z" fill=""/>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1505">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg class="vh ul cl il" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_48_1508)">
-                        <path d="M7.443 5.3501C8.082 5.3501 8.673 5.4001 9.213 5.5481C9.70301 5.63814 10.1708 5.82293 10.59 6.0921C10.984 6.3391 11.279 6.6861 11.475 7.1311C11.672 7.5761 11.77 8.1211 11.77 8.7141C11.77 9.4071 11.623 10.0001 11.279 10.4451C10.984 10.8911 10.492 11.2861 9.902 11.5831C10.738 11.8311 11.377 12.2761 11.77 12.8691C12.164 13.4631 12.41 14.2051 12.41 15.0461C12.41 15.7391 12.262 16.3321 12.016 16.8271C11.77 17.3221 11.377 17.7671 10.934 18.0641C10.4528 18.3825 9.92084 18.6165 9.361 18.7561C8.771 18.9051 8.181 19.0041 7.591 19.0041H1V5.3501H7.443ZM7.049 10.8901C7.59 10.8901 8.033 10.7421 8.377 10.4951C8.721 10.2481 8.869 9.8021 8.869 9.2581C8.869 8.9611 8.819 8.6641 8.721 8.4671C8.623 8.2691 8.475 8.1201 8.279 7.9721C8.082 7.8731 7.885 7.7741 7.639 7.7251C7.393 7.6751 7.148 7.6751 6.852 7.6751H4V10.8911H7.05L7.049 10.8901ZM7.197 16.7281C7.492 16.7281 7.787 16.6781 8.033 16.6291C8.28138 16.5819 8.51628 16.4805 8.721 16.3321C8.92139 16.1873 9.08903 16.002 9.213 15.7881C9.311 15.5411 9.41 15.2441 9.41 14.8981C9.41 14.2051 9.213 13.7101 8.82 13.3641C8.426 13.0671 7.885 12.9191 7.246 12.9191H4V16.7291H7.197V16.7281ZM16.689 16.6781C17.082 17.0741 17.672 17.2721 18.459 17.2721C19 17.2721 19.492 17.1241 19.885 16.8771C20.279 16.5801 20.525 16.2831 20.623 15.9861H23.033C22.639 17.1731 22.049 18.0141 21.263 18.5581C20.475 19.0531 19.541 19.3501 18.41 19.3501C17.6864 19.3523 16.9688 19.2179 16.295 18.9541C15.6887 18.7266 15.148 18.3529 14.721 17.8661C14.2643 17.4107 13.9267 16.8498 13.738 16.2331C13.492 15.5901 13.393 14.8981 13.393 14.1061C13.393 13.3641 13.492 12.6721 13.738 12.0281C13.9745 11.4082 14.3245 10.8378 14.77 10.3461C15.213 9.9011 15.754 9.5061 16.344 9.2581C17.0007 8.99416 17.7022 8.85969 18.41 8.8621C19.246 8.8621 19.984 9.0111 20.623 9.3571C21.263 9.7031 21.754 10.0991 22.148 10.6931C22.5499 11.2636 22.8494 11.8998 23.033 12.5731C23.131 13.2651 23.18 13.9581 23.131 14.7491H16C16 15.5411 16.295 16.2831 16.689 16.6791V16.6781ZM19.787 11.4841C19.443 11.1381 18.902 10.9401 18.262 10.9401C17.82 10.9401 17.475 11.0391 17.18 11.1871C16.885 11.3361 16.689 11.5341 16.492 11.7321C16.311 11.9234 16.1912 12.1643 16.148 12.4241C16.098 12.6721 16.049 12.8691 16.049 13.0671H20.475C20.377 12.3251 20.131 11.8311 19.787 11.4841V11.4841ZM15.459 6.2901H20.967V7.6261H15.46V6.2901H15.459Z"/>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_48_1508">
-                          <rect width="24" height="24" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="vd ro tc sf rn un gg vn">
-              <div class="animate_top">
-                <h4 class="kk wm tj ec">Quick Links</h4>
-                <ul>
-                  <li><a href="#" class="sc xl vb">Home</a></li>
-                  <li><a href="#" class="sc xl vb">Product</a></li>
-                  <li><a href="#" class="sc xl vb">Careers<span class="sc ek uj lk nh rg zi _i nc">Hiring</span></a></li>
-                  <li><a href="#" class="sc xl vb">Pricing</a></li>
-                </ul>
-              </div>
-
-              <div class="animate_top">
-                <h4 class="kk wm tj ec">Services</h4>
-                <ul>
-                  <li><a href="#" class="sc xl vb">Web Development</a></li>
-                  <li><a href="#" class="sc xl vb">Graphics Design</a></li>
-                  <li><a href="#" class="sc xl vb">Digital Marketing</a></li>
-                  <li><a href="#" class="sc xl vb">Ui/Ux Design</a></li>
-                </ul>
-              </div>
-
-              <div class="animate_top">
-                <h4 class="kk wm tj ec">Support</h4>
-                <ul>
-                  <li><a href="#" class="sc xl vb">Company</a></li>
-                  <li><a href="#" class="sc xl vb">Press media</a></li>
-                  <li><a href="#" class="sc xl vb">Our Blog</a></li>
-                  <li><a href="#" class="sc xl vb">Contact Us</a></li>
-                </ul>
-              </div>
-
-              <div class="animate_top">
-                <h4 class="kk wm tj ec">Newsletter</h4>
-                <p class="ac qe">Subscribe to receive future updates</p>
-
-                <form action="https://formbold.com/s/unique_form_id" method="POST">
-                  <div class="i">
-                    <input type="text" placeholder="Email address" class="vd sm _g ch pm vk xm rg gm dm dn gi mi"/>
-
-                    <button class="h q fi">
-                      <svg class="th vm ul" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_48_1487)">
-                          <path d="M3.1175 1.17318L18.5025 9.63484C18.5678 9.67081 18.6223 9.72365 18.6602 9.78786C18.6982 9.85206 18.7182 9.92527 18.7182 9.99984C18.7182 10.0744 18.6982 10.1476 18.6602 10.2118C18.6223 10.276 18.5678 10.3289 18.5025 10.3648L3.1175 18.8265C3.05406 18.8614 2.98262 18.8792 2.91023 18.8781C2.83783 18.8769 2.76698 18.857 2.70465 18.8201C2.64232 18.7833 2.59066 18.7308 2.55478 18.6679C2.51889 18.6051 2.50001 18.5339 2.5 18.4615V1.53818C2.50001 1.46577 2.51889 1.39462 2.55478 1.33174C2.59066 1.26885 2.64232 1.2164 2.70465 1.17956C2.76698 1.14272 2.83783 1.12275 2.91023 1.12163C2.98262 1.12051 3.05406 1.13828 3.1175 1.17318ZM4.16667 10.8332V16.3473L15.7083 9.99984L4.16667 3.65234V9.16651H8.33333V10.8332H4.16667Z"fill=""/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_48_1487">
-                            <rect width="20" height="20" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Footer Top -->
 
         <!-- Footer Bottom -->
         <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
           <div class="animate_top">
             <ul class="tc wf gg">
-              <li><a href="#" class="xl">English</a></li>
-              <li><a href="#" class="xl">Privacy Policy</a></li>
-              <li><a href="#" class="xl">Support</a></li>
+              <li><a href="#" class="xl">Inicio</a></li>
+              <li><a href="#" class="xl">Servicios</a></li>
+              <li><a href="#" class="xl">Contacto</a></li>
             </ul>
           </div>
 
-          <div class="animate_top"><p>&copy; 2025 Base. All rights reserved</p></div>
+          <div class="animate_top"><p>&copy;</p></div>
         </div>
         <!-- Footer Bottom -->
       </div>
@@ -1154,27 +802,27 @@
 
           plans: [
             {
-              name: 'Starter',
-              price: {
-                monthly: 29,
-                annually: 29 * 12 - 199,
-              },
+              name: 'Proceso de Legalización y Apostilla',
+              // price: {
+              //   monthly: 29,
+              //   annually: 29 * 12 - 199,
+              // },
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },
             {
-              name: 'Growth Plan',
-              price: {
-                monthly: 59,
-                annually: 59 * 12 - 100,
-              },
+              name: 'Apostilla por el Ministerio de Relaciones Exteriores',
+              // price: {
+              //   monthly: 59,
+              //   annually: 59 * 12 - 100,
+              // },
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },
             {
-              name: 'Business',
-              price: {
-                monthly: 139,
-                annually: 139 * 12 - 100,
-              },
+              name: 'Entrega de Documentos "Personal o por  Encomiendas"',
+              // price: {
+              //   monthly: 139,
+              //   annually: 139 * 12 - 100,
+              // },
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },
           ],
