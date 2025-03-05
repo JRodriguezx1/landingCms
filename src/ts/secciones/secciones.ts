@@ -1,10 +1,9 @@
 (()=>{
-  if(document.querySelector('.productos')){
-    const crearProducto = document.querySelector('#crearProducto');
-    const miDialogoProducto = document.querySelector('#miDialogoProducto') as any;
-    const inputupImage = document.querySelector('#upImage') as HTMLInputElement;
-    const btncustomUpImage = document.querySelector('#customUpImage');
-    const imginputfile = document.querySelector('#imginputfile') as HTMLImageElement;  //img
+  if(document.querySelector('.secciones')){
+    const crearSeccion = document.querySelector('#crearSeccion');
+    const miDialogoSeccion = document.querySelector('#miDialogoSeccion') as any;
+    
+    
     let indiceFila=0, control=0, tablaProductos:HTMLElement;
     
 
@@ -33,7 +32,7 @@
 
     let products:productsapi[]=[], unproducto:productsapi;
 
-    (async ()=>{
+    /*(async ()=>{
       try {
           const url = "/admin/api/allproducts"; //llamado a la API REST
           const respuesta = await fetch(url); 
@@ -42,17 +41,17 @@
       } catch (error) {
           console.log(error);
       }
-    })();
+    })();*/
 
     //////////////////  TABLA //////////////////////
     tablaProductos = ($('#tablaProductos') as any).DataTable(configdatatables);
 
-    crearProducto?.addEventListener('click', (e):void=>{
+    crearSeccion?.addEventListener('click', (e):void=>{
       control = 0;
       limpiarformdialog();
-      document.querySelector('#modalProducto')!.textContent = "Crear producto";
-      (document.querySelector('#btnEditarCrearProducto') as HTMLInputElement).value = "Crear";
-      miDialogoProducto.showModal();
+      document.querySelector('#modalSeccion')!.textContent = "Crear Seccion";
+      (document.querySelector('#btnEditarCrearSeccion') as HTMLInputElement).value = "Crear";
+      miDialogoSeccion.showModal();
       document.addEventListener("click", cerrarDialogoExterno);
     });
 
@@ -74,9 +73,9 @@
       (document.querySelector('#preciocompra')as HTMLInputElement).value = unproducto?.precio_compra??'';
       (document.querySelector('#precioventa')as HTMLInputElement).value = unproducto?.precio_venta??'';
       (document.querySelector('#sku')as HTMLInputElement).value = unproducto?.codigo??'';
-      imginputfile.src = "/build/img/"+unproducto?.foto;
+      
       indiceFila = (tablaProductos as any).row((e.target as HTMLElement).closest('tr')).index();
-      miDialogoProducto.showModal();
+      miDialogoSeccion.showModal();
       document.addEventListener("click", cerrarDialogoExterno);
     }
 
@@ -84,27 +83,15 @@
     document.querySelector('#formCrearUpdateProducto')?.addEventListener('submit', e=>{
       if(control){
         e.preventDefault();
-        var imgFile:(string|File), info = (tablaProductos as any).page.info();
-        imgFile=unproducto.foto;
-        if(!imginputfile.src.includes(unproducto.foto)){ //cambio de imagen
-          imgFile = ((e.target as HTMLFormElement).elements.namedItem("upImage") as HTMLInputElement).files?.[0]!; //obtengo el archivo
-          if(imgFile){
-            if(imgFile.type!=="image/png"&&imgFile.type!=="image/jpeg"){
-              msjAlert('error', 'No es un formato valido para la foto', (document.querySelector('#divmsjalerta1') as HTMLElement));
-              return;
-            }
-            if(imgFile.size>550000){ //si es mayor a 550KB
-              msjAlert('error', 'La imagen no debe superar los 500KB', document.querySelector('#divmsjalerta1')!);
-              return;
-            }
-          }
-        }
+        
+        var info = (tablaProductos as any).page.info();
+        
+       
         (async ()=>{ 
           const datos = new FormData();
           datos.append('id', unproducto!.id);
           datos.append('idcategoria', $('#categoria').val()as string);
           datos.append('nombre', $('#nombre').val()as string);
-          datos.append('foto', imgFile); //en el backend no se lee con $_POST, se lee con $_FILES
           datos.append('precio_compra', $('#preciocompra').val()as string);
           datos.append('precio_venta', $('#precioventa').val()as string);
           datos.append('codigo', $('#sku').val()as string);
@@ -175,27 +162,15 @@
       });
     }
 
-    //////////////////// Cargar imagen como preview  //////////////////////
-    btncustomUpImage?.addEventListener('click', ()=>inputupImage?.click());
-    inputupImage?.addEventListener('change', function(){
-      const file = this.files?.[0];
-      if(file){
-        const reader = new FileReader();
-        reader.onload = function(){
-          const resrult = reader.result;
-          if(typeof resrult == "string")imginputfile.src = resrult;
-        } 
-        reader.readAsDataURL(file);
-      }
-    });
+   
 
     function limpiarformdialog(){
       (document.querySelector('#formCrearUpdateProducto') as HTMLFormElement)?.reset();
-      (document.querySelector('#formCrearUpdateProducto') as HTMLFormElement).action = "/admin/almacen/crear_producto";
+      //(document.querySelector('#formCrearUpdateProducto') as HTMLFormElement).action = "/admin/almacen/crear_producto";
     }
     function cerrarDialogoExterno(event:Event) {
-      if (event.target === miDialogoProducto || (event.target as HTMLInputElement).value === 'salir' || (event.target as HTMLInputElement).value === 'Actualizar') {
-        miDialogoProducto.close();
+      if (event.target === miDialogoSeccion || (event.target as HTMLInputElement).value === 'salir' || (event.target as HTMLInputElement).value === 'Actualizar') {
+        miDialogoSeccion.close();
         document.removeEventListener("click", cerrarDialogoExterno);
       }
     }

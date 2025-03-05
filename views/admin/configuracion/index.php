@@ -2,9 +2,6 @@
     <div class="tabs" id="tabulacion">
         <div class="tabs-content">
             <label><input type="radio" name="radio" <?php echo $paginanegocio??'';?> ><span id="pagina1">Negocio</span></label>
-            <label><input type="radio" name="radio" <?php echo $paginaempleado??'';?> ><span id="pagina2">Empleados</span></label>
-            <label><input type="radio" name="radio" <?php echo $paginamalla??'';?> ><span id="pagina3">Malla</span></label>
-            <label><input type="radio" name="radio" <?php echo $paginadesc??'';?> ><span id="pagina4">Fecha desc..</span></label>
             <label><input type="radio" name="radio"><span id="pagina5">Configuración</span></label>
         </div>
     </div>
@@ -13,15 +10,9 @@
     <!-- negocio -->
     <div class="hidden max-w-screen-md mx-auto mt-6 negocio paginas pagina1"><?php include __DIR__. "/negocio.php";?></div>
     
-    <!-- crear empleado-->
-    <div class="hidden mt-6 empleado paginas pagina2"><?php include __DIR__. "/empleado.php";?></div>  
+    
 
-    <!--malla-->
-    <div class="hidden paginas pagina3 mallaempleado"></div>
-
-    <div class="hidden paginas pagina4 descpagina3"></div>
-
-    <!-- configuración - medios de pago, colores, tiempo de servicio -->
+    <!-- configuraciónes adicionales -->
     <div class="hidden mt-6 paginas pagina5 configAdd">
         
         <div class="tlg:flex flex-1 tlg:overflow-hidden accordion_inv">
@@ -104,23 +95,6 @@
             </div>
 
         </div> <!-- fin accordion_inv -->
-
-        <div class="mediospago">
-            <h4 class="text-center text-gray-600 mb-4">Medios De Pago</h4>
-            <div class="mediospago__form">
-                <?php foreach($mediospago as $value): ?>
-                <div class="mediospago__mediopago">
-                    <div class="stylecheckbox">
-                        <input type="checkbox" id="<?php echo $value->mediopago??'';?>" name="mediopago" value="<?php echo $value->id??'';?>" <?php echo $value->id==1?'disabled':'';?>>
-                        <label for="<?php echo $value->mediopago??'';?>"><?php echo $value->mediopago??'';?></label>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-            <div class="mediospago__btn">
-                <span id="btnmediopago" class="btn-md btn-blueintense"><i class="fa-solid fa-plus"></i> Actualizar</span>
-            </div>
-        </div> <!-- fin mediospago -->
         
     </div> <!-- fin pagina5 -->
 

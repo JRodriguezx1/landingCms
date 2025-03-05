@@ -64,48 +64,6 @@
     <!--<script src="/build/js/bundle.min.js" defer></script>-->
     <script src="/build/js/bundle.ts.min.js" defer></script>
 
-    <script>
-        //$("#flatpickr").flatpickr({inline: true, disableMobile: "false"});
-        
-        /*var picker = new Pikaday({ field: document.getElementById('datepicker')});
-        picker.show();*/
-        
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            //theme: true,
-            headerToolbar: {right: '', left: '', center: 'title'},
-            titleFormat: {year: 'numeric', month: 'long'},
-            contentHeight: 250,
-            aspectRatio: 1,
-            initialView: 'dayGridMonth',
-            locale: 'es',
-            dayCellDidMount: function(arg) {
-                var today = new Date(); // Obtener la fecha actual
-                if (arg.date.getDate() === today.getDate() &&arg.date.getMonth() === today.getMonth() &&arg.date.getFullYear() === today.getFullYear()) {
-                    // Personaliza la celda del día actual
-                    arg.el.style.backgroundColor = '#007df4'; // Cambia el color de fondo
-                    //arg.el.style.border = '2px solid blue'; // Agrega un borde
-                    var dayNumberElement = arg.el.querySelector('.fc-daygrid-day-number');
-                    dayNumberElement.style.color = 'white';
-                    dayNumberElement.style.fontSize = '1.8rem';
-                    dayNumberElement.style.fontWeight = '700';
-                }
-            },
-            dayHeaderContent: function(arg) {
-                return ''; // Reemplaza el contenido del encabezado con una cadena vacía
-            },
-            datesSet: function(dateInfo) {
-                var titleElement = document.querySelector('.fc-toolbar h2'); // Selecciona el elemento del título
-                titleElement.style.fontSize = '15px'; // Cambia el tamaño de la letra
-                titleElement.style.color = '#6b7280'; // Cambia el color del texto
-                var dayCells = document.querySelectorAll('.fc-daygrid-day');
-                dayCells.forEach(function(cell) {
-                    cell.style.height = '30px'; // Ajustar la altura de las celdas
-                });
-            }
-        });
-        calendar.render();
-        
-    </script>
+    
 </body>
 </html>
