@@ -603,6 +603,7 @@
         <img src="/build/images/shape-07.svg" alt="Shape" class="h w da ee" />
         <img src="/build/images/shape-12.svg" alt="Shape" class="h p s" />
         <img src="/build/images/shape-13.svg" alt="Shape" class="h r q" />
+        
 
         <!-- Section Title Start -->
         <div x-data="{ sectionTitle: `¡Contáctanos para tus trámites sin fronteras!`, sectionTitleText: `Estamos aquí para facilitar tus trámites migratorios entre Venezuela y Colombia. Completa el formulario y nos pondremos en contacto contigo lo antes posible para ayudarte.`}">
