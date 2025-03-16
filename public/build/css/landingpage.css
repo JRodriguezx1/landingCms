@@ -1,4 +1,8 @@
 /* Boton flotante de Whatsapp*/
+html {
+    scroll-behavior: smooth;
+}
+
 .btn-ws{
     visibility: hidden;
     position: fixed;
