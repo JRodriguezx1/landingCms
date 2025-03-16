@@ -745,8 +745,8 @@
           <div class="">
             <ul class="tc wf gg">
               <li><a href="#" class="xl">Inicio</a></li>
-              <li><a href="#" class="xl">Servicios</a></li>
-              <li><a href="#" class="xl">Contacto</a></li>
+              <li><a href="#servicios" class="xl">Servicios</a></li>
+              <li><a href="#support" class="xl">Contacto</a></li>
             </ul>
           </div>
 
