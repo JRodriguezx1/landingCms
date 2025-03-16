@@ -94,7 +94,7 @@
               </p>
 
               <div class="tc tf yo zf mb">
-                <a href="#" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
+                <a href="tel:+1234567890" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
                 <span class="tc sf">
                   <a href="#" class="inline-block ek xj kk wm"> Llámanos (+58) 424 – 9128806 </a>
                   <span class="inline-block">Para cualquier pregunta o inquietud</span>
