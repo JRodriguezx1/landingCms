@@ -11,6 +11,7 @@ class logincontrolador{
 
     public static function loginauth(Router $router){
         $alertas = [];
+        
 
         if($_SERVER['REQUEST_METHOD'] === 'POST' ){
             //$_POST = ['email'=>'correo@correo.com', 'password'=>123456]
@@ -52,7 +53,7 @@ class logincontrolador{
 
     public static function login(Router $router){
         $alertas = [];
-
+        
         if($_SERVER['REQUEST_METHOD'] === 'POST' ){
             //$_POST = ['email'=>'correo@correo.com', 'password'=>123456]
             $auth = new usuarios($_POST);  //$auth es objeto de la clase usuarios de los datos que el usuario escribio

@@ -1,13 +1,3 @@
-<!--<!DOCTYPE html>
-<html lang="en">-->
-  <!--<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Base - Tailwind CSS Startup Template</title>
-    <link rel="icon" href="favicon.ico">
-    <link href="style.css" rel="stylesheet">
-  </head> -->
 
   <body
     x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
@@ -21,10 +11,10 @@
       class="g s r vd ya cj"
       :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
       @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
->
+    >
       <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
         <div class="vd to/4 tc wf ">
-          <a class="w-16" href="index.html">
+          <a class="w-16" href="/">
           <img class="om" src="/build/images/tramites.png" alt="Logo Light" style="width: 225px; height: auto;" />
             <img class="xc nm" src="/build/images/tramitesocsuro.png" alt="Logo Dark" style="width: 225px; height: auto;" />
           </a>
@@ -49,35 +39,17 @@
         <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
           <nav>
             <ul class="tc _o sf yo cg ep">
-              <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }">Inicio</a></li>
-              <li><a href="index.html#features" class="xl">Servicios</a></li>
+              <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Inicio</a></li>
+              <li><a href="#servicios" class="xl">Servicios</a></li>
               <li class="c i" x-data="{ dropdown: false }">
                 <a
-                  href="#"
+                  href="#support"
                   class="xl tc wf yf bg"
-                  @click.prevent="dropdown = !dropdown"
                   :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
                 >
                   Contacto
-
-                  <!-- <svg
-                    :class="{ 'wh': dropdown }"
-                    class="th mm we fd pf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                  </svg> -->
                 </a>
-
-                <!-- Dropdown Start -->
-                <!-- <ul class="a" :class="{ 'tc': dropdown }">
-                  <li><a href="blog-grid.html" class="xl" :class="{ 'mk': page === 'blog-grid' }">Blog Grid</a></li>
-                  <li><a href="blog-single.html" class="xl" :class="{ 'mk': page === 'blog-single' }">Blog Single</a></li>
-                  <li><a href="signin.html" class="xl" :class="{ 'mk': page === 'signin' }">Sign In</a></li>
-                  <li><a href="signup.html" class="xl" :class="{ 'mk': page === 'signup' }">Sign Up</a></li>
-                  <li><a href="404.html" class="xl" :class="{ 'mk': page === '404' }">404</a></li>
-                </ul> -->
-                <!-- Dropdown End -->
               </li>
-              <!-- <li><a href="index.html#support" class="xl">Support</a></li> -->
             </ul>
           </nav>
 
@@ -94,8 +66,6 @@
               </label>
             </div>
 
-            <!-- <a href="signin.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Sign In</a>
-            <a href="signup.html" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Sign Up</a> -->
           </div>
         </div>
       </div>
@@ -108,12 +78,11 @@
       <section class="gj do ir hj sp jr i pg">
         <!-- Hero Images -->
         <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
-          <img src="/build/images/shape-01.svg" alt="shape" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
-          <img src="/build/images/shape-02.svg" alt="shape" class="xc 2xl:ud-block h u p va" />
-          <img src="/build/images/shape-03.svg" alt="shape" class="xc 2xl:ud-block h v w va" />
           <img src="/build/images/shape-04.svg" alt="shape" class="h q r" />
           <img src="/build/images/hero.png" alt="Woman" class="h q r ua rounded-b-lg " style="position: relative; top: 27px; left: 9px;" />
         </div>
+
+        <?php include __DIR__. "/../templates/alertas.php"; ?>
 
         <!-- Hero Content -->
         <div class="bb ze ki xn 2xl:ud-px-0">
@@ -138,8 +107,7 @@
       <!-- ===== Hero End ===== -->
 
       <!-- ===== Small Features Start ===== -->
-      <section id="features">
-        <div class="bb ze ki yn 2xl:ud-px-12.5">
+      <section id="features" class="bb ze ki yn 2xl:ud-px-12.5">
           <div class="tc uf zo xf ap zf bp mq">
             <!-- Small Features Item -->
             <div class="animate_top kn to/3 tc cg oq">
@@ -174,7 +142,6 @@
               </div>
             </div>
           </div>
-        </div>
       </section>
       <!-- ===== Small Features End ===== -->
 
@@ -185,7 +152,6 @@
             <!-- About Images -->
             <div class="animate_left xc gn gg jn/2 i">
               <div>
-                <img src="/build/images/shape-05.svg" alt="Shape" class="h -ud-left-5 x" />
                 <img src="/build/images/about-01.jpg" alt="About" class="ib" />
                 <img src="/build/images/about-02.jpg" alt="About" />
               </div>
@@ -216,13 +182,12 @@
       <!-- ===== About End ===== -->
 
       <!-- ===== Team Start ===== -->
-      <section class="i pg ji gp uq">
+      <section id="servicios" class="i pg ji gp uq">
         <!-- Bg Shapes -->
         <span class="rc h s r vd fd/5 fh rm"></span>
         <img src="/build/images/shape-08.svg" alt="Shape Bg" class="h q r" />
-        <img src="/build/images/shape-09.svg" alt="Shape" class="of h y z/2" />
-        <img src="/build/images/shape-10.svg" alt="Shape" class="h _ aa" />
-        <img src="/build/images/shape-11.svg" alt="Shape" class="of h m ba" />
+        <img src="/build/images/shape-10.svg" alt="Shape" class="h v aa xc fn" />
+        <img src="/build/images/shape-11.svg" alt="Shape" class="of h m xc fn" />
 
         <!-- Section Title Start -->
         <div x-data="{ sectionTitle: `Soluciones Integrales para tu Tranquilidad`, sectionTitleText: `Te ofrecemos un conjunto de servicios diseñados para facilitar tus trámites y brindarte la tranquilidad que necesitas. Desde gestiones migratorias hasta servicios adicionales, nuestro equipo está listo para asesorarte en cada paso del proceso.`}">
@@ -297,7 +262,7 @@
       <section class="lj tp kr">
         <!-- Section Title Start -->
         <div x-data="{ sectionTitle: `Servicios Migratorios que Ofrecemos`, sectionTitleText: `Te ayudamos a gestionar trámites migratorios de forma rápida y segura. Confía en nuestros expertos para facilitar tu proceso.`}">
-          <div class="animate_top bb ze rj ki xn vq">
+          <div class="bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
           </div>
@@ -393,10 +358,10 @@
                   <span x-text="billPlan == 'monthly' ? '' : '/per year'" class="sc ak kk wm"></span>
                 </div>
 
-                <p class="ur dc">Después de obtener los documentos, llevamos a cabo un proceso de legalización y apostilla, asegurándonos de que los documentos tengan validez en el extranjero</p>
+                <p class="ur dc" x-text="plan.descripcion"></p>
 
                 <!-- Button -->
-                <a href="#" class="ek rg lk ml il gi ri" :class="plan.name == 'Growth Plan' ? 'gh sl' : 'mh tl'">¡Solicita Tu Trámite Ahora!</a>
+                <a href="#" class="ek rg lk ml il gi pi" :class="plan.name == 'Growth Plan' ? 'gh sl' : 'mh tl'">¡Solicita Tu Trámite Ahora!</a>
 
                 <!-- Features -->
                 <!-- <ul class="tc sf bg ob fb">
@@ -427,7 +392,7 @@
         <div class="bb ye ki xn vq jb jo">
           <div class="wc qf pn xo zf iq">
             <!-- Blog Item -->
-            <div class="animate_top sg vk rm xm">
+            <div class=" sg vk rm xm">
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="/build/images/blog-01.png" alt="Blog" />
 
@@ -449,7 +414,7 @@
             </div>
 
             <!-- Blog Item -->
-            <div class="animate_top sg vk rm xm">
+            <div class=" sg vk rm xm">
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="/build/images/blog-02.png" alt="Blog" />
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
@@ -470,7 +435,7 @@
             </div>
 
             <!-- Blog Item -->
-            <div class="animate_top sg vk rm xm">
+            <div class=" sg vk rm xm">
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="/build/images/blog-03.png" alt="Blog" />
 
@@ -494,7 +459,6 @@
         </div>
       </section>
       <!-- ===== Blog End ===== -->
-      
 
       <!-- ===== Testimonials Start ===== -->
       <section class="hj rp hr">
@@ -521,8 +485,6 @@
                     <span class="rc je md/2 mh yg h q p"></span>
 
                     <div class="tc sf rn tn un zf dp">
-                      
-
                       <div>
                         <img src="/build/images/icon-quote.svg" alt="Quote" />
                         <p class="ek ik xj _p kc fb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.</p>
@@ -538,6 +500,32 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <!-- Border Shape -->
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+
+                    <div class="tc sf rn tn un zf dp">
+                      
+
+                      <div>
+                        <img src="/build/images/icon-quote.svg" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.</p>
+
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Lulu lupe</span>
+                            <span class="rc">Founter @democompany</span>
+                          </div>
+                          <img class="rk" src="/build/images/brand-light-02.svg" alt="Brand" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
               <!-- If we need navigation -->
               <div class="tc wf xf fg jb">
@@ -561,7 +549,7 @@
       <!-- ===== Testimonials End ===== -->
 
       <!-- ===== Counter Start ===== -->
-      <section class="i pg qh rm ji hp">
+      <section id="contador_num" class="i pg qh rm ji hp indicadorNum">
         <img src="/build/images/shape-11.svg" alt="Shape" class="of h ga ha ke" />
         <img src="/build/images/shape-07.svg" alt="Shape" class="h ia o ae jf" />
         <img src="/build/images/shape-14.svg" alt="Shape" class="h ja ka" />
@@ -570,44 +558,38 @@
         <div class="bb ze i va ki xn br">
           <div class="tc uf sn tn xf un gg">
             <div class="animate_top me/5 ln rj">
-              <h2 class="gk vj zp or kk wm hc">450</h2>
+              <h2 data-valor="450" class="count_num gk vj zp or kk wm hc">0+</h2>
               <p class="ek bk aq">Total de trabajos realizados</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 class="gk vj zp or kk wm hc">420</h2>
+              <h2 data-valor="420" class="count_num gk vj zp or kk wm hc">0+</h2>
               <p class="ek bk aq">Clientes satisfechos</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 class="gk vj zp or kk wm hc">10</h2>
+              <h2 data-valor="10" class="count_num gk vj zp or kk wm hc">0+</h2>
               <p class="ek bk aq">Países donde hemos gestionado trámites</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 class="gk vj zp or kk wm hc">10</h2>
+              <h2 data-valor="10" class="count_num gk vj zp or kk wm hc">0+</h2>
               <p class="ek bk aq">Años de experiencia</p>
             </div>
           </div>
         </div>
       </section>
       <!-- ===== Counter End ===== -->
-
-      <!-- ===== Clients Start ===== -->
-      
-
       
 
       <!-- ===== Contact Start ===== -->
       <section id="support" class="i pg fh rm ji gp uq">
         <!-- Bg Shapes -->
-        <img src="/build/images/shape-06.svg" alt="Shape" class="h aa y" />
         <img src="/build/images/shape-03.svg" alt="Shape" class="h ca u" />
         <img src="/build/images/shape-07.svg" alt="Shape" class="h w da ee" />
         <img src="/build/images/shape-12.svg" alt="Shape" class="h p s" />
         <img src="/build/images/shape-13.svg" alt="Shape" class="h r q" />
-        
 
         <!-- Section Title Start -->
         <div x-data="{ sectionTitle: `¡Contáctanos para tus trámites sin fronteras!`, sectionTitleText: `Estamos aquí para facilitar tus trámites migratorios entre Venezuela y Colombia. Completa el formulario y nos pondremos en contacto contigo lo antes posible para ayudarte.`}">
-          <div class="animate_top bb ze rj ki xn vq">
+          <div class="bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
           </div>
@@ -616,7 +598,7 @@
 
         <div class="i va bb ye ki xn wq jb mo">
           <div class="tc uf sn tf rn un zf xl:gap-10">
-            <div class="animate_top w-full mn/5 to/3 vk sg hh sm yh rq i pg">
+            <div class="w-full mn/5 to/3 vk sg hh sm yh rq i pg">
               <!-- Bg Shapes -->
               <img src="/build/images/shape-03.svg" alt="Shape" class="h la x wd" />
               <img src="/build/images/shape-06.svg" alt="Shape" class="h la ma ne kf" />
@@ -664,28 +646,23 @@
                       </svg>
                     </a>
                   </li>
-                  <li>
-                    <a href="#" class="c tc wf xf ie ld rg ml il tl">
-                      <svg class="th lm ml il" width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.82308 0.904297C7.40883 0.904297 7.95058 0.95013 8.44558 1.0858C8.89476 1.16834 9.32351 1.33772 9.70783 1.58446C10.069 1.81088 10.3394 2.12896 10.5191 2.53688C10.6997 2.9448 10.7895 3.44438 10.7895 3.98796C10.7895 4.62321 10.6547 5.1668 10.3394 5.57471C10.069 5.98355 9.61799 6.34563 9.07716 6.61788C9.84349 6.84521 10.4292 7.25313 10.7895 7.79672C11.1507 8.34122 11.3762 9.02138 11.3762 9.7923C11.3762 10.4275 11.2405 10.9711 11.015 11.4249C10.7895 11.8786 10.4292 12.2865 10.0232 12.5588C9.58205 12.8506 9.09443 13.0651 8.58124 13.1931C8.04041 13.3297 7.49958 13.4205 6.95874 13.4205H0.916992V0.904297H6.82308ZM6.46191 5.98263C6.95783 5.98263 7.36391 5.84696 7.67924 5.62055C7.99458 5.39413 8.13024 4.9853 8.13024 4.48663C8.13024 4.21438 8.08441 3.94213 7.99458 3.76155C7.90474 3.58005 7.76908 3.44346 7.58941 3.3078C7.40883 3.21705 7.22824 3.1263 7.00274 3.08138C6.77724 3.03555 6.55266 3.03555 6.28133 3.03555H3.66699V5.98355H6.46283L6.46191 5.98263ZM6.59758 11.3341C6.86799 11.3341 7.13841 11.2883 7.36391 11.2434C7.59159 11.2001 7.80692 11.1071 7.99458 10.9711C8.17826 10.8384 8.33193 10.6685 8.44558 10.4725C8.53541 10.246 8.62616 9.9738 8.62616 9.65663C8.62616 9.02138 8.44558 8.56763 8.08533 8.25046C7.72416 7.97822 7.22824 7.84255 6.64249 7.84255H3.66699V11.335H6.59758V11.3341ZM15.2986 11.2883C15.6588 11.6513 16.1997 11.8328 16.9211 11.8328C17.417 11.8328 17.868 11.6971 18.2282 11.4707C18.5894 11.1985 18.8149 10.9262 18.9047 10.654H21.1139C20.7527 11.742 20.2119 12.513 19.4914 13.0116C18.7691 13.4654 17.9129 13.7376 16.8762 13.7376C16.2128 13.7396 15.5551 13.6165 14.9374 13.3746C14.3816 13.1661 13.886 12.8235 13.4946 12.3773C13.0759 11.9598 12.7665 11.4457 12.5935 10.8804C12.368 10.291 12.2772 9.65663 12.2772 8.93063C12.2772 8.25047 12.368 7.61613 12.5935 7.0258C12.8103 6.45755 13.1311 5.93468 13.5395 5.48396C13.9456 5.07605 14.4415 4.71396 14.9823 4.48663C15.5843 4.24469 16.2274 4.12143 16.8762 4.12363C17.6425 4.12363 18.319 4.26021 18.9047 4.57738C19.4914 4.89455 19.9415 5.25755 20.3027 5.80205C20.6711 6.32503 20.9456 6.90819 21.1139 7.52538C21.2037 8.15972 21.2487 8.79497 21.2037 9.52005H14.667C14.667 10.246 14.9374 10.9262 15.2986 11.2892V11.2883ZM18.1384 6.52713C17.8231 6.20996 17.3272 6.02846 16.7405 6.02846C16.3353 6.02846 16.0191 6.11922 15.7487 6.25488C15.4782 6.39147 15.2986 6.57297 15.118 6.75447C14.952 6.92978 14.8422 7.15067 14.8027 7.3888C14.7568 7.61613 14.7119 7.79672 14.7119 7.97822H18.7691C18.6792 7.29805 18.4537 6.84522 18.1384 6.52713ZM14.1711 1.76596H19.2201V2.99063H14.172V1.76596H14.1711Z" fill=""/>
-                      </svg>
-                    </a>
-                  </li>
+                  
                 </ul>
               </div>
             </div>
 
-            <div class="animate_top w-full nn/5 vo/3 vk sg hh sm yh tq">
-              <form action="https://formbold.com/s/unique_form_id" method="POST">
+            <div class="w-full nn/5 vo/3 vk sg hh sm yh tq">
+              <form action="/formcontacto" method="post">
                 <div class="tc sf yo ap zf ep qb">
                   <div class="vd to/2">
-                    <label class="rc ac" for="fullname">Nombre</label>
+                    <label class="rc ac" for="nombre">Nombre</label>
                     <input
                       type="text"
-                      name="fullname"
-                      id="fullname"
-                      placeholder="DEscribe tu nombre aquí"
+                      name="nombre"
+                      id="nombre"
+                      placeholder="tu nombre aquí"
                       class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                      required
                     />
                   </div>
 
@@ -697,31 +674,33 @@
                       id="email"
                       placeholder="example@gmail.com"
                       class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                      required
                     />
                   </div>
                 </div>
 
                 <div class="fb">
                   <div class="vd to/2">
-                    <label class="rc ac" for="phone">Número de teléfono</label>
+                    <label class="rc ac" for="telefono">Número de teléfono</label>
                     <input
                       type="text"
-                      name="phone"
-                      id="phone"
+                      name="telefono"
+                      id="telefono"
                       placeholder="Escribe tú número de celular"
                       class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                      required
                     />
                   </div>
 
-            
+
 
                 <div class="fb">
-                  <label class="rc ac" for="message">Mensaje</label>
+                  <label class="rc ac" for="mensaje">Mensaje</label>
                   <textarea
                     placeholder="Escribe tu mensaje aquí"
                     rows="4"
-                    name="message"
-                    id="message"
+                    name="mensaje"
+                    id="mensaje"
                     class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci"
                   ></textarea>
                 </div>
@@ -762,8 +741,8 @@
         <!-- Footer Top -->
 
         <!-- Footer Bottom -->
-        <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
-          <div class="animate_top">
+        <div class="bh ch pm tc uf yo wf xf cg bj">
+          <div class="">
             <ul class="tc wf gg">
               <li><a href="#" class="xl">Inicio</a></li>
               <li><a href="#" class="xl">Servicios</a></li>
@@ -771,13 +750,19 @@
             </ul>
           </div>
 
-          <div class="animate_top"><p>&copy;</p></div>
+          <div class=""><p>&copy;</p></div>
         </div>
         <!-- Footer Bottom -->
       </div>
     </footer>
 
     <!-- ===== Footer End ===== -->
+
+    <div class="btn-ws">
+      <a href="https://api.whatsapp.com/send?phone=573xxxxxxxxx"
+      target="_blank"><img loading="lazy" src="/build/images/icons-whatsapp-verde.png" alt="whatsapp-negocio"></a>
+    </div>
+
 
     <!-- ====== Back To Top Start ===== -->
     <button
@@ -808,6 +793,7 @@
               //   monthly: 29,
               //   annually: 29 * 12 - 199,
               // },
+              descripcion: 'Después de obtener los documentos, llevamos a cabo un proceso de legalización y apostilla, asegurándonos de que los documentos tengan validez en el extranjero',
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },
             {
@@ -816,6 +802,7 @@
               //   monthly: 59,
               //   annually: 59 * 12 - 100,
               // },
+              descripcion: 'Después de obtener los documentos, llevamos a cabo un proceso de legalización y apostilla',
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },
             {
@@ -824,12 +811,13 @@
               //   monthly: 139,
               //   annually: 139 * 12 - 100,
               // },
+              descripcion: 'legalización y apostilla, asegurándonos de que los documentos tengan validez en el extranjero',
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },
           ],
         };
       };
     </script>
-  <script defer src="/build/js/bundle.js"></script></body>
+  
   <!--
 </html>-->
