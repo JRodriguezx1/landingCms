@@ -524,6 +524,30 @@
                   </div>
                 </div>
 
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <!-- Border Shape -->
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+
+                    <div class="tc sf rn tn un zf dp">
+                      
+
+                      <div>
+                        <img src="/build/images/icon-quote.svg" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">Sin tu apoyo, no sé si lo hubiera logrado. Gracias por acompañarme todo el proceso del trámite. Gracias por cada minuto de tu atención y dedicación. Mi corazón tiene una enorme gratitud por todo lo que has hecho hoy día tengo mi pasaporte y visa por tu gestión, sinceramente un excelente servicio, fuiste una recomendación de mi primo y la verdad te recomendaré mil veces por qué es lo mejor de lo mejor. </p>
+
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Antonio Blanco</span>
+                            <span class="rc">Fuente: ajbbantonio@gmail.com</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
               <!-- If we need navigation -->
               <div class="tc wf xf fg jb">
@@ -603,7 +627,7 @@
 
               <div class="fb">
                 <h4 class="wj kk wm cc">Dirección de correo electrónico</h4>
-                <p><a href="#">support@startup.com</a></p>
+                <p><a href="#">tramitessinfronteras7@gmail.com</a></p>
               </div>
               <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Office Location</h4>
@@ -611,7 +635,7 @@
               </div> -->
               <div class="fb">
                 <h4 class="wj kk wm cc">Número de teléfono</h4>
-                <p><a href="#">+009 8754 3433 223</a></p>
+                <p><a href="#">+58 314 7102077</a></p>
               </div>
               <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Skype Email</h4>
