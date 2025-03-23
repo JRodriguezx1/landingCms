@@ -35,8 +35,8 @@ class Email {
          $mail->Password = $_ENV['EMAIL_PASS'];  
      
          //$negocio = negocio::get(1);
-         $mail->setFrom('tramitessinfronteras@correo.com');
-         $mail->addAddress('julianithox1@gmail.com', 'Julian DR');
+         $mail->setFrom('tramitessinfronteras7@gmail.com');
+         $mail->addAddress('tramitessinfronteras7@gmail.com', 'Tramites sin frontera');
          $mail->Subject = 'Interesado desde tramites sin frontera';
 
          // Set HTML

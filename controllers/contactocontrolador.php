@@ -11,9 +11,10 @@ use MVC\Router;  //namespace\clase
 class contactocontrolador{
 
   public static function formcontacto(Router $router){
-    session_start();
-    isadmin();
+    /*session_start();
+    isadmin();*/
     $alertas = [];
+    
 
     if($_SERVER['REQUEST_METHOD'] === 'POST' ){
         // Enviar el email
