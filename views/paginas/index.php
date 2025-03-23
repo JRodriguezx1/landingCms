@@ -88,13 +88,13 @@
         <div class="bb ze ki xn 2xl:ud-px-0">
           <div class="tc _o">
             <div class="animate_left jn/2">
-              <h1 class="fk vj zp or kk wm wb">Trámites Migratorios en Venezuela - Confianza y Eficiencia.</h1>
+              <h1 class="fk vj zp or kk wm wb">Trámites Migratorios - Confianza y Eficiencia.</h1>
               <p class="fq">
               Llevamos a cabo tus gestiones con seriedad y profesionalismo, asegurándonos de obtener tus documentos de forma rápida y legalizada para que puedas realizar cualquier trámite necesario.
               </p>
 
               <div class="tc tf yo zf mb">
-                <a href="tel:+1234567890" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
+                <a href="https://api.whatsapp.com/send?phone=583147102077" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
                 <span class="tc sf">
                   <a href="#" class="inline-block ek xj kk wm"> Llámanos (+58) 424 – 9128806 </a>
                   <span class="inline-block">Para cualquier pregunta o inquietud</span>
@@ -397,7 +397,7 @@
                 <img class="w-full" src="/build/images/blog-01.png" alt="Blog" />
 
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                  <a href="#support" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
                 </div>
               </div>
 
@@ -418,7 +418,7 @@
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="/build/images/blog-02.png" alt="Blog" />
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                  <a href="#support" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
                 </div>
               </div>
 
@@ -440,7 +440,7 @@
                 <img class="w-full" src="/build/images/blog-03.png" alt="Blog" />
 
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="./blog-single.html" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
+                  <a href="#support" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
                 </div>
               </div>
 
@@ -487,14 +487,13 @@
                     <div class="tc sf rn tn un zf dp">
                       <div>
                         <img src="/build/images/icon-quote.svg" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.</p>
+                        <p class="ek ik xj _p kc fb">A través de un familiar los contacte, y la verdad las referencia que me dio mi hermana rebasaron mis expectativas, quede súper satisfecho con su trabajo tan profesional y eficiente... Gracias</p>
 
                         <div class="tc yf vf">
                           <div>
-                            <span class="rc ek xj kk wm zb">Devid Smith</span>
-                            <span class="rc">Founter @democompany</span>
+                            <span class="rc ek xj kk wm zb">Yui Sun Yan Hung</span>
+                            <span class="rc">Fuente: yuiyanh1942@gmail.com</span>
                           </div>
-                          <img class="rk" src="/build/images/brand-light-02.svg" alt="Brand" />
                         </div>
                       </div>
                     </div>
@@ -512,14 +511,37 @@
 
                       <div>
                         <img src="/build/images/icon-quote.svg" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.</p>
+                        <p class="ek ik xj _p kc fb">Muchas gracias por la gestión. Había tenido Malas experiencias en el pasado, pero llegar acá fue la mejor decisión, me brindaron apoyo y mucha confianza. Realmente tienen un excelente servicio.</p>
 
                         <div class="tc yf vf">
                           <div>
-                            <span class="rc ek xj kk wm zb">Lulu lupe</span>
-                            <span class="rc">Founter @democompany</span>
+                            <span class="rc ek xj kk wm zb">Cindy Domínguez</span>
+                            <span class="rc">Fuente: cindydominguezs.99@gmail.com</span>
                           </div>
-                          <img class="rk" src="/build/images/brand-light-02.svg" alt="Brand" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <!-- Border Shape -->
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+
+                    <div class="tc sf rn tn un zf dp">
+                      
+
+                      <div>
+                        <img src="/build/images/icon-quote.svg" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">Sin tu apoyo, no sé si lo hubiera logrado. Gracias por acompañarme todo el proceso del trámite. Gracias por cada minuto de tu atención y dedicación. Mi corazón tiene una enorme gratitud por todo lo que has hecho hoy día tengo mi pasaporte y visa por tu gestión, sinceramente un excelente servicio, fuiste una recomendación de mi primo y la verdad te recomendaré mil veces por qué es lo mejor de lo mejor. </p>
+
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Antonio Blanco</span>
+                            <span class="rc">Fuente: ajbbantonio@gmail.com</span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -532,7 +554,7 @@
                 <div
                   class="swiper-button-prev c tc wf xf ie ld rg _g dh pf ml vr hh rm tl zm rl ym"
                 >
-                  <svg class="th lm" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="th lm" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="https://www.instagram.com/tramitessinfronteras7/">
                     <path d="M3.52366 7.83336L7.99366 12.3034L6.81533 13.4817L0.333663 7.00002L6.81533 0.518357L7.99366 1.69669L3.52366 6.16669L13.667 6.16669L13.667 7.83336L3.52366 7.83336Z" fill=""/>
                   </svg>
                 </div>
@@ -588,7 +610,7 @@
         <img src="/build/images/shape-13.svg" alt="Shape" class="h r q" />
 
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `¡Contáctanos para tus trámites sin fronteras!`, sectionTitleText: `Estamos aquí para facilitar tus trámites migratorios entre Venezuela y Colombia. Completa el formulario y nos pondremos en contacto contigo lo antes posible para ayudarte.`}">
+        <div x-data="{ sectionTitle: `¡Contáctanos para tus trámites sin fronteras!`, sectionTitleText: `Estamos aquí para facilitar tus trámites migratorios. Completa el formulario y nos pondremos en contacto contigo lo antes posible para ayudarte.`}">
           <div class="bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -605,7 +627,7 @@
 
               <div class="fb">
                 <h4 class="wj kk wm cc">Dirección de correo electrónico</h4>
-                <p><a href="#">support@startup.com</a></p>
+                <p><a href="#">tramitessinfronteras7@gmail.com</a></p>
               </div>
               <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Office Location</h4>
@@ -613,7 +635,7 @@
               </div> -->
               <div class="fb">
                 <h4 class="wj kk wm cc">Número de teléfono</h4>
-                <p><a href="#">+009 8754 3433 223</a></p>
+                <p><a href="#">+58 314 7102077</a></p>
               </div>
               <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Skype Email</h4>
@@ -626,21 +648,21 @@
                 <h4 class="wj kk wm qb">Redes Sociales</h4>
                 <ul class="tc wf fg">
                   <li>
-                    <a href="#" class="c tc wf xf ie ld rg ml il tl">
+                    <a href="https://www.facebook.com/profile.php?id=61573522004800&mibextid=wwXIfr&rdid=paCMaKgrbjAoYzaa&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A4Y9keyJX%2F%3Fmibextid%3DwwXIfr#" class="c tc wf xf ie ld rg ml il tl">
                       <svg class="th lm ml il" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.83366 11.3752H9.12533L10.042 7.7085H6.83366V5.87516C6.83366 4.931 6.83366 4.04183 8.667 4.04183H10.042V0.96183C9.74316 0.922413 8.61475 0.833496 7.42308 0.833496C4.93433 0.833496 3.16699 2.35241 3.16699 5.14183V7.7085H0.416992V11.3752H3.16699V19.1668H6.83366V11.3752Z" fill=""/>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="c tc wf xf ie ld rg ml il tl">
-                      <svg class="th lm ml il" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.3153 2.18484C18.6155 2.4944 17.8733 2.6977 17.1134 2.78801C17.9144 2.30899 18.5138 1.55511 18.8001 0.666844C18.0484 1.11418 17.2244 1.42768 16.3654 1.59726C15.7885 0.979958 15.0238 0.57056 14.1901 0.432713C13.3565 0.294866 12.5007 0.436294 11.7558 0.835009C11.0108 1.23372 10.4185 1.86739 10.0708 2.63749C9.72313 3.40759 9.63963 4.27098 9.83327 5.09343C8.30896 5.01703 6.81775 4.62091 5.45645 3.93079C4.09516 3.24067 2.89423 2.27197 1.93161 1.08759C1.59088 1.67284 1.41182 2.33814 1.41278 3.01534C1.41278 4.34451 2.08928 5.51876 3.11778 6.20626C2.50912 6.1871 1.91386 6.02273 1.38161 5.72685V5.77451C1.38179 6.65974 1.68811 7.51766 2.24864 8.20282C2.80916 8.88797 3.58938 9.3582 4.45703 9.53376C3.89201 9.68688 3.29956 9.70945 2.72453 9.59976C2.96915 10.3617 3.44595 11.0281 4.08815 11.5056C4.73035 11.9831 5.50581 12.2478 6.30594 12.2627C5.51072 12.8872 4.60019 13.3489 3.62642 13.6213C2.65264 13.8938 1.63473 13.9716 0.630859 13.8503C2.38325 14.9773 4.4232 15.5756 6.50669 15.5737C13.5586 15.5737 17.415 9.73176 17.415 4.66535C17.415 4.50035 17.4104 4.33351 17.4031 4.17035C18.1537 3.62783 18.8016 2.95578 19.3162 2.18576L19.3153 2.18484Z" fill=""/>
+                    <a href="https://www.tiktok.com/@tramitessinfronteras70" class="c tc wf xf ie ld rg ml il tl">
+                      <svg width="16" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="#79808a" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="c tc wf xf ie ld rg ml il tl">
+                    <a href="https://www.instagram.com/tramitessinfronteras7/" class="c tc wf xf ie ld rg ml il tl">
                       <svg class="th lm ml il" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.36198 2.58327C4.36174 3.0695 4.16835 3.53572 3.82436 3.87937C3.48037 4.22301 3.01396 4.41593 2.52773 4.41569C2.0415 4.41545 1.57528 4.22206 1.23164 3.87807C0.887991 3.53408 0.69507 3.06767 0.695313 2.58144C0.695556 2.09521 0.888943 1.62899 1.23293 1.28535C1.57692 0.941701 2.04333 0.748781 2.52956 0.749024C3.01579 0.749267 3.48201 0.942654 3.82566 1.28664C4.1693 1.63063 4.36222 2.09704 4.36198 2.58327ZM4.41698 5.77327H0.750313V17.2499H4.41698V5.77327ZM10.2103 5.77327H6.56198V17.2499H10.1736V11.2274C10.1736 7.87244 14.5461 7.56077 14.5461 11.2274V17.2499H18.167V9.98077C18.167 4.32494 11.6953 4.53577 10.1736 7.31327L10.2103 5.77327Z"fill=""/>
                       </svg>
@@ -759,7 +781,7 @@
     <!-- ===== Footer End ===== -->
 
     <div class="btn-ws">
-      <a href="https://api.whatsapp.com/send?phone=573xxxxxxxxx"
+      <a href="https://api.whatsapp.com/send?phone=583147102077"
       target="_blank"><img loading="lazy" src="/build/images/icons-whatsapp-verde.png" alt="whatsapp-negocio"></a>
     </div>
 
@@ -802,7 +824,7 @@
               //   monthly: 59,
               //   annually: 59 * 12 - 100,
               // },
-              descripcion: 'Después de obtener los documentos, llevamos a cabo un proceso de legalización y apostilla',
+              descripcion: 'apostillamos los documentos ante la Cancillería de Venezuela, lo que les otorga validez internacional.',
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },
             {
@@ -811,7 +833,7 @@
               //   monthly: 139,
               //   annually: 139 * 12 - 100,
               // },
-              descripcion: 'legalización y apostilla, asegurándonos de que los documentos tengan validez en el extranjero',
+              descripcion: 'Una vez completado el proceso, entregamos los documentos al cliente personalmente o por empresa de encomienda',
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },
           ],
