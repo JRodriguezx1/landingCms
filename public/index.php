@@ -13,6 +13,7 @@ use Controllers\editorpaginacontrolador;
 use Controllers\clientescontrolador;
 use Controllers\direccionescontrolador;
 use Controllers\configcontrolador;
+use Controllers\contactocontrolador;
 use Controllers\paginacontrolador;
 
 // me importa la clase router
@@ -49,7 +50,7 @@ $router->get('/confirmar-cuenta', [logincontrolador::class, 'confirmar_cuenta'])
 
 //area publica
 $router->get('/', [paginacontrolador::class, 'index']);
-//$router->get('/', [logincontrolador::class, 'login']);
+$router->post('/formcontacto', [contactocontrolador::class, 'formcontacto']);
 
 
 /////area dashboard/////

@@ -9,19 +9,20 @@ class Email {
 
     public $email;
     public $nombre;
-    public $token;
+    public $telefono;
+    public $mensaje;
     
-    public function __construct($email, $nombre, $token, $password='')
+    public function __construct($email, $nombre, $telefono, $mensaje)
     {
         $this->email = $email;
         $this->nombre = $nombre;
-        $this->token = $token;
-        $this->password = $password;
+        $this->telefono = $telefono;
+        $this->mensaje = $mensaje;
     }
 
-    public function enviarConfirmacion() { //cunado se registra por primera vez
-        $host = $_SERVER['HTTP_HOST'];  //app_barber.test, cliente1.app_barber.test, cliente2.app_barber.test
-        $cliente = explode('.', $host);
+    public function enviarConfirmacion() { //cunado un interesado se contacta por el formulario
+        /*$host = $_SERVER['HTTP_HOST'];  //app_barber.test, cliente1.app_barber.test, cliente2.app_barber.test
+        $cliente = explode('.', $host);*/
 
          // create a new object
          $mail = new PHPMailer();
@@ -30,61 +31,33 @@ class Email {
          $mail->SMTPAuth = true;
          $mail->SMTPSecure = 'tls'; //'ssl'; //ENCRYPTION_STARTTLS - PHPMailer::ENCRYPTION_SMTPS; //'ssl' = si la url tiene el candado, si no =  'tls'
          $mail->Port = $_ENV['EMAIL_PORT']; //465; para ssl y 587 para tls
-         $mail->Username = $_ENV['EMAIL_USER']; //'julianithox1@gmail.com';
-         $mail->Password = $_ENV['EMAIL_PASS']; //'ddvcysabiytmkwca'; 
+         $mail->Username = $_ENV['EMAIL_USER'];
+         $mail->Password = $_ENV['EMAIL_PASS'];  
      
-         $negocio = negocio::get(1);
-         $mail->setFrom($negocio[0]->email);
-         $mail->addAddress($this->email, $this->nombre);
-         $mail->Subject = 'Cuenta Registrada';
+         //$negocio = negocio::get(1);
+         $mail->setFrom('tramitessinfronteras@correo.com');
+         $mail->addAddress('julianithox1@gmail.com', 'Julian DR');
+         $mail->Subject = 'Interesado desde tramites sin frontera';
 
          // Set HTML
          $mail->isHTML(TRUE);
          $mail->CharSet = 'UTF-8';
 
          $contenido = '<html>';
-         $contenido .= "<p> <strong>Hola " . $this->nombre .  "</strong> Te Has Registrado Correctamente en {$negocio[0]->nombre}.</p>";
-         //$contenido .= "<p>Presiona aquí: <a href='http://".$cliente[0].".app_barber.test/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";       
-         if($this->password)$contenido .= "<p>Ingresa con tu numero de celular, y tu password de ingreso es: ".$this->password."</p>";
-         $contenido .= "<p>Si tu no creaste esta cuenta; puedes ignorar el mensaje</p>";
+         $contenido .= "<p><strong>Hola, </strong> te ha llegado un correo desde el formulario Tramites sin frontera.</p>";
+         $contenido .= '<p>Mensaje: '.$this->mensaje.'</p>';       
+         $contenido .= "<p>Enviado por: ".$this->nombre."</p>";
+         $contenido .= "<p>Telefono: ".$this->telefono."</p>";
+         $contenido .= "<p>Email: ".$this->email."</p>";
          $contenido .= '</html>';
          $mail->Body = $contenido;
 
          //Enviar el mail
          if(!$mail->send()){
              debuguear($mail->ErrorInfo);
+         }else{
+            return true;
          }
 
-    }
-
-    public function enviarInstrucciones() {
-        // create a new object
-        $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST']; // 'smtp.gmail.com'; ;
-        $mail->SMTPAuth = true;
-        $mail->SMTPSecure = 'tls'; // 'ssl';
-        $mail->Port = $_ENV['EMAIL_PORT']; //465; 
-        $mail->Username = $_ENV['EMAIL_USER']; // 'julianithox1@gmail.com'; 
-        $mail->Password = $_ENV['EMAIL_PASS']; // 'ddvcysabiytmkwca'; 
-    
-        $negocio = negocio::get(1);
-        $mail->setFrom($negocio[0]->email);
-        $mail->addAddress($this->email, $this->nombre);
-        $mail->Subject = 'Reestablece tu password';
-
-        // Set HTML
-        $mail->isHTML(TRUE);
-        $mail->CharSet = 'UTF-8';
-
-        $contenido = '<html>';
-        $contenido .= "<p><strong>Hola " . $this->nombre .  "</strong> Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://".$cliente[0].".app_barber.test/recuperar?token=" . $this->token . "'>Reestablecer Password</a>";        
-        $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
-        $contenido .= '</html>';
-        $mail->Body = $contenido;
-
-        //Enviar el mail
-        $mail->send();
     }
 }
