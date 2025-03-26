@@ -43,4 +43,11 @@ class seccionescontrolador{
   }
 
 
+
+  ///////////////////////////////////  Apis ////////////////////////////////////
+  public static function allsections(){  //api llamado desde secciones.ts
+    $clientes = usuarios::whereArray(['admin'=>0, 'habilitar'=>1]);
+    echo json_encode($clientes);
+}
+
 }

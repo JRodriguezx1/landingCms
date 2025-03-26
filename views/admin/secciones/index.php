@@ -2,7 +2,7 @@
     <h4 class="text-gray-600 mb-8">Secciones</h4>
     <button id="crearSeccion" class="btn-md btn-blue mb-4">Crear</button>
     <div>
-        <table class="tabla">
+        <table id="tablaSecciones" class="tabla">
             <thead>
                 <tr>
                     <th>id</th>
@@ -23,7 +23,6 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-
     </div>
 
     <dialog class="midialog-sm p-5" id="miDialogoSeccion">

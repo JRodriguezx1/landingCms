@@ -4,47 +4,32 @@
     const miDialogoSeccion = document.querySelector('#miDialogoSeccion') as any;
     
     
-    let indiceFila=0, control=0, tablaProductos:HTMLElement;
+    let indiceFila=0, control=0, tablaSecciones:HTMLElement;
     
 
-    type productsapi = {
+    type sectionsapi = {
       id:string,
-      idcategoria: string,
       nombre: string,
-      foto: string,
-      marca: string,
-      codigo: string,
-      descripcion: string,
-      peso: string,
-      medidas: string,
-      color: string,
-      funcion: string,
-      uso:string,
-      fabricante: string,
-      garantia: string,
-      stock: string,
-      categoria: string,
-      precio_compra: string,
-      precio_venta: string,
-      fecha_ingreso: string,
+      fechacreacion: string,
+      fechaupdate: string,
       //idservicios:{idempleado:string, idservicio:string}[]
     };
 
-    let products:productsapi[]=[], unproducto:productsapi;
+    let sections:sectionsapi[]=[], unasection:sectionsapi;
 
-    /*(async ()=>{
+    (async ()=>{
       try {
-          const url = "/admin/api/allproducts"; //llamado a la API REST
+          const url = "/admin/api/allsections"; //llamado a la API REST
           const respuesta = await fetch(url); 
-          products = await respuesta.json(); 
-          console.log(products);
+          sections = await respuesta.json(); 
+          console.log(sections);
       } catch (error) {
           console.log(error);
       }
-    })();*/
+    })();
 
     //////////////////  TABLA //////////////////////
-    tablaProductos = ($('#tablaProductos') as any).DataTable(configdatatables);
+    tablaSecciones = ($('#tablaSecciones') as any).DataTable(configdatatables);
 
     crearSeccion?.addEventListener('click', (e):void=>{
       control = 0;
@@ -55,26 +40,26 @@
       document.addEventListener("click", cerrarDialogoExterno);
     });
 
-    document.querySelector('#tablaProductos')?.addEventListener("click", (e)=>{ //evento click sobre toda la tabla
+    document.querySelector('#tablaSecciones')?.addEventListener("click", (e)=>{ //evento click sobre toda la tabla
       const target = e.target as HTMLElement;
-      if((e.target as HTMLElement)?.classList.contains("editarProductos")||(e.target as HTMLElement).parentElement?.classList.contains("editarProductos"))editarProductos(e);
-      if(target?.classList.contains("eliminarProductos")||target.parentElement?.classList.contains("eliminarProductos"))eliminarProductos(e);
+      if((e.target as HTMLElement)?.classList.contains("editarSeccion")||(e.target as HTMLElement).parentElement?.classList.contains("editarSeccion"))editarSeccion(e);
+      if(target?.classList.contains("eliminarSeccion")||target.parentElement?.classList.contains("eliminarSeccion"))eliminarSeccion(e);
     });
 
-    function editarProductos(e:Event){
-      let idproducto = (e.target as HTMLElement).parentElement?.id!;
-      if((e.target as HTMLElement)?.tagName === 'I')idproducto = (e.target as HTMLElement).parentElement?.parentElement?.id!;
+    function editarSeccion(e:Event){
+      let idsection = (e.target as HTMLElement).parentElement?.id!;
+      if((e.target as HTMLElement)?.tagName === 'I')idsection = (e.target as HTMLElement).parentElement?.parentElement?.id!;
       control = 1;
-      document.querySelector('#modalProducto')!.textContent = "Actualizar producto";
-      (document.querySelector('#btnEditarCrearProducto') as HTMLInputElement)!.value = "Actualizar";
-      unproducto = products.find(x=>x.id === idproducto)!;
-      $('#categoria').val(unproducto?.idcategoria??'');
-      (document.querySelector('#nombre')as HTMLInputElement).value = unproducto?.nombre!;
-      (document.querySelector('#preciocompra')as HTMLInputElement).value = unproducto?.precio_compra??'';
-      (document.querySelector('#precioventa')as HTMLInputElement).value = unproducto?.precio_venta??'';
-      (document.querySelector('#sku')as HTMLInputElement).value = unproducto?.codigo??'';
+      document.querySelector('#modalSeccion')!.textContent = "Actualizar seccion";
+      (document.querySelector('#btnEditarCrearSeccion') as HTMLInputElement)!.value = "Actualizar";
+      unasection = sections.find(x=>x.id === idsection)!;
+      //$('#categoria').val(unasection?.idcategoria??'');
+      (document.querySelector('#nombre')as HTMLInputElement).value = unasection?.nombre!;
+      /*(document.querySelector('#preciocompra')as HTMLInputElement).value = unasection?.precio_compra??'';
+      (document.querySelector('#precioventa')as HTMLInputElement).value = unasection?.precio_venta??'';
+      (document.querySelector('#sku')as HTMLInputElement).value = unasection?.codigo??'';*/
       
-      indiceFila = (tablaProductos as any).row((e.target as HTMLElement).closest('tr')).index();
+      indiceFila = (tablaSecciones as any).row((e.target as HTMLElement).closest('tr')).index();
       miDialogoSeccion.showModal();
       document.addEventListener("click", cerrarDialogoExterno);
     }
@@ -84,12 +69,12 @@
       if(control){
         e.preventDefault();
         
-        var info = (tablaProductos as any).page.info();
+        var info = (tablaSecciones as any).page.info();
         
        
         (async ()=>{ 
           const datos = new FormData();
-          datos.append('id', unproducto!.id);
+          datos.append('id', unasection!.id);
           datos.append('idcategoria', $('#categoria').val()as string);
           datos.append('nombre', $('#nombre').val()as string);
           datos.append('precio_compra', $('#preciocompra').val()as string);
@@ -103,9 +88,9 @@
               if(resultado.exito !== undefined){
                 msjalertToast('success', '¡Éxito!', resultado.exito[0]);
                 /// actualizar el arregle del producto ///
-                products.forEach(a=>{if(a.id == unproducto.id)a = Object.assign(a, resultado.producto[0]);});
+                sections.forEach(a=>{if(a.id == unasection.id)a = Object.assign(a, resultado.producto[0]);});
                 ///////// cambiar la fila completa, su contenido //////////
-                const datosActuales = (tablaProductos as any).row(indiceFila+=info.start).data();
+                const datosActuales = (tablaSecciones as any).row(indiceFila+=info.start).data();
                 /*img*/datosActuales[1] = `<div class="text-center"><img class="inline" style="width: 50px;" src="/build/img/${resultado.producto[0].foto}" alt=""></div>`;
                 /*NOMBRE*/datosActuales[2] ='<div class="w-80 whitespace-normal">'+$('#nombre').val()+'</div>';
                 /*CATEGORIA*/datosActuales[3] = $('#categoria option:selected').text();
@@ -113,8 +98,8 @@
                 /*CODIGO*/datosActuales[5] = $('#sku').val();
                 /*PRECIOVENTA*/datosActuales[6] = $('#precioventa').val();
                 
-                (tablaProductos as any).row(indiceFila).data(datosActuales).draw();
-                (tablaProductos as any).page(info.page).draw('page'); //me mantiene la pagina actual
+                (tablaSecciones as any).row(indiceFila).data(datosActuales).draw();
+                (tablaSecciones as any).page(info.page).draw('page'); //me mantiene la pagina actual
               }else{
                 msjalertToast('error', '¡Error!', resultado.error[0]);
               }
@@ -126,10 +111,10 @@
       } //fin if(control)
     });
 
-    function eliminarProductos(e:Event){
-      let idproducto = (e.target as HTMLElement).parentElement!.id, info = (tablaProductos as any).page.info();
-      if((e.target as HTMLElement).tagName === 'I')idproducto = (e.target as HTMLElement).parentElement!.parentElement!.id;
-      indiceFila = (tablaProductos as any).row((e.target as HTMLElement).closest('tr')).index();
+    function eliminarSeccion(e:Event){
+      let idsection = (e.target as HTMLElement).parentElement!.id, info = (tablaSecciones as any).page.info();
+      if((e.target as HTMLElement).tagName === 'I')idsection = (e.target as HTMLElement).parentElement!.parentElement!.id;
+      indiceFila = (tablaSecciones as any).row((e.target as HTMLElement).closest('tr')).index();
       Swal.fire({
           customClass: {confirmButton: 'sweetbtnconfirm', cancelButton: 'sweetbtncancel'},
           icon: 'question',
@@ -142,14 +127,14 @@
           if (result.isConfirmed) {
               (async ()=>{ 
                   const datos = new FormData();
-                  datos.append('id', idproducto);
+                  datos.append('id', idsection);
                   try {
                       const url = "/admin/api/eliminarProducto";
                       const respuesta = await fetch(url, {method: 'POST', body: datos}); 
                       const resultado = await respuesta.json();  
                       if(resultado.exito !== undefined){
-                        (tablaProductos as any).row(indiceFila+info.start).remove().draw(); 
-                        (tablaProductos as any).page(info.page).draw('page');
+                        (tablaSecciones as any).row(indiceFila+info.start).remove().draw(); 
+                        (tablaSecciones as any).page(info.page).draw('page');
                         Swal.fire(resultado.exito[0], '', 'success') 
                       }else{
                           Swal.fire(resultado.error[0], '', 'error')

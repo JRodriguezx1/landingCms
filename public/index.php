@@ -77,12 +77,13 @@ $router->get('/admin/configuracion', [configcontrolador::class, 'index']);
 
 
 
+//////////////////////////////////  API`S //////////////////////////////////////
 
-
-
+$router->get('/admin/api/allsections', [seccionescontrolador::class, 'allsections']);
+//////////////////////////////  NO  ///////////////////////////////////
 $router->post('/admin/api/apiCrearCliente', [clientescontrolador::class, 'apiCrearCliente']);  // crear cliente desde modulo de ventas.ts
 $router->get('/admin/api/direccionesXcliente', [direccionescontrolador::class, 'direccionesXcliente']); //obtener direcciones segun cliente elegido en ventas.ts
-$router->post('/admin/api/addDireccionCliente', [direccionescontrolador::class, 'addDireccionCliente']); //add direccion segun cliente elegido desde ventas.ts
+
 
 
 
