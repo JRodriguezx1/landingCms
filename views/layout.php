@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base - <?php echo $titulo; ?></title>
+    <title>Pasaporte y Apostilla | Gestión de Trámites Venezolanos  </title>
+    <meta name="description" content="Gestionamos trámites en Venezuela: pasaporte, apostilla, actas de nacimiento, Solicitud de Carta de Soltería y más. Servicio rápido y confiable. ¡Contáctanos!" />
+    <link rel="canonical" href="https://tramitessinfrontera.com/">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

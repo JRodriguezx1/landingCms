@@ -14,7 +14,7 @@
     >
       <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
         <div class="vd to/4 tc wf ">
-          <a class="w-16" href="/">
+          <a class="w-16" href="/" rel="nofollow">
           <img class="om" src="/build/images/tramites.png" alt="Logo Light" style="width: 225px; height: auto;" />
             <img class="xc nm" src="/build/images/tramitesocsuro.png" alt="Logo Dark" style="width: 225px; height: auto;" />
           </a>
@@ -39,11 +39,11 @@
         <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
           <nav>
             <ul class="tc _o sf yo cg ep">
-              <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Inicio</a></li>
-              <li><a href="#servicios" class="xl">Servicios</a></li>
+              <li><a href="/" rel="nofollow" class="xl" :class="{ 'mk': page === 'home' }">Inicio</a></li>
+              <li><a href="#servicios" rel="nofollow" class="xl">Servicios</a></li>
               <li class="c i" x-data="{ dropdown: false }">
                 <a
-                  href="#support"
+                  href="#support" rel="nofollow"
                   class="xl tc wf yf bg"
                   :class="{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
                 >
@@ -94,9 +94,9 @@
               </p>
 
               <div class="tc tf yo zf mb">
-                <a href="https://api.whatsapp.com/send?phone=583147102077" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
+                <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
                 <span class="tc sf">
-                  <a href="#" class="inline-block ek xj kk wm"> Llámanos (+58) 424 – 9128806 </a>
+                  <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="inline-block ek xj kk wm"> Llámanos (+57) 314 – 7102077 </a>
                   <span class="inline-block">Para cualquier pregunta o inquietud</span>
                 </span>
               </div>
@@ -168,7 +168,7 @@
               <h2 class="fk vj zp pr kk wm qb">Contamos con más de 10 años de experiencia en el área de gestoría en Venezuela</h2>
               <p class="uo">Ofreciendo servicios confiables, eficientes y honestos para facilitar los trámites que muchas personas encuentran complicados o desconocen.</p>
 
-              <div href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
+              <div href="https://www.youtube.com/watch?v=xcJtL7QggTI" rel="nofollow" data-fslightbox class="vc wf hg mb">
                 <span class="tc wf xf be dd rg i gh ua">
                   <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
                   <img src="/build/images/icon-play.svg" alt="Play" />
@@ -361,7 +361,7 @@
                 <p class="ur dc" x-text="plan.descripcion"></p>
 
                 <!-- Button -->
-                <a href="#" class="ek rg lk ml il gi pi" :class="plan.name == 'Growth Plan' ? 'gh sl' : 'mh tl'">¡Solicita Tu Trámite Ahora!</a>
+                <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="ek rg lk ml il gi pi" :class="plan.name == 'Growth Plan' ? 'gh sl' : 'mh tl'">¡Solicita Tu Trámite Ahora!</a>
 
                 <!-- Features -->
                 <!-- <ul class="tc sf bg ob fb">
@@ -397,13 +397,13 @@
                 <img class="w-full" src="/build/images/blog-01.png" alt="Blog" />
 
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="#support" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
+                  <a href="#support" rel="nofollow" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
                 </div>
               </div>
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="blog-single.html">Citas para Visado</a>
+                  <a href="blog-single.html" rel="nofollow">Citas para Visado</a>
                 </h4>
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
@@ -418,13 +418,13 @@
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="/build/images/blog-02.png" alt="Blog" />
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="#support" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
+                  <a href="#support" rel="nofollow" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
                 </div>
               </div>
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="blog-single.html">Servicios de Tránsito Terrestre en Venezuela</a>
+                  <a href="blog-single.html" rel="nofollow">Servicios de Tránsito Terrestre en Venezuela</a>
                 </h4>
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
@@ -440,13 +440,13 @@
                 <img class="w-full" src="/build/images/blog-03.png" alt="Blog" />
 
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
-                  <a href="#support" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
+                  <a href="#support" rel="nofollow" class="vc ek rg lk gh sl ml il gi hi">Solicitar Ahora</a>
                 </div>
               </div>
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq lb">
-                  <a href="blog-single.html">Trámite y Apostilla de Antecedentes Penales</a>
+                  <a href="blog-single.html" rel="nofollow">Trámite y Apostilla de Antecedentes Penales</a>
                 </h4>
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
@@ -627,7 +627,7 @@
 
               <div class="fb">
                 <h4 class="wj kk wm cc">Dirección de correo electrónico</h4>
-                <p><a href="#">tramitessinfronteras7@gmail.com</a></p>
+                <p><a href="#contanto" rel="nofollow">tramitessinfronteras7@gmail.com</a></p>
               </div>
               <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Office Location</h4>
@@ -635,7 +635,7 @@
               </div> -->
               <div class="fb">
                 <h4 class="wj kk wm cc">Número de teléfono</h4>
-                <p><a href="#">+58 314 7102077</a></p>
+                <p><a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow">+57 314 7102077</a></p>
               </div>
               <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Skype Email</h4>
@@ -648,21 +648,21 @@
                 <h4 class="wj kk wm qb">Redes Sociales</h4>
                 <ul class="tc wf fg">
                   <li>
-                    <a href="https://www.facebook.com/profile.php?id=61573522004800&mibextid=wwXIfr&rdid=paCMaKgrbjAoYzaa&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A4Y9keyJX%2F%3Fmibextid%3DwwXIfr#" class="c tc wf xf ie ld rg ml il tl">
+                    <a href="https://www.facebook.com/profile.php?id=61573522004800&mibextid=wwXIfr&rdid=paCMaKgrbjAoYzaa&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A4Y9keyJX%2F%3Fmibextid%3DwwXIfr#" rel="nofollow" class="c tc wf xf ie ld rg ml il tl">
                       <svg class="th lm ml il" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.83366 11.3752H9.12533L10.042 7.7085H6.83366V5.87516C6.83366 4.931 6.83366 4.04183 8.667 4.04183H10.042V0.96183C9.74316 0.922413 8.61475 0.833496 7.42308 0.833496C4.93433 0.833496 3.16699 2.35241 3.16699 5.14183V7.7085H0.416992V11.3752H3.16699V19.1668H6.83366V11.3752Z" fill=""/>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.tiktok.com/@tramitessinfronteras70" class="c tc wf xf ie ld rg ml il tl">
+                    <a href="https://www.tiktok.com/@tramitessinfronteras70" class="c tc wf xf ie ld rg ml il tl" rel="nofollow">
                       <svg width="16" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#79808a" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/tramitessinfronteras7/" class="c tc wf xf ie ld rg ml il tl">
+                    <a href="https://www.instagram.com/tramitessinfronteras7/" class="c tc wf xf ie ld rg ml il tl" rel="nofollow">
                       <svg class="th lm ml il" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.36198 2.58327C4.36174 3.0695 4.16835 3.53572 3.82436 3.87937C3.48037 4.22301 3.01396 4.41593 2.52773 4.41569C2.0415 4.41545 1.57528 4.22206 1.23164 3.87807C0.887991 3.53408 0.69507 3.06767 0.695313 2.58144C0.695556 2.09521 0.888943 1.62899 1.23293 1.28535C1.57692 0.941701 2.04333 0.748781 2.52956 0.749024C3.01579 0.749267 3.48201 0.942654 3.82566 1.28664C4.1693 1.63063 4.36222 2.09704 4.36198 2.58327ZM4.41698 5.77327H0.750313V17.2499H4.41698V5.77327ZM10.2103 5.77327H6.56198V17.2499H10.1736V11.2274C10.1736 7.87244 14.5461 7.56077 14.5461 11.2274V17.2499H18.167V9.98077C18.167 4.32494 11.6953 4.53577 10.1736 7.31327L10.2103 5.77327Z"fill=""/>
                       </svg>
@@ -749,7 +749,7 @@
               <p class="lk">Brindamos asesoría especializada para la renovación de visados en Venezuela, asegurándonos de que los residentes con visados vigentes puedan completar el proceso sin inconvenientes. Esto incluye la gestión del visado de transeúnte y la tramitación de la cédula correspondiente, con vigencia acorde al tiempo aprobado por extranjería (desde 1 hasta 5 años).</p>
             </div>
             <div class="animate_right bf">
-              <a href="#" class="vc ek kk hh rg ol il cm gi hi">¡Solicita tu Trámite Ahora!</a>
+              <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="vc ek kk hh rg ol il cm gi hi">¡Solicita tu Trámite Ahora!</a>
             </div>
           </div>
         </div>
@@ -766,9 +766,9 @@
         <div class="bh ch pm tc uf yo wf xf cg bj">
           <div class="">
             <ul class="tc wf gg">
-              <li><a href="#" class="xl">Inicio</a></li>
-              <li><a href="#servicios" class="xl">Servicios</a></li>
-              <li><a href="#support" class="xl">Contacto</a></li>
+              <li><a href="#" class="xl" rel="nofollow">Inicio</a></li>
+              <li><a href="#servicios" rel="nofollow" class="xl">Servicios</a></li>
+              <li><a href="#support" rel="nofollow" class="xl">Contacto</a></li>
             </ul>
           </div>
 
@@ -781,7 +781,7 @@
     <!-- ===== Footer End ===== -->
 
     <div class="btn-ws">
-      <a href="https://api.whatsapp.com/send?phone=583147102077"
+      <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow"
       target="_blank"><img loading="lazy" src="/build/images/icons-whatsapp-verde.png" alt="whatsapp-negocio"></a>
     </div>
 
