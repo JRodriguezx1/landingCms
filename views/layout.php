@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title><?php echo $titulo; ?></title>
     
+=======
+    <title>Asesoría Jurídica | Gestión de Trámites Venezolanos  </title>
+    <meta name="description" content="Gestionamos trámites en Venezuela: pasaporte, apostilla, actas de nacimiento, Solicitud de Carta de Soltería y más. Servicio rápido y confiable. ¡Contáctanos!" />
+    <link rel="canonical" href="https://tramitessinfrontera.com/">
+    <meta name="google-site-verification" content="y-E_YbPCgdpPwJ4-lXzTn22ZDM4YYI3ks2uN-XJxp00" />
+>>>>>>> 6920eaba23fb2fc2fec5b9cb8cbdd96d20c1b477
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
