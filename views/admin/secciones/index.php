@@ -39,7 +39,6 @@
                 </div>
             </div>
            
-            
             <div class="text-right">
                 <button class="btn-md btn-red" type="button" value="salir">Salir</button>
                 <input id="btnEditarCrearSeccion" class="btn-md btn-blue" type="submit" value="Crear">
