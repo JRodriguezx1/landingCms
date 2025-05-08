@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasaporte y Apostilla | Gestión de Trámites Venezolanos  </title>
+    <title>Asesoría Jurídica | Gestión de Trámites Venezolanos  </title>
     <meta name="description" content="Gestionamos trámites en Venezuela: pasaporte, apostilla, actas de nacimiento, Solicitud de Carta de Soltería y más. Servicio rápido y confiable. ¡Contáctanos!" />
     <link rel="canonical" href="https://tramitessinfrontera.com/">
     <meta name="google-site-verification" content="y-E_YbPCgdpPwJ4-lXzTn22ZDM4YYI3ks2uN-XJxp00" />

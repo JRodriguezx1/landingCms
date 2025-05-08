@@ -14,6 +14,7 @@ class contactocontrolador{
     /*session_start();
     isadmin();*/
     $alertas = [];
+    
 
     if($_SERVER['REQUEST_METHOD'] === 'POST' ){
         // Enviar el email

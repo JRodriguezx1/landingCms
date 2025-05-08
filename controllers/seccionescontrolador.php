@@ -23,6 +23,7 @@ class seccionescontrolador{
     $router->render('admin/secciones/index', ['titulo'=>'Secciones', 'secciones'=>$secciones, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
   }
 
+
   public static function crear_seccion(Router $router){
     session_start();
     isadmin();
@@ -43,11 +44,24 @@ class seccionescontrolador{
   }
 
 
+  public static function editar_seccion(Router $router){
+    session_start();
+    isadmin();
+    $alertas = [];
 
-  ///////////////////////////////////  Apis ////////////////////////////////////
-  public static function allsections(){  //api llamado desde secciones.ts
-    $clientes = usuarios::whereArray(['admin'=>0, 'habilitar'=>1]);
-    echo json_encode($clientes);
-}
+    $seccion = new sections($_POST);
+    if($_SERVER['REQUEST_METHOD'] === 'POST' ){
+      $r = $seccion->crear_guardar();
+      if($r[0]){
+        $alertas['exito'][] = "Seccion creada con exito";
+      }else{
+        $alertas['error'][] = "Hubo un error intenta nuevamente";
+      }
+    }
+    //$alertas = usuarios::getAlertas();
+    $secciones = sections::all();
+    $router->render('admin/secciones/index', ['titulo'=>'Secciones', 'secciones'=>$secciones, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
+  }
+
 
 }
