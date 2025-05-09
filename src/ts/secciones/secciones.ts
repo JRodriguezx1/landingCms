@@ -43,7 +43,7 @@
     document.querySelector('#tablaSecciones')?.addEventListener("click", (e)=>{ //evento click sobre toda la tabla
       const target = e.target as HTMLElement;
       if((e.target as HTMLElement)?.classList.contains("editarSeccion")||(e.target as HTMLElement).parentElement?.classList.contains("editarSeccion"))editarSeccion(e);
-      if(target?.classList.contains("eliminarSeccion")||target.parentElement?.classList.contains("eliminarSeccion"))eliminarSeccion(e);
+      if(target?.classList.contains("bloquearSeccion")||target.parentElement?.classList.contains("bloquearSeccion"))bloquearSeccion(e);
     });
 
     function editarSeccion(e:Event){
@@ -53,51 +53,33 @@
       document.querySelector('#modalSeccion')!.textContent = "Actualizar seccion";
       (document.querySelector('#btnEditarCrearSeccion') as HTMLInputElement)!.value = "Actualizar";
       unasection = sections.find(x=>x.id === idsection)!;
-      //$('#categoria').val(unasection?.idcategoria??'');
       (document.querySelector('#nombre')as HTMLInputElement).value = unasection?.nombre!;
-      /*(document.querySelector('#preciocompra')as HTMLInputElement).value = unasection?.precio_compra??'';
-      (document.querySelector('#precioventa')as HTMLInputElement).value = unasection?.precio_venta??'';
-      (document.querySelector('#sku')as HTMLInputElement).value = unasection?.codigo??'';*/
-      
       indiceFila = (tablaSecciones as any).row((e.target as HTMLElement).closest('tr')).index();
       miDialogoSeccion.showModal();
       document.addEventListener("click", cerrarDialogoExterno);
     }
 
-    ////////////////////  Actualizar/Editar producto  //////////////////////
-    document.querySelector('#formCrearUpdateProducto')?.addEventListener('submit', e=>{
+    ////////////////////  Actualizar nombre de seccion  //////////////////////
+    document.querySelector('#formCrearUpdateseccion')?.addEventListener('submit', e=>{
       if(control){
         e.preventDefault();
-        
         var info = (tablaSecciones as any).page.info();
-        
-       
         (async ()=>{ 
           const datos = new FormData();
           datos.append('id', unasection!.id);
-          datos.append('idcategoria', $('#categoria').val()as string);
           datos.append('nombre', $('#nombre').val()as string);
-          datos.append('precio_compra', $('#preciocompra').val()as string);
-          datos.append('precio_venta', $('#precioventa').val()as string);
-          datos.append('codigo', $('#sku').val()as string);
+
           try {
-              const url = "/admin/api/actualizarproducto";
+              const url = "/admin/api/editarseccion";
               const respuesta = await fetch(url, {method: 'POST', body: datos}); 
               const resultado = await respuesta.json(); 
-              console.log(resultado); 
               if(resultado.exito !== undefined){
                 msjalertToast('success', '¡Éxito!', resultado.exito[0]);
-                /// actualizar el arregle del producto ///
-                sections.forEach(a=>{if(a.id == unasection.id)a = Object.assign(a, resultado.producto[0]);});
-                ///////// cambiar la fila completa, su contenido //////////
+                /// actualizar el arregle de las secciones ///
+                sections.forEach(a=>{if(a.id == unasection.id)a = Object.assign(a, resultado.seccion[0]);});
+
                 const datosActuales = (tablaSecciones as any).row(indiceFila+=info.start).data();
-                /*img*/datosActuales[1] = `<div class="text-center"><img class="inline" style="width: 50px;" src="/build/img/${resultado.producto[0].foto}" alt=""></div>`;
-                /*NOMBRE*/datosActuales[2] ='<div class="w-80 whitespace-normal">'+$('#nombre').val()+'</div>';
-                /*CATEGORIA*/datosActuales[3] = $('#categoria option:selected').text();
-                /*MARCA*/datosActuales[4] = '';
-                /*CODIGO*/datosActuales[5] = $('#sku').val();
-                /*PRECIOVENTA*/datosActuales[6] = $('#precioventa').val();
-                
+                /*NOMBRE*/datosActuales[1] =$('#nombre').val();
                 (tablaSecciones as any).row(indiceFila).data(datosActuales).draw();
                 (tablaSecciones as any).page(info.page).draw('page'); //me mantiene la pagina actual
               }else{
@@ -111,15 +93,16 @@
       } //fin if(control)
     });
 
-    function eliminarSeccion(e:Event){
+    function bloquearSeccion(e:Event){
       let idsection = (e.target as HTMLElement).parentElement!.id, info = (tablaSecciones as any).page.info();
       if((e.target as HTMLElement).tagName === 'I')idsection = (e.target as HTMLElement).parentElement!.parentElement!.id;
+      (e.target as HTMLElement).closest('button')!.style.backgroundColor = "";
       indiceFila = (tablaSecciones as any).row((e.target as HTMLElement).closest('tr')).index();
       Swal.fire({
           customClass: {confirmButton: 'sweetbtnconfirm', cancelButton: 'sweetbtncancel'},
           icon: 'question',
-          title: 'Desea eliminar el prducto?',
-          text: "El prducto sera eliminado definitivamente.",
+          title: 'Desea bloquear la seccion?',
+          text: "La seccion se bloqueara y no sera mostrada en la pagina web.",
           showCancelButton: true,
           confirmButtonText: 'Si',
           cancelButtonText: 'No',
@@ -129,12 +112,10 @@
                   const datos = new FormData();
                   datos.append('id', idsection);
                   try {
-                      const url = "/admin/api/eliminarProducto";
+                      const url = "/admin/api/bloquearseccion";
                       const respuesta = await fetch(url, {method: 'POST', body: datos}); 
                       const resultado = await respuesta.json();  
                       if(resultado.exito !== undefined){
-                        (tablaSecciones as any).row(indiceFila+info.start).remove().draw(); 
-                        (tablaSecciones as any).page(info.page).draw('page');
                         Swal.fire(resultado.exito[0], '', 'success') 
                       }else{
                           Swal.fire(resultado.error[0], '', 'error')
@@ -150,8 +131,8 @@
    
 
     function limpiarformdialog(){
-      (document.querySelector('#formCrearUpdateProducto') as HTMLFormElement)?.reset();
-      //(document.querySelector('#formCrearUpdateProducto') as HTMLFormElement).action = "/admin/almacen/crear_producto";
+      (document.querySelector('#formCrearUpdateseccion') as HTMLFormElement)?.reset();
+      //(document.querySelector('#formCrearUpdateseccion') as HTMLFormElement).action = "/admin/almacen/crear_producto";
     }
     function cerrarDialogoExterno(event:Event) {
       if (event.target === miDialogoSeccion || (event.target as HTMLInputElement).value === 'salir' || (event.target as HTMLInputElement).value === 'Actualizar') {

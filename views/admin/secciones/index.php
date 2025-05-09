@@ -18,7 +18,8 @@
                         <td class=""><?php echo $seccion->nombre; ?></td>         
                         <td class=""><?php echo $seccion->fechacreacion; ?></td>       
                         <td class="accionestd">
-                            <div class="acciones-btns" id="<?php echo $seccion->id;?>"><button class="btn-md btn-turquoise editarSeccion"><i class="fa-solid fa-pen-to-square"></i></button><button class="btn-md btn-blue editarContenidoSeccion"><i class="fa-solid fa-grip-vertical"></i></button><button class="btn-md btn-red bloquearSeccion"><i class="fa-solid fa-ban"></i></button></div></td>   
+                            <div class="acciones-btns" id="<?php echo $seccion->id;?>"><button class="btn-md btn-turquoise editarSeccion"><i class="fa-solid fa-pen-to-square"></i></button><button class="btn-md btn-blue editarContenidoSeccion"><i class="fa-solid fa-grip-vertical"></i></button><button class="btn-md btn-red bloquearSeccion"><i class="fa-solid fa-ban"></i></button></div>
+                        </td>   
                     </tr>
                     
                 <?php endforeach; ?>

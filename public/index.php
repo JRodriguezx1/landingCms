@@ -63,7 +63,6 @@ $router->get('/admin/viewmobile', [dashboardcontrolador::class, 'viewmobile']);
 ///// area de secciones /////
 $router->get('/admin/secciones', [seccionescontrolador::class, 'index']);
 $router->post('/admin/secciones/crear_seccion', [seccionescontrolador::class, 'crear_seccion']);
-$router->post('/admin/secciones/editar_seccion', [seccionescontrolador::class, 'editar_seccion']);
 
 ///// area de reportes /////
 $router->get('/admin/editarpagina', [editorpaginacontrolador::class, 'index']);
@@ -82,9 +81,7 @@ $router->get('/admin/configuracion', [configcontrolador::class, 'index']);
 //////////////////////////////////  API`S //////////////////////////////////////
 
 $router->get('/admin/api/allsections', [seccionescontrolador::class, 'allsections']);
-//////////////////////////////  NO  ///////////////////////////////////
-$router->post('/admin/api/apiCrearCliente', [clientescontrolador::class, 'apiCrearCliente']);  // crear cliente desde modulo de ventas.ts
-$router->get('/admin/api/direccionesXcliente', [direccionescontrolador::class, 'direccionesXcliente']); //obtener direcciones segun cliente elegido en ventas.ts
+$router->post('/admin/api/editarseccion', [seccionescontrolador::class, 'editarseccion']);
 
 
 
