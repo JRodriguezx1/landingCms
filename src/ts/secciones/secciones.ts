@@ -96,7 +96,6 @@
     function bloquearSeccion(e:Event){
       let idsection = (e.target as HTMLElement).parentElement!.id, info = (tablaSecciones as any).page.info();
       if((e.target as HTMLElement).tagName === 'I')idsection = (e.target as HTMLElement).parentElement!.parentElement!.id;
-      (e.target as HTMLElement).closest('button')!.style.backgroundColor = "";
       indiceFila = (tablaSecciones as any).row((e.target as HTMLElement).closest('tr')).index();
       Swal.fire({
           customClass: {confirmButton: 'sweetbtnconfirm', cancelButton: 'sweetbtncancel'},
@@ -111,12 +110,15 @@
               (async ()=>{ 
                   const datos = new FormData();
                   datos.append('id', idsection);
-                  try {
-                      const url = "/admin/api/bloquearseccion";
-                      const respuesta = await fetch(url, {method: 'POST', body: datos}); 
-                      const resultado = await respuesta.json();  
+                  try {  
+                      const url = "/admin/api/bloquearseccion?id="+idsection; //llamado a la API REST y se trae las direcciones segun cliente elegido
+                      const respuesta = await fetch(url);
+                      const resultado = await respuesta.json();
+                      console.log(resultado);
                       if(resultado.exito !== undefined){
-                        Swal.fire(resultado.exito[0], '', 'success') 
+                        (e.target as HTMLElement).closest('button')!.style.backgroundColor = "#02db02";
+                        (e.target as HTMLElement).closest('button')!.style.borderColor = "#02db02";
+                        Swal.fire(resultado.exito[0], '', 'success')
                       }else{
                           Swal.fire(resultado.error[0], '', 'error')
                       }

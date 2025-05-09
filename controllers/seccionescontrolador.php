@@ -69,4 +69,22 @@ class seccionescontrolador{
     echo json_encode($alertas);
   }
 
+  public static function bloquearseccion(){
+    session_start();
+    isadmin();
+    $alertas = [];
+
+    $id = $_GET['id'];
+    if(!is_numeric($id)){
+      $alertas['error'][]="error durante el bloque de la seccion";
+      echo json_encode($alertas);
+      return;
+    }
+    $seccion = sections::find('id', $id);
+    if($seccion)
+        $alertas['exito'][] = "Seccion bloqueada con exito";
+    
+    echo json_encode($alertas);
+  }
+
 }

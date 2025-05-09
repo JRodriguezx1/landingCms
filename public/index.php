@@ -82,7 +82,7 @@ $router->get('/admin/configuracion', [configcontrolador::class, 'index']);
 
 $router->get('/admin/api/allsections', [seccionescontrolador::class, 'allsections']);
 $router->post('/admin/api/editarseccion', [seccionescontrolador::class, 'editarseccion']);
-
+$router->get('/admin/api/bloquearseccion', [seccionescontrolador::class, 'bloquearseccion']);
 
 
 
