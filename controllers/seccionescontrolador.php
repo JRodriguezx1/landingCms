@@ -44,6 +44,18 @@ class seccionescontrolador{
   }
 
 
+  public static function getseccion(Router $router){
+    session_start();
+    isadmin();
+    $alertas = [];
+
+    
+    $secciones = sections::all();
+    $router->render('admin/secciones/index', ['titulo'=>'Secciones', 'secciones'=>$secciones, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
+  }
+
+
+
   ///////////////////////////////////  Apis ////////////////////////////////////
   public static function allsections(){  //api llamado desde ventas.js me trae todas las direcciones segun cliente elegido
     $secciones = sections::all();
@@ -81,9 +93,16 @@ class seccionescontrolador{
       return;
     }
     $seccion = sections::find('id', $id);
-    if($seccion)
+    if($seccion){
+      $seccion->estado = $seccion->estado=='1'?'0':'1';
+      $r = $seccion->actualizar();
+      if($r){
         $alertas['exito'][] = "Seccion bloqueada con exito";
-    
+        $alertas['seccion'][]= $seccion;
+      }else{
+        $alertas['error'][] = "Error al bloquear la seccion";
+      }
+    }
     echo json_encode($alertas);
   }
 

@@ -7,6 +7,7 @@
                 <tr>
                     <th>id</th>
                     <th>Seccion</th>
+                    <th>Estado</th>
                     <th>Fecha Creacion</th>
                     <th class="accionesth">Acciones</th>
                 </tr>
@@ -15,10 +16,11 @@
                 <?php foreach($secciones as $seccion): ?>
                     <tr> 
                         <td class=""><?php echo $seccion->id; ?></td> 
-                        <td class=""><?php echo $seccion->nombre; ?></td>         
+                        <td class=""><?php echo $seccion->nombre; ?></td>
+                        <td class=""><?php echo $seccion->estado==1?'Activo':'Inactivo'; ?></td>
                         <td class=""><?php echo $seccion->fechacreacion; ?></td>       
                         <td class="accionestd">
-                            <div class="acciones-btns" id="<?php echo $seccion->id;?>"><button class="btn-md btn-turquoise editarSeccion"><i class="fa-solid fa-pen-to-square"></i></button><button class="btn-md btn-blue editarContenidoSeccion"><i class="fa-solid fa-grip-vertical"></i></button><button class="btn-md btn-red bloquearSeccion"><i class="fa-solid fa-ban"></i></button></div>
+                            <div class="acciones-btns" id="<?php echo $seccion->id;?>"><button class="btn-md btn-turquoise editarSeccion"><i class="fa-solid fa-pen-to-square"></i></button><a href="/admin/secciones/seccion?id=<?php echo $seccion->id;?>" class="btn-md btn-blue editarContenidoSeccion"><i class="fa-solid fa-grip-vertical"></i></a><button class="btn-md <?php echo $seccion->estado==1?'btn-red':'btn-lima'; ?> bloquearSeccion"><i class="fa-solid fa-ban"></i></button></div>
                         </td>   
                     </tr>
                     

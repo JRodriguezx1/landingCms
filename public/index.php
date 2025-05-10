@@ -63,6 +63,8 @@ $router->get('/admin/viewmobile', [dashboardcontrolador::class, 'viewmobile']);
 ///// area de secciones /////
 $router->get('/admin/secciones', [seccionescontrolador::class, 'index']);
 $router->post('/admin/secciones/crear_seccion', [seccionescontrolador::class, 'crear_seccion']);
+///// area de bloques por seccion /////
+$router->get('/admin/secciones/seccion', [seccionescontrolador::class, 'getseccion']);
 
 ///// area de reportes /////
 $router->get('/admin/editarpagina', [editorpaginacontrolador::class, 'index']);
