@@ -49,9 +49,12 @@ class seccionescontrolador{
     isadmin();
     $alertas = [];
 
-    
-    $secciones = sections::all();
-    $router->render('admin/secciones/index', ['titulo'=>'Secciones', 'secciones'=>$secciones, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
+    $id = $_GET['id'];
+    if(!is_numeric($id))return;
+
+    $seccion = sections::find('id', $id);
+
+    $router->render('admin/secciones/seccion', ['titulo'=>'Secciones', 'seccion'=>$seccion, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
   }
 
 
