@@ -91,14 +91,23 @@
     });
 
     function bloquearSeccion(e:Event){
-      let idsection = (e.target as HTMLElement).parentElement!.id, info = (tablaSecciones as any).page.info();
+      let idsection = (e.target as HTMLElement).parentElement!.id, info = (tablaSecciones as any).page.info(), titulo:string, texto:string;
       if((e.target as HTMLElement).tagName === 'I')idsection = (e.target as HTMLElement).parentElement!.parentElement!.id;
       indiceFila = (tablaSecciones as any).row((e.target as HTMLElement).closest('tr')).index();
+      
+      if((e.target as HTMLElement).closest('button')?.classList.contains('btn-red')){
+        titulo = "Desea bloquear la seccion?";
+        texto = "La seccion se bloqueara y no sera mostrada en la pagina web.";
+      }else{
+        titulo = "Desea desbloquear la seccion?";
+        texto = "La seccion se desbloqueara y sera mostrada en la pagina web.";
+      }
+
       Swal.fire({
           customClass: {confirmButton: 'sweetbtnconfirm', cancelButton: 'sweetbtncancel'},
           icon: 'question',
-          title: 'Desea bloquear la seccion?',
-          text: "La seccion se bloqueara y no sera mostrada en la pagina web.",
+          title: titulo,
+          text: texto,
           showCancelButton: true,
           confirmButtonText: 'Si',
           cancelButtonText: 'No',

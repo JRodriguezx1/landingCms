@@ -44,20 +44,6 @@ class seccionescontrolador{
   }
 
 
-  public static function getseccion(Router $router){
-    session_start();
-    isadmin();
-    $alertas = [];
-
-    $id = $_GET['id'];
-    if(!is_numeric($id))return;
-
-    $seccion = sections::find('id', $id);
-
-    $router->render('admin/secciones/seccion', ['titulo'=>'Secciones', 'seccion'=>$seccion, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
-  }
-
-
 
   ///////////////////////////////////  Apis ////////////////////////////////////
   public static function allsections(){  //api llamado desde ventas.js me trae todas las direcciones segun cliente elegido

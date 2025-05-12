@@ -9,7 +9,7 @@ use Model\clientes;
 
 
  
-class direccionescontrolador{
+class testimonialescontrolador{
 
     public static function index(Router $router){
         session_start();
@@ -30,7 +30,7 @@ class direccionescontrolador{
                 }*/
         }
 
-        $router->render('admin/clientes/index', ['titulo'=>'Clientes', 'clientes'=>$clientes, 'alertas'=>$alertas, 'buscar'=>$buscar, 'user'=>$_SESSION]);
+        $router->render('admin/testimoniales/index', ['titulo'=>'Testimoniales', 'clientes'=>$clientes, 'alertas'=>$alertas, 'buscar'=>$buscar, 'user'=>$_SESSION]);
     }
 
     public static function crear(Router $router){

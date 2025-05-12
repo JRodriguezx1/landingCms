@@ -6,6 +6,7 @@ require_once __DIR__ . '/../includes/app.php'; //apunta al directorio raiz y lue
 
 //me importa clases del controlador
 
+use Controllers\blockscontrolador;
 use Controllers\logincontrolador; //clase para logueo, registro de usuario, recuperacion, deslogueo etc..
 use Controllers\dashboardcontrolador;
 use Controllers\seccionescontrolador;
@@ -15,7 +16,7 @@ use Controllers\direccionescontrolador;
 use Controllers\configcontrolador;
 use Controllers\contactocontrolador;
 use Controllers\paginacontrolador;
-
+use Controllers\testimonialescontrolador;
 // me importa la clase router
 use MVC\Router;  
 
@@ -64,10 +65,10 @@ $router->get('/admin/viewmobile', [dashboardcontrolador::class, 'viewmobile']);
 $router->get('/admin/secciones', [seccionescontrolador::class, 'index']);
 $router->post('/admin/secciones/crear_seccion', [seccionescontrolador::class, 'crear_seccion']);
 ///// area de bloques por seccion /////
-$router->get('/admin/secciones/seccion', [seccionescontrolador::class, 'getseccion']);
-
-///// area de reportes /////
-$router->get('/admin/editarpagina', [editorpaginacontrolador::class, 'index']);
+$router->get('/admin/seccion/block', [blockscontrolador::class, 'getblock']);
+$router->get('/admin/seccion/block/ServiciosAdicionales', [blockscontrolador::class, 'ServiciosAdicionales']);
+///// area de testimoniales /////
+$router->get('/admin/testimoniales', [testimonialescontrolador::class, 'index']);
 ///// area de clientes /////
 $router->get('/admin/clientes', [clientescontrolador::class, 'index']);
 $router->post('/admin/clientes', [clientescontrolador::class, 'index']); //filtro de busqueda
@@ -85,7 +86,7 @@ $router->get('/admin/configuracion', [configcontrolador::class, 'index']);
 $router->get('/admin/api/allsections', [seccionescontrolador::class, 'allsections']);
 $router->post('/admin/api/editarseccion', [seccionescontrolador::class, 'editarseccion']);
 $router->get('/admin/api/bloquearseccion', [seccionescontrolador::class, 'bloquearseccion']);
-
+$router->get('/admin/api/allblocks', [blockscontrolador::class, 'allblocks']);
 
 
 

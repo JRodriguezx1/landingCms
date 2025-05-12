@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
 --
--- Host: localhost    Database: landing
+-- Host: 127.0.0.1    Database: landing
 -- ------------------------------------------------------
 -- Server version	8.0.40
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -25,14 +25,14 @@ DROP TABLE IF EXISTS `blocks`;
 CREATE TABLE `blocks` (
   `id` int NOT NULL AUTO_INCREMENT,
   `idsection` int NOT NULL,
-  `tipobloque` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
-  `contenido` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `tipobloque` varchar(22) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `contenido` varchar(512) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
   `fechacreacion` datetime DEFAULT NULL,
   `fechaupdaate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idsection_idx` (`idsection`),
   CONSTRAINT `idsection` FOREIGN KEY (`idsection`) REFERENCES `sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `blocks` (
 
 LOCK TABLES `blocks` WRITE;
 /*!40000 ALTER TABLE `blocks` DISABLE KEYS */;
+INSERT INTO `blocks` VALUES (1,1,'titulo','Trámites Migratorios - Confianza y Eficiencia.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(2,1,'texto','Llevamos a cabo tus gestiones con seriedad y profesionalismo, asegurándonos de obtener tus documentos de forma rápida y legalizada para que puedas realizar cualquier trámite necesario.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(3,1,'telefono','(+57) 314 – 7102077','2025-05-08 05:54:38','2025-05-08 05:54:38'),(4,1,'beneficio titulo','Atención 24/7','2025-05-08 05:54:38','2025-05-08 05:54:38'),(5,1,'beneficio texto','Estamos disponibles en todo momento para atender tus dudas y gestionar tus trámites sin importar el día o la hora.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(6,1,'beneficio titulo','Asesoria Personalizada','2025-05-08 05:54:38','2025-05-08 05:54:38'),(7,1,'beneficio texto','Te guiamos paso a paso en cada trámite, brindándote la mejor solución según tu caso particular.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(8,1,'beneficio titulo','Garantía de Servicio','2025-05-08 05:54:38','2025-05-08 05:54:38'),(9,1,'beneficio texto','Nos comprometemos a brindarte un servicio de calidad y eficiente, asegurando que cada trámite se realice de manera rápida y segura.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(10,1,'titulo','Contamos con más de 10 años de experiencia en el área de gestoría en Venezuela','2025-05-08 05:54:38','2025-05-08 05:54:38'),(11,1,'texto','Ofreciendo servicios confiables, eficientes y honestos para facilitar los trámites que muchas personas encuentran complicados o desconocen.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(12,2,'titulo','Soluciones Integrales para tu Tranquilidad','2025-05-08 05:54:38','2025-05-08 05:54:38'),(13,2,'texto','Te ofrecemos un conjunto de servicios diseñados para facilitar tus trámites y brindarte la tranquilidad que necesitas. Desde gestiones migratorias hasta servicios adicionales, nuestro equipo está listo para asesorarte en cada paso del proceso.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(14,2,'titulo','Trámites Migratorios','2025-05-08 05:54:38','2025-05-08 05:54:38'),(15,2,'titulo','Asesoría Personalizada','2025-05-08 05:54:38','2025-05-08 05:54:38'),(16,2,'titulo','Servicios Adicionales','2025-05-08 05:54:38','2025-05-08 05:54:38'),(17,3,'titulo','Servicios Migratorios que Ofrecemos','2025-05-08 05:54:38','2025-05-08 05:54:38'),(18,3,'texto','Te ayudamos a gestionar trámites migratorios de forma rápida y segura. Confía en nuestros expertos para facilitar tu proceso.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(19,3,'titulo','Solicitud de Acta de Nacimiento ante el Registro Civil','2025-05-08 05:54:38','2025-05-08 05:54:38'),(20,3,'texto','Te gestionamos la solicitud de actas de nacimiento en cualquier registro civil en Venezuela, asegurándonos de que todo el proceso se realice correctamente.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(21,3,'titulo','Solicitud de Acta de Matrimonio','2025-05-08 05:54:38','2025-05-08 05:54:38'),(22,3,'texto','Solicitud de actas de matrimonio para que puedas obtener este documento legalizado de manera rápida y sin complicaciones.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(23,3,'titulo','Solicitud de Acta de Defunción','2025-05-08 05:54:38','2025-05-08 05:54:38'),(24,3,'texto','Te ayudamos a obtener el acta de defunción, un documento fundamental para muchos trámites legales y administrativos.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(25,3,'titulo','Solicitud de Carta de Soltería ante Notaría Pública','2025-05-08 05:54:38','2025-05-08 05:54:38'),(26,3,'texto','Si necesitas una carta de soltería, nos encargamos de gestionarla ante la notaría pública, agilizando el proceso para ti.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(27,3,'titulo','Solicitud de Fe de Vida','2025-05-08 05:54:38','2025-05-08 05:54:38'),(28,3,'texto','Realizamos la solicitud de Fe de Vida para que puedas presentar este documento ante las autoridades correspondientes o para realizar trámites internacionales.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(29,3,'titulo','Legalización por el Registro Principal','2025-05-08 05:54:38','2025-05-08 05:54:38'),(30,3,'texto','Una vez obtenidos los documentos, nos encargamos de legalizarlos por el Registro Principal para darle validez oficial.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(31,4,'titulo','Servicios adicionales para ti','2025-05-08 05:54:38','2025-05-08 05:54:38'),(32,4,'texto','Además de trámites migratorios, ofrecemos soluciones integrales para facilitar tu proceso. Descubre cómo podemos ayudarte.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(33,5,'titulo','Tu Aliado en el Camino hacia un Nuevo Destino','2025-05-08 05:54:38','2025-05-08 05:54:38'),(34,5,'texto','Brindamos orientación especializada para personas que buscan emigrar, ayudándolos a cumplir con los requisitos legales y los trámites necesarios para una transición exitosa.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(35,5,'titulo','Citas para Visado','2025-05-08 05:54:38','2025-05-08 05:54:38'),(36,5,'texto','Gestionamos citas para visados en los consulados de Chile, México, Perú, España y Ecuador, asegurando un proceso rápido y efectivo','2025-05-08 05:54:38','2025-05-08 05:54:38'),(37,5,'titulo','Servicios de Tránsito Terrestre en Venezuela','2025-05-08 05:54:38','2025-05-08 05:54:38'),(38,5,'texto','Tramitamos licencias de conducir de 2da, 3ra, 4ta y 5ta categoría, cartas consulares o certificaciones consulares y licencias internacionales, cumpliendo con todos los procedimientos exigidos.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(39,5,'titulo','Trámite y Apostilla de Antecedentes Penales','2025-05-08 05:54:38','2025-05-08 05:54:38'),(40,5,'texto','Gestionamos la solicitud y apostilla de antecedentes penales, esenciales para procesos legales y migratorios en otros países.','2025-05-08 05:54:38','2025-05-08 05:54:38'),(41,6,'titulo','¡Contáctanos para tus trámites sin fronteras!','2025-05-08 05:54:38','2025-05-08 05:54:38'),(42,6,'texto','Estamos aquí para facilitar tus trámites migratorios. Completa el formulario y nos pondremos en contacto contigo lo antes posible para ayudarte.','2025-05-08 05:54:38','2025-05-08 05:54:38');
 /*!40000 ALTER TABLE `blocks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,10 +150,11 @@ DROP TABLE IF EXISTS `sections`;
 CREATE TABLE `sections` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(44) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `estado` tinyint(1) NOT NULL,
   `fechacreacion` datetime DEFAULT NULL,
   `fechaupdate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,7 +163,33 @@ CREATE TABLE `sections` (
 
 LOCK TABLES `sections` WRITE;
 /*!40000 ALTER TABLE `sections` DISABLE KEYS */;
+INSERT INTO `sections` VALUES (1,'Inicio',1,'2025-05-12 00:00:00','2025-05-08 05:54:38'),(2,'Soluciones',1,'2025-05-12 00:00:00','2025-05-09 01:17:46'),(3,'Servicios Migratorios',1,'2025-05-12 00:00:00','2025-05-09 01:18:19'),(4,'Servicios Adicionales',1,'2025-05-12 00:00:00','2025-05-12 00:20:17'),(5,'Orientacion',1,'2025-05-12 00:00:00','2025-05-12 00:24:44'),(6,'Contacto',1,'2025-05-12 00:51:54','2025-05-12 00:51:54');
 /*!40000 ALTER TABLE `sections` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `serviciosadicionales`
+--
+
+DROP TABLE IF EXISTS `serviciosadicionales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `serviciosadicionales` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(55) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `contenido` varchar(256) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `textobtn` varchar(33) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `serviciosadicionales`
+--
+
+LOCK TABLES `serviciosadicionales` WRITE;
+/*!40000 ALTER TABLE `serviciosadicionales` DISABLE KEYS */;
+/*!40000 ALTER TABLE `serviciosadicionales` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -177,6 +205,7 @@ CREATE TABLE `testimoniales` (
   `titulo` varchar(33) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
   `comentario` varchar(350) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
   `imagen` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
+  `email` varchar(55) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -222,6 +251,10 @@ LOCK TABLES `usuarios` WRITE;
 INSERT INTO `usuarios` VALUES (1,'Julian','Rodriguez','1094912099','3042029683',NULL,'$2y$10$1UzKplRenZvcKwDTMbtioe/yZXPsPyPAVUsEtOs7zbfpoLEg27/MK',1,NULL,'Administrador');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'landing'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -232,4 +265,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-30 20:56:40
+-- Dump completed on 2025-05-11 23:47:03

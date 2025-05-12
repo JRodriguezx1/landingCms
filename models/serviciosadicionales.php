@@ -2,8 +2,8 @@
 
 namespace Model;
 
-class direcciones extends ActiveRecord{
-    protected static $tabla = 'direcciones';
+class serviciosadicionales extends ActiveRecord{
+    protected static $tabla = 'serviciosadicionales';
     protected static $columnasDB = ['id', 'idcliente', 'idtarifa', 'iddepartamento', 'idciudad', 'pais', 'departamento', 'ciudad', 'direccion', 'codigopostal', 'observacion'];
     
     public function __construct($args = []){
