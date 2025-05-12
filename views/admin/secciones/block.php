@@ -1,6 +1,6 @@
 <div class="box block">
     <h4 class="text-gray-600 mb-8"><?php echo $nombreseccion; ?></h4>
-
+    <?php include __DIR__. "/../../templates/alertas.php"; ?>
     <div class="flex flex-wrap gap-2 mt-4 mb-6 pb-4 border-b-2 border-blue-600">
         <a class="btn-command" href="/admin/secciones"><span class="material-symbols-outlined">reply</span>Volver</a>
         <?php if($nombreseccion==='Servicios Adicionales'):?>

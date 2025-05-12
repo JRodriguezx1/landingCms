@@ -1,5 +1,6 @@
 <div class="box secciones">
     <h4 class="text-gray-600 mb-8">Secciones</h4>
+    <?php include __DIR__. "/../../templates/alertas.php"; ?>
     <!--<button id="crearSeccion" class="btn-md btn-blue mb-4">Crear</button>-->
     <div>
         <table id="tablaSecciones" class="tabla">

@@ -16,7 +16,7 @@ class testimonialescontrolador{
         isadmin();
         $alertas = [];
         $buscar = '';
-        $clientes = clientes::all(); //me trae los usuario que esten confirmados y no admin
+        $testimoniales = [];
 
         if($_SERVER['REQUEST_METHOD'] === 'POST' ){
             if($_POST['filtro']!='all')
@@ -30,7 +30,7 @@ class testimonialescontrolador{
                 }*/
         }
 
-        $router->render('admin/testimoniales/index', ['titulo'=>'Testimoniales', 'clientes'=>$clientes, 'alertas'=>$alertas, 'buscar'=>$buscar, 'user'=>$_SESSION]);
+        $router->render('admin/testimoniales/index', ['titulo'=>'Testimoniales', 'testimoniales'=>$testimoniales, 'alertas'=>$alertas, 'buscar'=>$buscar, 'user'=>$_SESSION]);
     }
 
     public static function crear(Router $router){

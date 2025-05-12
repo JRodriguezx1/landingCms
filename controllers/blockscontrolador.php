@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Model\blocks;
 use Model\sections;
+use Model\serviciosadicionales;
 use MVC\Router;  //namespace\clase
  
 class blockscontrolador{
@@ -35,8 +36,19 @@ class blockscontrolador{
     session_start();
     isadmin();
     $alertas = [];
-
-    $servicios = [];
+    if($_SERVER['REQUEST_METHOD'] === 'POST' ){
+       $servicios = new serviciosadicionales($_POST);
+       $alertas = $servicios->validarServicioAdicional();
+       if(empty($alertas)){
+        $r = $servicios->crear_guardar();
+        if($r[0]){
+          $alertas['exito'][] = "Servicio adicional creado con exito";
+        }else{
+          $alertas['error'][] = "Error al crear servicio adicional intenta nuevamente";
+        }
+       }
+    }
+    $servicios = serviciosadicionales::all();
     $router->render('admin/secciones/sesrviciosadicioanles', ['titulo'=>'Servicios Adicionales', 'servicios'=>$servicios, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
   }
 

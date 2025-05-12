@@ -78,7 +78,7 @@
                 bloques.forEach(a=>{if(a.id == unbloque.id)a = Object.assign(a, resultado.bloque[0]);});
 
                 const datosActuales = (tablaBloques as any).row(indiceFila+=info.start).data();
-                /*NOMBRE*/datosActuales[3] =$('#contenido').val();
+                /*CONTENIDO*/datosActuales[3] =$('#contenido').val();
                 (tablaBloques as any).row(indiceFila).data(datosActuales).draw();
                 (tablaBloques as any).page(info.page).draw('page'); //me mantiene la pagina actual
               }else{

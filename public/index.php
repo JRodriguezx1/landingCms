@@ -67,6 +67,7 @@ $router->post('/admin/secciones/crear_seccion', [seccionescontrolador::class, 'c
 ///// area de bloques por seccion /////
 $router->get('/admin/seccion/block', [blockscontrolador::class, 'getblock']);
 $router->get('/admin/seccion/block/ServiciosAdicionales', [blockscontrolador::class, 'ServiciosAdicionales']);
+$router->post('/admin/seccion/block/ServiciosAdicionales', [blockscontrolador::class, 'ServiciosAdicionales']);
 ///// area de testimoniales /////
 $router->get('/admin/testimoniales', [testimonialescontrolador::class, 'index']);
 ///// area de clientes /////

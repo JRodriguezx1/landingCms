@@ -4,30 +4,25 @@ namespace Model;
 
 class testimoniales extends ActiveRecord{
     protected static $tabla = 'testimoniales';
-    protected static $columnasDB = ['id', 'idcliente', 'idtarifa', 'iddepartamento', 'idciudad', 'pais', 'departamento', 'ciudad', 'direccion', 'codigopostal', 'observacion'];
+    protected static $columnasDB = ['id', 'nombre', 'titulo', 'comentario', 'imagen', 'email'];
     
     public function __construct($args = []){
         $this->id = $args['id']??null;
-        $this->idcliente = $args['idcliente']??'';
-        $this->idtarifa = $args['idtarifa']??1;
-        $this->iddepartamento = $args['iddepartamento']??1;
-        $this->idciudad = $args['idciudad']??1;
-        $this->pais = $args['pais']??'';
-        $this->departamento = $args['departamento']??' ';
-        $this->ciudad = $args['ciudad']??' ';
-        $this->direccion = $args['direccion']??' ';
-        $this->codigopostal = $args['codigopostal']??'';
-        $this->observacion = $args['observacion']??'';
+        $this->nombre = $args['nombre']??'';
+        $this->titulo = $args['titulo']??'';
+        $this->comentario = $args['comentario']??'';
+        $this->imagen = $args['imagen']??'';
+        $this->email = $args['email']??'';
     }
 
 
-    public function validarDireccion(){
-        if(!$this->departamento)self::$alertas['error'][] = "departamento no especificado";
-        if(strlen($this->departamento)>34)self::$alertas['error'][] = 'Has excecido el limite de caracteres';
-        if(!$this->ciudad)self::$alertas['error'][] = "ciudad no especificada";
-        if(strlen($this->ciudad)>34)self::$alertas['error'][] = 'Has excecido el limite de caracteres';
-        if(!$this->direccion)self::$alertas['error'][] = "Direccion no especificada";
-        if(strlen($this->direccion)>72)self::$alertas['error'][] = 'Has excecido el limite de caracteres';
+    public function validarTestimonial(){
+        if(!$this->nombre)self::$alertas['error'][] = "nombre dle testimonial es obligatorio";
+        if(strlen($this->nombre)>52)self::$alertas['error'][] = 'Has excecido el limite de caracteres del nombre del testimonial';
+        if(!$this->titulo)self::$alertas['error'][] = "titulo del testimonial no especificada";
+        if(strlen($this->titulo)>30)self::$alertas['error'][] = 'Has excecido el limite de caracteres del titulo del testimonial';
+        if(!$this->comentario)self::$alertas['error'][] = "comentario del testimonial no especificada";
+        if(strlen($this->comentario)>336)self::$alertas['error'][] = 'Has excecido el limite de caracteres del comentario testimonial';
         return self::$alertas;
     }
 }
