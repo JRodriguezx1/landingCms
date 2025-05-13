@@ -82,10 +82,12 @@
               if(resultado.exito !== undefined){
                 msjalertToast('success', '¡Éxito!', resultado.exito[0]);
                 /// actualizar el arregle de las secciones ///
-                testimonial.forEach(a=>{if(a.id == untestimonio.id)a = Object.assign(a, resultado.bloque[0]);});
-
+                testimonial.forEach(a=>{if(a.id == untestimonio.id)a = Object.assign(a, resultado.testimonial[0]);});
                 const datosActuales = (tablaTestimoniales as any).row(indiceFila+=info.start).data();
+                /*nombre*/datosActuales[1] =$('#nombre').val();
+                /*titulo*/datosActuales[2] =$('#titulo').val();
                 /*comentario*/datosActuales[3] =$('#comentario').val();
+                /*email*/datosActuales[4] =$('#email').val();
                 (tablaTestimoniales as any).row(indiceFila).data(datosActuales).draw();
                 (tablaTestimoniales as any).page(info.page).draw('page'); //me mantiene la pagina actual
               }else{
@@ -100,23 +102,15 @@
     });
 
     function eliminarTsetimonial(e:Event){
-      let idtestimonio = (e.target as HTMLElement).parentElement!.id, info = (tablaTestimoniales as any).page.info(), titulo:string, texto:string;
+      let idtestimonio = (e.target as HTMLElement).parentElement!.id, info = (tablaTestimoniales as any).page.info();
       if((e.target as HTMLElement).tagName === 'I')idtestimonio = (e.target as HTMLElement).parentElement!.parentElement!.id;
       indiceFila = (tablaTestimoniales as any).row((e.target as HTMLElement).closest('tr')).index();
-      
-      if((e.target as HTMLElement).closest('button')?.classList.contains('btn-red')){
-        titulo = "Desea ocultar el comentario?";
-        texto = "El comentario sera ocultado en la pagina web.";
-      }else{
-        titulo = "Desea mostrar el comentario?";
-        texto = "El comentario sera visible en la pagina web.";
-      }
 
       Swal.fire({
           customClass: {confirmButton: 'sweetbtnconfirm', cancelButton: 'sweetbtncancel'},
           icon: 'question',
-          title: titulo,
-          text: texto,
+          title: 'Desea eliminar el testimonial',
+          text: 'Se eliminara por completo el testimonial',
           showCancelButton: true,
           confirmButtonText: 'Si',
           cancelButtonText: 'No',
@@ -130,14 +124,7 @@
                       const respuesta = await fetch(url);
                       const resultado = await respuesta.json();
                       if(resultado.exito !== undefined){
-                        const datosActuales = (tablaTestimoniales as any).row(indiceFila+=info.start).data();
-                        datosActuales[2] = resultado.seccion[0].estado==='1'?'Activo':'Inactivo';
-                        datosActuales[4] = `<div class="acciones-btns" id="${resultado.seccion[0].id}">
-                                              <button class="btn-md btn-turquoise editarTestimonial"><i class="fa-solid fa-pen-to-square"></i></button>
-                                              <a href="/admin/secciones/seccion?id=${resultado.seccion[0].id}" class="btn-md btn-blue editarcomentarioSeccion"><i class="fa-solid fa-grip-vertical"></i></a>
-                                              <button class="btn-md ${resultado.seccion[0].estado==='1'?'btn-red':'btn-lima'} eliminarTsetimonial"><i class="fa-solid fa-ban"></i></button>
-                                            </div>`;
-                        (tablaTestimoniales as any).row(indiceFila).data(datosActuales).draw();
+                        (tablaTestimoniales as any).row(indiceFila+info.start).remove().draw(); 
                         (tablaTestimoniales as any).page(info.page).draw('page'); //me mantiene la pagina actual
                         Swal.fire(resultado.exito[0], '', 'success')
                       }else{

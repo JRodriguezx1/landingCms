@@ -14,6 +14,7 @@
                     <th>id</th>
                     <th>Tipo</th>
                     <th>contenido</th>
+                    <th>Estado</th>
                     <th>Fecha Actualizacion</th>
                     <th class="accionesth">Acciones</th>
                 </tr>
@@ -24,6 +25,7 @@
                         <td class=""><?php echo $bloque->id; ?></td> 
                         <td class=""><?php echo $bloque->tipobloque; ?></td>
                         <td class=""><?php echo $bloque->contenido; ?></td>
+                        <td class=""><?php echo $bloque->estado==1?'Activo':'Inactivo';?></td>
                         <td class=""><?php echo $bloque->fechaupdate; ?></td>       
                         <td class="accionestd">
                             <div class="acciones-btns" id="<?php echo $bloque->id;?>"><button class="btn-md btn-turquoise editarBloque"><i class="fa-solid fa-pen-to-square"></i></button><button class="btn-md <?php echo $bloque->estado==1?'btn-red':'btn-lima'; ?> bloquearBloque"><i class="fa-solid fa-ban"></i></button></div>

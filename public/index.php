@@ -72,9 +72,8 @@ $router->post('/admin/seccion/block/ServiciosAdicionales', [blockscontrolador::c
 $router->get('/admin/testimoniales', [testimonialescontrolador::class, 'index']);  //cunado se visita pagina testimoniales
 $router->post('/admin/testimoniales', [testimonialescontrolador::class, 'index']);  //crear testimoniales
 ///// area de clientes /////
-$router->get('/admin/clientes', [clientescontrolador::class, 'index']);
-$router->post('/admin/clientes', [clientescontrolador::class, 'index']); //filtro de busqueda
-$router->post('/admin/clientes/crear', [clientescontrolador::class, 'crear']);
+$router->get('/admin/clientes', [clientescontrolador::class, 'index']);  //mostrar clientes
+$router->post('/admin/clientes/crear', [clientescontrolador::class, 'crear']);  //crear clientes
 $router->post('/admin/clientes/actualizar', [clientescontrolador::class, 'actualizar']);
 $router->get('/admin/clientes/detalle', [clientescontrolador::class, 'detalle']);
 $router->get('/admin/clientes/hab_desh', [clientescontrolador::class, 'hab_desh']); //habilitar deshabilitar cliente
@@ -95,5 +94,6 @@ $router->get('/admin/api/allserviciosadicionales', [blockscontrolador::class, 'a
 $router->post('/admin/api/editarServicio', [blockscontrolador::class, 'editarServicio']);  //editar servicio adicional, desde serviciosadicionales.ts
 $router->get('/admin/api/eliminarServicio', [blockscontrolador::class, 'eliminarServicio']);  //desde serviciosadicionales.ts
 $router->get('/admin/api/alltestimoniales', [testimonialescontrolador::class, 'alltestimoniales']);
+$router->post('/admin/api/editarTestimonial', [testimonialescontrolador::class, 'editarTestimonial']);
 
 $router->comprobarRutas();

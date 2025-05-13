@@ -4,7 +4,7 @@ namespace Model;
 
 class serviciosadicionales extends ActiveRecord{
     protected static $tabla = 'serviciosadicionales';
-    protected static $columnasDB = ['id', 'titulo', 'contenido', 'textobtn'];
+    protected static $columnasDB = ['id', 'titulo', 'contenido', 'textobtn', 'fechacreacion', 'fechaupdate'];
     
     public function __construct($args = []){
         $this->id = $args['id']??null;

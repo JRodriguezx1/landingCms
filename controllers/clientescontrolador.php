@@ -3,10 +3,13 @@
 namespace Controllers;
 
 use Classes\Email;
+use Model\ActiveRecord;
 use MVC\Router;  //namespace\clase
 use Model\usuarios;
 use Model\clientes;
-
+use Model\empleados;
+use Model\direcciones;
+use Model\tarifas;
 
  
 class clientescontrolador{
@@ -15,66 +18,39 @@ class clientescontrolador{
         session_start();
         isadmin();
         $alertas = [];
-        $buscar = '';
-        $clientes = clientes::all(); //me trae los usuario que esten confirmados y no admin
-
+        $clientes = clientes::all();
+       
         if($_SERVER['REQUEST_METHOD'] === 'POST' ){
-            if($_POST['filtro']!='all')
-                $clientes = usuarios::filtro_nombre($_POST['filtro'], $_POST['buscar'], 'id');
-                $buscar = $_POST['buscar'];
-/*
-            if($_POST['filtro'] == "cedula"){
-                $registros_total = estudiantes::inner_join("SELECT COUNT(*) FROM estudiantes WHERE cedula LIKE '{$_POST['buscar']}%';");
-                }else{
-                    $registros_total = estudiantes::inner_join("SELECT COUNT(*) FROM estudiantes WHERE nombre LIKE '{$_POST['buscar']}%';");
-                }*/
+            
         }
-
-        $router->render('admin/clientes/index', ['titulo'=>'Clientes', 'clientes'=>$clientes, 'alertas'=>$alertas, 'buscar'=>$buscar, 'user'=>$_SESSION]);
+        $router->render('admin/clientes/index', ['titulo'=>'Clientes', 'clientes'=>$clientes, 'alertas'=>$alertas, 'user'=>$_SESSION]);
     }
 
     public static function crear(Router $router){
+        /*$alertas = $usuario->validarEmail();    
+        $usuarioexiste = $usuario->validar_registro();//retorna 1 si existe usuario(email), 0 si no existe
+        $usuariotelexiste = $usuario->find('movil', $_POST['movil']);*/
         session_start();
         isadmin();
-        $usuario = new usuarios; //instancia el objeto vacio
-        $alertas = [];  
-
+        $cliente = new clientes($_POST);
+        $alertas = [];
         if($_SERVER['REQUEST_METHOD'] === 'POST' ){
-            
-            $usuario->compara_objetobd_post($_POST); //objeto instaciado toma los valores del $_POST
-            $alertas = $usuario->validar_nueva_cuenta();
-            $alertas = $usuario->validarEmail();
-            
-            if(empty($alertas)){ 
-                
-                $usuarioexiste = $usuario->validar_registro();//retorna 1 si existe usuario(email), 0 si no existe
-                $usuariotelexiste = $usuario->find('movil', $_POST['movil']);
-
-                if($usuarioexiste||$usuariotelexiste){ //si usuario ya existe
-                    $usuario::setAlerta('error', 'El usuario ya esta registrado');
-                    $alertas = $usuario::getAlertas();
+            $alertas = $cliente->validar_nuevo_cliente();
+            $documentID = $cliente->validar_regDinamic('identificacion');
+            //$alertas = $direccion->validarDireccion();
+            if(empty($alertas) && !$documentID){ //si los campos cumplen los criterios y cliente no existe por documento    
+                $resultado = $cliente->crear_guardar();  
+                if($resultado[0]){
+                    $alertas['exito'][] = 'Cliente Registrado correctamente'; 
                 }else{
-                    //hashear pass
-                    $usuario->hashPassword();
-                    //eliminar pass2
-                    unset($usuario->password2);
-                    //generar token
-                    //$usuario->creartoken();
-                    $usuario->confirmado = '1';
-
-                    //enviar el email
-                    $email = new Email($usuario->email, $usuario->nombre, $usuario->token, $_POST['password']);
-                    $email->enviarConfirmacion();
-
-                //guardar cliente recien creado en bd  
-                    $resultado = $usuario->crear_guardar();  
-                    if($resultado){
-                        $alertas['exito'][] = 'Cliente Registrado correctamente';
-                    }     
+                    $alertas['error'][] = 'Hubo un error en el proceso, intentalo nuevamente';
                 }
+            }else{
+                if($documentID)$cliente::setAlerta('error', 'El cliente ya esta registrado');
+                $alertas = $cliente::getAlertas();
             }
         }
-        $clientes = usuarios::whereArray(['confirmado'=>1, 'admin'=>0]);
+        $clientes = clientes::all();
         $router->render('admin/clientes/index', ['titulo'=>'clientes', 'clientes'=>$clientes, 'alertas'=>$alertas, 'user'=>$_SESSION]);
     }
 
@@ -136,25 +112,15 @@ class clientescontrolador{
         $alertas = []; 
  
         $cliente = usuarios::find('id', $id);
-        $citas = citas::idregistros('id_usuario', $id);
-        foreach($citas as $cita){
-            if($cita->id_empserv){
-                $cita->idservicio = empserv::uncampo('id', $cita->id_empserv, 'idservicio');
-                $cita->idempleado = empserv::uncampo('id', $cita->id_empserv, 'idempleado');
-                $cita->servicio = servicios::find('id', $cita->idservicio);
-                $cita->empleado = empleados::uncampo('id', $cita->idempleado, 'nombre').' '.empleados::uncampo('id', $cita->idempleado, 'apellido');
-                $cita->facturacion = facturacion::find('idcita', $cita->id);
-            }
-        }
-        $router->render('admin/clientes/detalle', ['titulo'=>'clientes', 'cliente'=>$cliente, 'citas'=>$citas, 'alertas'=>$alertas, 'user'=>$_SESSION]);
+        
+        $router->render('admin/clientes/detalle', ['titulo'=>'clientes', 'cliente'=>$cliente, 'alertas'=>$alertas, 'user'=>$_SESSION]);
     }
      
 
 
     ///////////////////////////////////  Apis ////////////////////////////////////
     public static function allclientes(){  //api llamado desde citas.js
-        //$clientes = usuarios::all();
-        $clientes = usuarios::whereArray(['admin'=>0, 'habilitar'=>1]);
+        $clientes = clientes::all();
         echo json_encode($clientes);
     }
     
@@ -172,12 +138,15 @@ class clientescontrolador{
             if(empty($alertas) && !$documentID){ //si los campos cumplen los criterios y cliente no existe por documento   
                 //guardar cliente recien creado en bd  
                 $resultado = $cliente->crear_guardar();  
-                if($resultado){
+                if($resultado[0]){
                     $direccion->idcliente =  $resultado[1];
                     $r1 = $direccion->crear_guardar();
-                    if($r1){
+                    if($r1[0]){
                         $alertas['exito'][] = 'Cliente Registrado correctamente';
                         $alertas['nextID'] = $resultado[1];
+                    }else{
+                        $cliente->eliminar_idregistros('id', [$resultado[1]]);
+                        $alertas['error'][] = 'Hubo un error en el proceso, intentalo nuevamente';
                     }
                 }else{
                     $alertas['error'][] = 'Hubo un error en el proceso, intentalo nuevamente';
@@ -188,5 +157,46 @@ class clientescontrolador{
             }
         }
         echo json_encode($alertas);
+    }
+
+
+    public static function apiActualizarcliente(){
+        session_start();
+        $alertas = []; 
+        $cliente = clientes::find('id', $_POST['id']);
+        if($_SERVER['REQUEST_METHOD'] === 'POST' ){
+            $cliente->compara_objetobd_post($_POST);
+            $alertas = $cliente->validar_nuevo_cliente();
+            if(empty($alertas)){
+                $r = $cliente->actualizar();
+                if($r){
+                    $alertas['exito'][] = "Datos del cliente actualizados";
+                }else{
+                    $alertas['error'][] = "Error al actualizar cliente";
+                }
+            }
+        }
+        $alertas['cliente'][] = $cliente;
+        echo json_encode($alertas);  
+    }
+
+
+    public static function apiEliminarCliente(){
+        session_start();
+        $cliente = clientes::find('id', $_POST['id']);
+        if($_SERVER['REQUEST_METHOD'] === 'POST' ){
+            if(!empty($cliente)){
+                $r = $cliente->eliminar_registro();
+                if($r){
+                    ActiveRecord::setAlerta('exito', 'Cliente eliminado correctamente');
+                }else{
+                    ActiveRecord::setAlerta('error', 'error en el proceso de eliminacion');
+                }
+            }else{
+                ActiveRecord::setAlerta('error', 'Cliente no encontrado');
+            }
+        }
+        $alertas = ActiveRecord::getAlertas();
+        echo json_encode($alertas); 
     }
 }

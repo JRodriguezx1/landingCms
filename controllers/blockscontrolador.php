@@ -95,7 +95,7 @@ class blockscontrolador{
   }
 
 
-   public static function eliminarServicio(){
+  public static function eliminarServicio(){
     session_start();
     isadmin();
     $alertas = [];
