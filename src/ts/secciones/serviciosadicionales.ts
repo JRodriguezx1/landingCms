@@ -7,9 +7,9 @@
 
     type serviciosAdicionalesapi = {
       id:string,
-      idsection: string,
-      tipobloque: string,
+      titulo: string,
       contenido: string,
+      textobtn: string,
       fechacreacion: string,
       fechaupdate: string,
       //idservicios:{idempleado:string, idservicio:string}[]
@@ -52,13 +52,15 @@
       document.querySelector('#modalServicio')!.textContent = "Actualizar Servicio";
       (document.querySelector('#btnEditarCrearServicio') as HTMLInputElement)!.value = "Actualizar";
       unservicio = servicios.find(x=>x.id === idservicio)!;
+      (document.querySelector('#titulo')as HTMLInputElement).value = unservicio?.titulo!;
       (document.querySelector('#contenido')as HTMLInputElement).value = unservicio?.contenido!;
+      (document.querySelector('#textobtn')as HTMLInputElement).value = unservicio?.textobtn!;
       indiceFila = (tablaServiciosAdicionales as any).row((e.target as HTMLElement).closest('tr')).index();
       miDialogoServicio.showModal();
       document.addEventListener("click", cerrarDialogoExterno);
     }
 
-    ////////////////////  Actualizar contenido del servicio adicioanal  //////////////////////
+    ////////////////////  Actualizar servicio adicioanal  //////////////////////
     document.querySelector('#formCrearUpdateServicio')?.addEventListener('submit', e=>{
       if(control){
         e.preventDefault();
@@ -66,19 +68,21 @@
         (async ()=>{ 
           const datos = new FormData();
           datos.append('id', unservicio!.id);
+          datos.append('titulo', $('#titulo').val()as string);
           datos.append('contenido', $('#contenido').val()as string);
-
+          datos.append('textobtn', $('#textobtn').val()as string);
           try {
-              const url = "/admin/api/editarServicio";
+              const url = "/admin/api/editarServicio";  // llama controlador blockscontrolador.php
               const respuesta = await fetch(url, {method: 'POST', body: datos}); 
               const resultado = await respuesta.json(); 
               if(resultado.exito !== undefined){
                 msjalertToast('success', '¡Éxito!', resultado.exito[0]);
                 /// actualizar el arregle de las secciones ///
-                servicios.forEach(a=>{if(a.id == unservicio.id)a = Object.assign(a, resultado.bloque[0]);});
-
+                servicios.forEach(a=>{if(a.id == unservicio.id)a = Object.assign(a, resultado.serviciosadicionales[0]);});
                 const datosActuales = (tablaServiciosAdicionales as any).row(indiceFila+=info.start).data();
-                /*CONTENIDO*/datosActuales[3] =$('#contenido').val();
+                /*TITULO*/datosActuales[1] =$('#titulo').val();
+                /*CONTENIDO*/datosActuales[2] =$('#contenido').val();
+                /*TEXTO BTN*/datosActuales[3] =$('#textobtn').val();
                 (tablaServiciosAdicionales as any).row(indiceFila).data(datosActuales).draw();
                 (tablaServiciosAdicionales as any).page(info.page).draw('page'); //me mantiene la pagina actual
               }else{
@@ -93,23 +97,15 @@
     });
 
     function eliminarServicio(e:Event){
-      let idservicio = (e.target as HTMLElement).parentElement!.id, info = (tablaServiciosAdicionales as any).page.info(), titulo:string, texto:string;
+      let idservicio = (e.target as HTMLElement).parentElement!.id, info = (tablaServiciosAdicionales as any).page.info();
       if((e.target as HTMLElement).tagName === 'I')idservicio = (e.target as HTMLElement).parentElement!.parentElement!.id;
       indiceFila = (tablaServiciosAdicionales as any).row((e.target as HTMLElement).closest('tr')).index();
-      
-      if((e.target as HTMLElement).closest('button')?.classList.contains('btn-red')){
-        titulo = "Desea ocultar el contenido?";
-        texto = "El contenido sera ocultado en la pagina web.";
-      }else{
-        titulo = "Desea mostrar el contenido?";
-        texto = "El contenido sera visible en la pagina web.";
-      }
 
       Swal.fire({
           customClass: {confirmButton: 'sweetbtnconfirm', cancelButton: 'sweetbtncancel'},
           icon: 'question',
-          title: titulo,
-          text: texto,
+          title: 'Desea eliminar el servicio adicional',
+          text: 'Se eliminara por completo el servicio adicional',
           showCancelButton: true,
           confirmButtonText: 'Si',
           cancelButtonText: 'No',
@@ -119,18 +115,11 @@
                   const datos = new FormData();
                   datos.append('id', idservicio);
                   try {  
-                      const url = "/admin/api/eliminarServicio?id="+idservicio; //llamado a la API REST y se trae las direcciones segun cliente elegido
+                      const url = "/admin/api/eliminarServicio?id="+idservicio; //llamado a la API REST, llama controlador blockscontrolador.php
                       const respuesta = await fetch(url);
                       const resultado = await respuesta.json();
                       if(resultado.exito !== undefined){
-                        const datosActuales = (tablaServiciosAdicionales as any).row(indiceFila+=info.start).data();
-                        datosActuales[2] = resultado.seccion[0].estado==='1'?'Activo':'Inactivo';
-                        datosActuales[4] = `<div class="acciones-btns" id="${resultado.seccion[0].id}">
-                                              <button class="btn-md btn-turquoise editarServicio"><i class="fa-solid fa-pen-to-square"></i></button>
-                                              <a href="/admin/secciones/seccion?id=${resultado.seccion[0].id}" class="btn-md btn-blue editarContenidoSeccion"><i class="fa-solid fa-grip-vertical"></i></a>
-                                              <button class="btn-md ${resultado.seccion[0].estado==='1'?'btn-red':'btn-lima'} eliminarServicio"><i class="fa-solid fa-ban"></i></button>
-                                            </div>`;
-                        (tablaServiciosAdicionales as any).row(indiceFila).data(datosActuales).draw();
+                        (tablaServiciosAdicionales as any).row(indiceFila+info.start).remove().draw(); 
                         (tablaServiciosAdicionales as any).page(info.page).draw('page'); //me mantiene la pagina actual
                         Swal.fire(resultado.exito[0], '', 'success')
                       }else{

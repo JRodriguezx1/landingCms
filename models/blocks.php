@@ -3,7 +3,7 @@ namespace Model;
 
 class blocks extends ActiveRecord {
     protected static $tabla = 'blocks';
-    protected static $columnasDB = ['id', 'idsection', 'tipobloque', 'contenido', 'fechacreacion', 'fechaupdate'];
+    protected static $columnasDB = ['id', 'idsection', 'tipobloque', 'contenido', 'estado', 'fechacreacion', 'fechaupdate'];
     
     public function __construct($args = [])
     {
@@ -11,6 +11,7 @@ class blocks extends ActiveRecord {
         $this->idsection = $args['idsection'] ?? '';
         $this->tipobloque = $args['tipobloque'] ?? '';
         $this->contenido = $args['contenido'] ?? '';
+        $this->estado = $args['estado'] ?? 1;
         $this->fechacreacion = $args['fechacreacion'] ?? date('Y-m-d H:i:s');
         $this->fechaupdate = $args['fechaupdate'] ?? date('Y-m-d H:i:s');
     }

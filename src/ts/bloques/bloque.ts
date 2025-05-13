@@ -58,7 +58,7 @@
       document.addEventListener("click", cerrarDialogoExterno);
     }
 
-    ////////////////////  Actualizar nombre de seccion  //////////////////////
+    ////////////////////  Actualizar bloque  //////////////////////
     document.querySelector('#formCrearUpdatebloque')?.addEventListener('submit', e=>{
       if(control){
         e.preventDefault();
@@ -67,9 +67,8 @@
           const datos = new FormData();
           datos.append('id', unbloque!.id);
           datos.append('contenido', $('#contenido').val()as string);
-
           try {
-              const url = "/admin/api/editarBloque";
+              const url = "/admin/api/editarBloque"; // llama a blockscontrolador.php
               const respuesta = await fetch(url, {method: 'POST', body: datos}); 
               const resultado = await respuesta.json(); 
               if(resultado.exito !== undefined){
@@ -78,7 +77,7 @@
                 bloques.forEach(a=>{if(a.id == unbloque.id)a = Object.assign(a, resultado.bloque[0]);});
 
                 const datosActuales = (tablaBloques as any).row(indiceFila+=info.start).data();
-                /*CONTENIDO*/datosActuales[3] =$('#contenido').val();
+                /*CONTENIDO*/datosActuales[2] =$('#contenido').val();
                 (tablaBloques as any).row(indiceFila).data(datosActuales).draw();
                 (tablaBloques as any).page(info.page).draw('page'); //me mantiene la pagina actual
               }else{
@@ -124,11 +123,10 @@
                       const resultado = await respuesta.json();
                       if(resultado.exito !== undefined){
                         const datosActuales = (tablaBloques as any).row(indiceFila+=info.start).data();
-                        datosActuales[2] = resultado.seccion[0].estado==='1'?'Activo':'Inactivo';
-                        datosActuales[4] = `<div class="acciones-btns" id="${resultado.seccion[0].id}">
+                        datosActuales[2] = resultado.bloque[0].estado==='1'?'Activo':'Inactivo';
+                        datosActuales[4] = `<div class="acciones-btns" id="${resultado.bloque[0].id}">
                                               <button class="btn-md btn-turquoise editarBloque"><i class="fa-solid fa-pen-to-square"></i></button>
-                                              <a href="/admin/secciones/seccion?id=${resultado.seccion[0].id}" class="btn-md btn-blue editarContenidoSeccion"><i class="fa-solid fa-grip-vertical"></i></a>
-                                              <button class="btn-md ${resultado.seccion[0].estado==='1'?'btn-red':'btn-lima'} bloquearBloque"><i class="fa-solid fa-ban"></i></button>
+                                              <button class="btn-md ${resultado.bloque[0].estado==='1'?'btn-red':'btn-lima'} bloquearBloque"><i class="fa-solid fa-ban"></i></button>
                                             </div>`;
                         (tablaBloques as any).row(indiceFila).data(datosActuales).draw();
                         (tablaBloques as any).page(info.page).draw('page'); //me mantiene la pagina actual

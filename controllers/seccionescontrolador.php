@@ -52,7 +52,7 @@ class seccionescontrolador{
   }
 
   /////////// editar nombre de seccion /////////////
-  public static function editarseccion(Router $router){
+  public static function editarseccion(){
     session_start();
     isadmin();
     $alertas = [];

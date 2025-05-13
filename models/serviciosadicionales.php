@@ -11,6 +11,8 @@ class serviciosadicionales extends ActiveRecord{
         $this->titulo = $args['titulo']??'';
         $this->contenido = $args['contenido']??1;
         $this->textobtn = $args['textobtn']??1;
+        $this->fechacreacion = $args['fechacreacion'] ?? date('Y-m-d H:i:s');
+        $this->fechaupdate = $args['fechaupdate'] ?? date('Y-m-d H:i:s');
     }
 
 

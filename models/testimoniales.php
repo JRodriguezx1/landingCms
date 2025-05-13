@@ -13,8 +13,9 @@ class testimoniales extends ActiveRecord{
         $this->comentario = $args['comentario']??'';
         $this->imagen = $args['imagen']??'';
         $this->email = $args['email']??'';
+        $this->fechacreacion = $args['fechacreacion'] ?? date('Y-m-d H:i:s');
+        $this->fechaupdate = $args['fechaupdate'] ?? date('Y-m-d H:i:s');
     }
-
 
     public function validarTestimonial(){
         if(!$this->nombre)self::$alertas['error'][] = "nombre dle testimonial es obligatorio";
@@ -23,6 +24,7 @@ class testimoniales extends ActiveRecord{
         if(strlen($this->titulo)>30)self::$alertas['error'][] = 'Has excecido el limite de caracteres del titulo del testimonial';
         if(!$this->comentario)self::$alertas['error'][] = "comentario del testimonial no especificada";
         if(strlen($this->comentario)>336)self::$alertas['error'][] = 'Has excecido el limite de caracteres del comentario testimonial';
+        if($this->email)if(!filter_var($this->email, FILTER_VALIDATE_EMAIL))self::$alertas['error'][] = 'Email no válido';
         return self::$alertas;
     }
 }

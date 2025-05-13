@@ -39,21 +39,21 @@
             <div class="formulario__campo">
                 <label class="formulario__label" for="titulo">Titulo</label>
                 <div class="formulario__dato">
-                    <input class="formulario__input" type="text" placeholder="titulo del servicio" id="titulo" name="titulo" value="<?php echo $servicio->titulo??'';?>" required>
+                    <input class="formulario__input" type="text" placeholder="Titulo del servicio" id="titulo" name="titulo" value="<?php echo $nuevoservicio->titulo??'';?>" required>
                     <label data-num="50" class="count-charts" for="">50</label>
                 </div>
             </div>
             <div class="formulario__campo">
                 <label class="formulario__label" for="contenido">Contenido</label>
                 <div class="formulario__dato">
-                    <input class="formulario__input" type="text" placeholder="Contenido del servicio" id="contenido" name="contenido" value="<?php echo $servicio->contenido??'';?>" required>
+                    <input class="formulario__input" type="text" placeholder="Contenido del servicio" id="contenido" name="contenido" value="<?php echo $nuevoservicio->contenido??'';?>" required>
                     <label data-num="244" class="count-charts" for="">244</label>
                 </div>
             </div>
             <div class="formulario__campo">
                 <label class="formulario__label" for="textobtn">Texto boton</label>
                 <div class="formulario__dato">
-                    <input class="formulario__input" type="text" placeholder="Texto boton del servicio" id="textobtn" name="textobtn" value="<?php echo $servicio->textobtn??'';?>" required>
+                    <input class="formulario__input" type="text" placeholder="Texto boton del servicio" id="textobtn" name="textobtn" value="<?php echo $nuevoservicio->textobtn??'';?>" required>
                     <label data-num="28" class="count-charts" for="">28</label>
                 </div>
             </div>
