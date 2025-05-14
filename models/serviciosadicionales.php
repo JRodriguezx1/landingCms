@@ -9,8 +9,8 @@ class serviciosadicionales extends ActiveRecord{
     public function __construct($args = []){
         $this->id = $args['id']??null;
         $this->titulo = $args['titulo']??'';
-        $this->contenido = $args['contenido']??1;
-        $this->textobtn = $args['textobtn']??1;
+        $this->contenido = $args['contenido']??'';
+        $this->textobtn = $args['textobtn']??'¡Solicita Tu Trámite Ahora!';
         $this->fechacreacion = $args['fechacreacion'] ?? date('Y-m-d H:i:s');
         $this->fechaupdate = $args['fechaupdate'] ?? date('Y-m-d H:i:s');
     }
@@ -22,7 +22,7 @@ class serviciosadicionales extends ActiveRecord{
         if(!$this->contenido)self::$alertas['error'][] = "Descripcion del servicio adicional es obligatorio";
         if(strlen($this->contenido)>249)self::$alertas['error'][] = 'Has excecido el limite de caracteres de la descripcion del servicio adicional';
         if(!$this->textobtn)self::$alertas['error'][] = "Texto del boton es obligatorio";
-        if(strlen($this->textobtn)>25)self::$alertas['error'][] = 'Has excecido el limite de caracteres para el texto del boton';
+        if(strlen($this->textobtn)>29)self::$alertas['error'][] = 'Has excecido el limite de caracteres para el texto del boton';
         return self::$alertas;
     }
 }

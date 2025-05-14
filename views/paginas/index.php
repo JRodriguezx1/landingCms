@@ -89,14 +89,11 @@
           <div class="tc _o">
             <div class="animate_left jn/2">
               <h1 class="fk vj zp or kk wm wb"><?php echo $blocks[0]->contenido??''; ?></h1>
-              <p class="fq">
-              Llevamos a cabo tus gestiones con seriedad y profesionalismo, asegurándonos de obtener tus documentos de forma rápida y legalizada para que puedas realizar cualquier trámite necesario.
-              </p>
-
+              <p class="fq"><?php echo  $blocks[1]->contenido??'';?>
               <div class="tc tf yo zf mb">
                 <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
                 <span class="tc sf">
-                  <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="inline-block ek xj kk wm"> Llámanos (+57) 314 – 7102077 </a>
+                  <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="inline-block ek xj kk wm"> Llámanos <?php echo  $blocks[2]->contenido??'';?> </a>
                   <span class="inline-block">Para cualquier pregunta o inquietud</span>
                 </span>
               </div>
@@ -115,8 +112,8 @@
                 <img src="/build/images/icon-01.svg" alt="Icon" />
               </div>
               <div>
-                <h4 class="ek yj go kk wm xb"> Atención 24/7</h4>
-                <p>Estamos disponibles en todo momento para atender tus dudas y gestionar tus trámites sin importar el día o la hora.</p>
+                <h4 class="ek yj go kk wm xb"><?php echo $blocks[3]->contenido??'';?></h4>
+                <p><?php echo  $blocks[4]->contenido??'';?></p>
               </div>
             </div>
 
@@ -126,8 +123,8 @@
                 <img src="/build/images/icon-02.svg" alt="Icon" />
               </div>
               <div>
-                <h4 class="ek yj go kk wm xb">Asesoria Personalizada</h4>
-                <p>Te guiamos paso a paso en cada trámite, brindándote la mejor solución según tu caso particular.</p>
+                <h4 class="ek yj go kk wm xb"><?php echo  $blocks[5]->contenido??'';?></h4>
+                <p><?php echo  $blocks[6]->contenido??'';?></p>
               </div>
             </div>
 
@@ -137,8 +134,8 @@
                 <img src="/build/images/icon-03.svg" alt="Icon" />
               </div>
               <div>
-                <h4 class="ek yj go kk wm xb">Garantía de Servicio</h4>
-                <p>Nos comprometemos a brindarte un servicio de calidad y eficiente, asegurando que cada trámite se realice de manera rápida y segura.</p>
+                <h4 class="ek yj go kk wm xb"><?php echo  $blocks[7]->contenido??'';?></h4>
+                <p><?php echo  $blocks[8]->contenido??'';?></p>
               </div>
             </div>
           </div>
@@ -165,8 +162,8 @@
             <!-- About Content -->
             <div class="animate_right jn/2">
               <h4 class="ek yj mk gb">¿Por qué elegirnos?</h4>
-              <h2 class="fk vj zp pr kk wm qb">Contamos con más de 10 años de experiencia en el área de gestoría en Venezuela</h2>
-              <p class="uo">Ofreciendo servicios confiables, eficientes y honestos para facilitar los trámites que muchas personas encuentran complicados o desconocen.</p>
+              <h2 class="fk vj zp pr kk wm qb"><?php echo  $blocks[9]->contenido??'';?></h2>
+              <p class="uo"><?php echo  $blocks[10]->contenido??'';?></p>
 
               <div href="https://www.youtube.com/watch?v=xcJtL7QggTI" rel="nofollow" data-fslightbox class="vc wf hg mb">
                 <span class="tc wf xf be dd rg i gh ua">
@@ -190,7 +187,7 @@
         <img src="/build/images/shape-11.svg" alt="Shape" class="of h m xc fn" />
 
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Soluciones Integrales para tu Tranquilidad`, sectionTitleText: `Te ofrecemos un conjunto de servicios diseñados para facilitar tus trámites y brindarte la tranquilidad que necesitas. Desde gestiones migratorias hasta servicios adicionales, nuestro equipo está listo para asesorarte en cada paso del proceso.`}">
+        <div x-data="{ sectionTitle: `<?php echo $blocks[11]->contenido??'';?>`, sectionTitleText: `<?php echo $blocks[12]->contenido??'';?>`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -214,7 +211,7 @@
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Trámites Migratorios</h4>
+              <h4 class="yj go kk wm ob zb"><?php echo $blocks[13]->contenido??'';?></h4>
               <p></p>
             </div>
 
@@ -232,7 +229,7 @@
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Asesoría Personalizada</h4>
+              <h4 class="yj go kk wm ob zb"><?php echo $blocks[14]->contenido??'';?></h4>
               <p></p>
             </div>
 
@@ -250,7 +247,7 @@
                 </div>
               </div>
 
-              <h4 class="yj go kk wm ob zb">Servicios Adicionales</h4>
+              <h4 class="yj go kk wm ob zb"><?php echo $blocks[15]->contenido??'';?></h4>
               <p></p>
             </div>
           </div>
@@ -261,7 +258,7 @@
       <!-- ===== Services Start ===== -->
       <section class="lj tp kr">
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Servicios Migratorios que Ofrecemos`, sectionTitleText: `Te ayudamos a gestionar trámites migratorios de forma rápida y segura. Confía en nuestros expertos para facilitar tu proceso.`}">
+        <div x-data="{ sectionTitle: <?php echo $blocks[16]->contenido??'';?>`, sectionTitleText: `<?php echo $blocks[17]->contenido??'';?>`}">
           <div class="bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -274,43 +271,43 @@
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-04.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Solicitud de Acta de Nacimiento ante el Registro Civil</h4>
-              <p>Te gestionamos la solicitud de actas de nacimiento en cualquier registro civil en Venezuela, asegurándonos de que todo el proceso se realice correctamente.</p>
+              <h4 class="ek zj kk wm nb _b"><?php echo $blocks[18]->contenido??'';?></h4>
+              <p><?php echo $blocks[19]->contenido??'';?></p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-05.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Solicitud de Acta de Matrimonio</h4>
-              <p>Solicitud de actas de matrimonio para que puedas obtener este documento legalizado de manera rápida y sin complicaciones.</p>
+              <h4 class="ek zj kk wm nb _b"><?php echo $blocks[20]->contenido??'';?></h4>
+              <p><?php echo $blocks[21]->contenido??'';?></p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-06.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Solicitud de Acta de Defunción</h4>
-              <p>Te ayudamos a obtener el acta de defunción, un documento fundamental para muchos trámites legales y administrativos.</p>
+              <h4 class="ek zj kk wm nb _b"><?php echo $blocks[22]->contenido??'';?></h4>
+              <p><?php echo $blocks[23]->contenido??'';?></p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-07.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Solicitud de Carta de Soltería ante Notaría Pública</h4>
-              <p>Si necesitas una carta de soltería, nos encargamos de gestionarla ante la notaría pública, agilizando el proceso para ti.</p>
+              <h4 class="ek zj kk wm nb _b"><?php echo $blocks[24]->contenido??'';?></h4>
+              <p><?php echo $blocks[25]->contenido??'';?></p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-08.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Solicitud de Fe de Vida</h4>
-              <p>Realizamos la solicitud de Fe de Vida para que puedas presentar este documento ante las autoridades correspondientes o para realizar trámites internacionales.</p>
+              <h4 class="ek zj kk wm nb _b"><?php echo $blocks[26]->contenido??'';?></h4>
+              <p><?php echo $blocks[27]->contenido??'';?></p>
             </div>
 
             <!-- Service Item -->
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="/build/images/icon-09.svg" alt="Icon" />
-              <h4 class="ek zj kk wm nb _b">Legalización por el Registro Principal</h4>
-              <p>Una vez obtenidos los documentos, nos encargamos de legalizarlos por el Registro Principal para darle validez oficial.</p>
+              <h4 class="ek zj kk wm nb _b"><?php echo $blocks[28]->contenido??'';?></h4>
+              <p><?php echo $blocks[29]->contenido??'';?></p>
             </div>
           </div>
         </div>
@@ -327,7 +324,7 @@
         <img src="/build/images/shape-13.svg" alt="Shape" class="h r q" />
 
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Servicios adicionales para ti`, sectionTitleText: `Además de trámites migratorios, ofrecemos soluciones integrales para facilitar tu proceso. Descubre cómo podemos ayudarte.`}">
+        <div x-data="{ sectionTitle: `<?php echo $blocks[30]->contenido??'';?>`, sectionTitleText: `<?php echo $blocks[31]->contenido??'';?>`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -345,31 +342,26 @@
           <span class="ek kk wm">Bill Annually</span>
         </div> -->
 
-        <!-- Pricing Table -->
+        <!-- Pricing Table SERVICIOS ADICIONALES -->
         <div class="bb ze i va ki xn yq bc">
           <div class="wc qf pn xo jg">
             <template x-for="(plan, i) in plans" x-key="i">
               <!-- Pricing Item -->
               <div class="animate_top rj sg hh sm vk xm hi nj oj">
                 <h4 x-text="plan.name" class="wj kk wm fb"></h4>
-
-                <div class="tc wf xf kg cc">
+                <!--<div class="tc wf xf kg cc">
                   <h2 :class="plan.name == 'Basic' ? 'text-green-500' : ''" x-text="`$${billPlan == 'monthly' ? plan.price.monthly : plan.price.annually}`" class="fk _j kk wm"></h2>
                   <span x-text="billPlan == 'monthly' ? '' : '/per year'" class="sc ak kk wm"></span>
-                </div>
-
+                </div>-->
                 <p class="ur dc" x-text="plan.descripcion"></p>
-
                 <!-- Button -->
                 <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="ek rg lk ml il gi pi" :class="plan.name == 'Growth Plan' ? 'gh sl' : 'mh tl'">¡Solicita Tu Trámite Ahora!</a>
-
                 <!-- Features -->
                 <!-- <ul class="tc sf bg ob fb">
                   <template x-for="(feature, i) in plan.features" x-key="i">
                     <li x-text="feature"></li>
                   </template>
                 </ul> -->
-
                 <!-- <p class="kk wm">7-day free trial</p> -->
               </div>
             </template>
@@ -381,7 +373,7 @@
       <!-- ===== Blog Start ===== -->
       <section class="ji gp uq">
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `Tu Aliado en el Camino hacia un Nuevo Destino`, sectionTitleText: `Brindamos orientación especializada para personas que buscan emigrar, ayudándolos a cumplir con los requisitos legales y los trámites necesarios para una transición exitosa.`}">
+        <div x-data="{ sectionTitle: `<?php echo $blocks[32]->contenido??'';?>`, sectionTitleText: `<?php echo $blocks[33]->contenido??'';?>`}">
           <div class="animate_top bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -403,11 +395,11 @@
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq lb">
-                  <p href="#" rel="nofollow">Citas para Visado</p>
+                  <p href="#" rel="nofollow"><?php echo $blocks[34]->contenido??'';?></p>
                 </h4>
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
-                    <p>Gestionamos citas para visados en los consulados de Chile, México, Perú, España y Ecuador, asegurando un proceso rápido y efectivo.</p>
+                    <p><?php echo $blocks[35]->contenido??'';?></p>
                   </div>
                 </div>
               </div>
@@ -424,11 +416,11 @@
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq lb">
-                  <p href="#" rel="nofollow">Servicios de Tránsito Terrestre en Venezuela</p>
+                  <p href="#" rel="nofollow"><?php echo $blocks[36]->contenido??'';?></p>
                 </h4>
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
-                    <p>Tramitamos licencias de conducir de 2da, 3ra, 4ta y 5ta categoría, cartas consulares o certificaciones consulares y licencias internacionales, cumpliendo con todos los procedimientos exigidos.</p>
+                    <p><?php echo $blocks[37]->contenido??'';?></p>
                   </div>
                 </div>
               </div>
@@ -446,11 +438,11 @@
 
               <div class="yh">
                 <h4 class="ek tj ml il kk wm xl eq lb">
-                  <p href="#" rel="nofollow">Trámite y Apostilla de Antecedentes Penales</p>
+                  <p href="#" rel="nofollow"><?php echo $blocks[38]->contenido??'';?></p>
                 </h4>
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
-                    <p>Gestionamos la solicitud y apostilla de antecedentes penales, esenciales para procesos legales y migratorios en otros países.</p>
+                    <p><?php echo $blocks[39]->contenido??'';?></p>
                   </div>
                 </div>
               </div>
@@ -610,7 +602,7 @@
         <img src="/build/images/shape-13.svg" alt="Shape" class="h r q" />
 
         <!-- Section Title Start -->
-        <div x-data="{ sectionTitle: `¡Contáctanos para tus trámites sin fronteras!`, sectionTitleText: `Estamos aquí para facilitar tus trámites migratorios. Completa el formulario y nos pondremos en contacto contigo lo antes posible para ayudarte.`}">
+        <div x-data="{ sectionTitle: `<?php echo $blocks[40]->contenido??'';?>`, sectionTitleText: `<?php echo $blocks[41]->contenido??'';?>`}">
           <div class="bb ze rj ki xn vq">
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
@@ -803,13 +795,16 @@
     <script>
       //  Pricing Table
       const setup = () => {
+
         return {
           isNavOpen: false,
 
           billPlan: 'monthly',
 
-          plans: [
-            {
+          plans: <?php echo json_encode(array_map(fn($s) => [
+            'name' => $s->titulo,
+            'descripcion' => $s->contenido
+            /*{
               name: 'Proceso de Legalización y Apostilla',
               // price: {
               //   monthly: 29,
@@ -835,9 +830,11 @@
               // },
               descripcion: 'Una vez completado el proceso, entregamos los documentos al cliente personalmente o por empresa de encomienda',
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
-            },
-          ],
+            },*/
+            
+          ], $serviciosadicionales)); ?>
         };
+
       };
     </script>
   

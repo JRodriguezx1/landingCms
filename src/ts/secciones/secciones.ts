@@ -116,7 +116,7 @@
               (async ()=>{ 
                   const datos = new FormData();
                   datos.append('id', idsection);
-                  try {  
+                  try {
                       const url = "/admin/api/bloquearseccion?id="+idsection; //llamado a la API REST y se trae las direcciones segun cliente elegido
                       const respuesta = await fetch(url);
                       const resultado = await respuesta.json();
@@ -125,7 +125,7 @@
                         datosActuales[2] = resultado.seccion[0].estado==='1'?'Activo':'Inactivo';
                         datosActuales[4] = `<div class="acciones-btns" id="${resultado.seccion[0].id}">
                                               <button class="btn-md btn-turquoise editarSeccion"><i class="fa-solid fa-pen-to-square"></i></button>
-                                              <a href="/admin/secciones/seccion?id=${resultado.seccion[0].id}" class="btn-md btn-blue editarContenidoSeccion"><i class="fa-solid fa-grip-vertical"></i></a>
+                                              <a href="/admin/seccion/block?id=${resultado.seccion[0].id}" class="btn-md btn-blue editarContenidoSeccion"><i class="fa-solid fa-grip-vertical"></i></a>
                                               <button class="btn-md ${resultado.seccion[0].estado==='1'?'btn-red':'btn-lima'} bloquearSeccion"><i class="fa-solid fa-ban"></i></button>
                                             </div>`;
                         (tablaSecciones as any).row(indiceFila).data(datosActuales).draw();

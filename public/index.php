@@ -71,6 +71,8 @@ $router->post('/admin/seccion/block/ServiciosAdicionales', [blockscontrolador::c
 ///// area de testimoniales /////
 $router->get('/admin/testimoniales', [testimonialescontrolador::class, 'index']);  //cunado se visita pagina testimoniales
 $router->post('/admin/testimoniales', [testimonialescontrolador::class, 'index']);  //crear testimoniales
+///// area de contadores /////
+$router->get('/admin/contadores', [blockscontrolador::class, 'contadores']);  //mostrar contadores
 ///// area de clientes /////
 $router->get('/admin/clientes', [clientescontrolador::class, 'index']);  //mostrar clientes
 $router->post('/admin/clientes/crear', [clientescontrolador::class, 'crear']);  //crear clientes

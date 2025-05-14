@@ -57,6 +57,7 @@
         <a class="<?php echo ($titulo === 'Secciones')?'activo':''; ?>" href="/admin/secciones"><span class="material-symbols-outlined"> article</span> <label class="btnav"> Secciones</label></a>
         <a class="<?php echo ($titulo === 'Servicios Adicionales')?'activo':''; ?>" href="/admin/seccion/block/ServiciosAdicionales"><span class="material-symbols-outlined">view_compact_alt</span> <label class="btnav">Servicios Adicionales</label></a>
         <a class="<?php echo ($titulo === 'Testimoniales')?'activo':''; ?>" href="/admin/testimoniales"><span class="material-symbols-outlined">view_compact_alt</span> <label class="btnav">Testimoniales</label></a>
+        <a class="<?php echo ($titulo === 'Contadores')?'activo':''; ?>" href="/admin/contadores"><span class="material-symbols-outlined">view_compact_alt</span> <label class="btnav">Contadores</label></a>
         <a class="<?php echo ($titulo === 'Clientes')?'activo':''; ?>" href="/admin/clientes"><span class="material-symbols-outlined">support_agent</span> <label class="btnav"> Clientes</label></a>
         <a class="<?php echo ($titulo === 'Perfil')?'activo':''; ?>" href="/admin/perfil"><span class="material-symbols-outlined">manage_accounts</span> <label class="btnav"> Perfil</label></a>
         <a class="<?php echo ($titulo === 'Configuracion')?'activo':''; ?>" href="/admin/configuracion"><span class="material-symbols-outlined">settings</span> <label class="btnav"> Configuracion</label></a>
