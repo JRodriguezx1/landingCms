@@ -29,8 +29,6 @@ class dashboardcontrolador{
         ...
         */
 
-        
-
 
         
 
@@ -93,22 +91,7 @@ class dashboardcontrolador{
         $router->render('admin/viewmobile/index', ['titulo'=>'mas...', 'user'=>$_SESSION, 'alertas'=>$alertas]);
     }
 
-    public static function alldays(){  //api
-        $alldays = pagosxdia::ordenarlimite('id', 'DESC', 8);
-        echo json_encode($alldays);
-    }
-
-    public static function totalcitas(){  //api
-        date_default_timezone_set('America/Bogota');
-        $fecha = date('Y-m-d'); //dia actual hoy
-        $citasxdia = citas::idregistros('start', $fecha);
-        //$citasxdia = citas::whereArray(['start'=>$fecha]);
-        foreach($citasxdia as $value){
-           // $value->idservicio = empserv::uncampo('id', $value->id_empserv, 'idservicio');
-            $value->facturacion = facturacion::find('idcita', $value->id);
-        }
-        echo json_encode($citasxdia);
-    }
+    
 }
 
 ?>

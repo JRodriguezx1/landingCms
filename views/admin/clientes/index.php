@@ -29,7 +29,7 @@
                     <td class="accionestd">
                         <div class="acciones-btns" id="<?php echo $cliente->id;?>">
                             <button class="btn-md btn-turquoise editarClientes"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn-md btn-light editarEliminarDireccion"><i class="fa-solid fa-location-dot"></i></button>
+                            <button class="btn-md btn-blue editarNota"><i class="fa-regular fa-circle-check"></i></button>
                             <button class="btn-md btn-red eliminarClientes"><i class="fa-solid fa-trash-can"></i></button>
                         </div>
                     </td>
@@ -62,7 +62,7 @@
 
             <div class="formulario__campo">
                     <label class="formulario__label" for="tipodocumento">Tipo de documento</label>
-                    <select class="formulario__select" id="tipodocumento" name="tipodocumento" required>
+                    <select class="formulario__select" id="tipodocumento" name="tipodocumento">
                         <option value="" disabled selected>-Seleccionar-</option>
                         <option value="1">Registro civil</option>
                         <option value="2">Tarjeta de identidad</option>
@@ -80,7 +80,7 @@
                 
                 <div class="formulario__campo">
                     <label class="formulario__label" for="identificacion">Identificacion</label>
-                    <input class="formulario__input" type="text" min="0" placeholder="Identificacion del cliente" id="identificacion" name="identificacion" value="<?php echo $crearcliente->identificacion??'';?>" required>
+                    <input class="formulario__input" type="text" min="0" placeholder="Identificacion del cliente" id="identificacion" name="identificacion" value="<?php echo $crearcliente->identificacion??'';?>">
                 </div>
     
             <div class="formulario__campo">
@@ -108,4 +108,24 @@
         </form>
     </dialog><!--fin crear/editar cliente-->
     
+    <dialog class="midialog-sm p-5" id="miDialogoNota">
+        <h4 id="modalNota" class="font-semibold text-gray-700 mb-4">Editar Nota</h4>
+        <div id="divmsjalerta1"></div>
+        
+        <form id="formCrearUpdateNota" class="formulario" action="" method="POST">
+              
+            <div class="formulario__campo">
+                <label class="formulario__label" for="nota">Nota</label>
+                <div class="formulario__dato">
+                    <textarea class="block w-full rounded-lg bg-gray-50 px-3 py-1.5 text-xl text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-blue-600" name="nota" id="nota" placeholder="Info cliente..." rows="4"></textarea>
+                    <label data-num="255" class="count-charts" for="">255</label>
+                </div>
+            </div>
+           
+            <div class="text-right">
+                <button class="btn-md btn-red" type="button" value="salir">Salir</button>
+                <input id="btnEditarCrearNota" class="btn-md btn-blue" type="submit" value="Guardar">
+            </div>
+        </form>
+    </dialog><!--fin editar la nota-->
 </div>

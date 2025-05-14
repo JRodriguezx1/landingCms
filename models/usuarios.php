@@ -4,7 +4,7 @@ namespace Model;
 
 class usuarios extends ActiveRecord {
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'nombre', 'apellido', 'cedula', 'nickname', 'movil', 'email', 'ws', 'password', 'confirmado', 'token', 'perfil', 'ciudad', 'direccion', 'fecha_nacimiento', 'img', 'fechacreacion', 'ultimologin'];
+    protected static $columnasDB = ['id', 'nombre', 'apellido', 'cedula', 'movil', 'email', 'password', 'usuario', 'confirmado', 'token', 'perfil'];
     
     public function __construct($args = [])
     {
@@ -12,21 +12,14 @@ class usuarios extends ActiveRecord {
         $this->nombre = $args['nombre'] ?? '';
         $this->apellido = $args['apellido'] ?? '';
         $this->cedula = $args['cedula'] ?? '';
-        $this->nickname = $args['nickname'] ?? '';
         $this->movil = $args['movil'] ?? '';
         $this->email = $args['email'] ?? '';
-        $this->ws = $args['ws'] ?? '';
         $this->password = $args['password'] ?? '';
         $this->password2 = $args['password2'] ?? '';
+        $this->usuario = $args['usuario'] ?? 'usuario';
         $this->confirmado = $args['confirmado'] ?? 0;
         $this->token = $args['token'] ?? '';
         $this->perfil = $args['perfil'] ?? null;
-        $this->ciudad = $args['ciudad'] ?? '';
-        $this->direccion = $args['direccion'] ?? '';
-        $this->fecha_nacimiento = $args['fecha_nacimiento'] ?? null;
-        $this->img = $args['img'] ?? '';
-        $this->fechacreacion = $args['fechacreacion'] ?? null;
-        $this->ultimologin = $args['ultimologin'] ?? null;
     }
 
     // Validar el Login de Usuarios

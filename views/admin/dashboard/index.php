@@ -4,7 +4,7 @@
     <div class="bloques">
         <div class="bloques__grid">
             <div class="bloques__bloque">
-                <p class="bloques__heading">Ingresos Hoy</p>
+                <p class="bloques__heading">Visitas Hoy</p>
                 <div class="bloques__contenido">
                     <p class="sign"><span>$</span><?php echo $day->computarizado??'0'; ?></p>
                     <i class="idollar fa-solid fa-dollar-sign"></i>
@@ -12,7 +12,7 @@
             </div>
 
             <div class="bloques__bloque">
-                <p class="bloques__heading">Servicios Hoy</p>
+                <p class="bloques__heading">Total Visitas</p>
                 <div class="bloques__contenido">
                     <p class="plus"><i class="fa-solid fa-plus"></i><?php echo $day->totalservices??'0';?></p>
                     <i class="icalender fa-regular fa-calendar-check"></i>
@@ -28,7 +28,7 @@
             </div>
 
             <div class="bloques__bloque">
-                <p class="bloques__heading">Empleados</p>
+                <p class="bloques__heading">Usuarios</p>
                 <div class="bloques__contenido">
                     <p class="employee"><i class="fa-solid fa-plus"></i><?php echo $totalempleados; ?></p>
                     <i class="icard fa-solid fa-address-card"></i>
@@ -41,7 +41,7 @@
         
         <div class="datos__contenedorgraficas">
             <div class="datos__grafica1">
-                <p class="text-center text-gray-500 text-xl mt-0 mb-2">Representacion grafica de ventas</p>
+                <p class="text-center text-gray-500 text-xl mt-0 mb-2">Representacion grafica de visitas</p>
                 <canvas class="max-h-96" id="chartventas"></canvas>
             </div>
 

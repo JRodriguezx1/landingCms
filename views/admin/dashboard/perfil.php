@@ -5,7 +5,7 @@
             <div class="perfil__img">
                 <i class="fa-solid fa-user-large"></i>
                 <p class="perfil__nombre"><?php echo $usuario->nombre??'';?> <?php echo $usuario->apellido??'';?></p>
-                <p class="perfil__cuenta"><?php echo $usuario->perfil=="Administrador"?'Cuenta Empleado':'Cuenta Admin';?></p>
+                <p class="perfil__cuenta"><?php echo $usuario->perfil=="Administrador"?'Cuenta Admin':'Cuenta Empleado';?></p>
             </div>
             <div class="perfil__contact">
                 <label for="">Direccion email</label>

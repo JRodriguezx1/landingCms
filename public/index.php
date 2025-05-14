@@ -31,7 +31,7 @@ $router->get('/loginauth', [logincontrolador::class, 'loginauth']);
 $router->post('/loginauth', [logincontrolador::class, 'loginauth']);
 $router->get('/login', [logincontrolador::class, 'login']);
 $router->post('/login', [logincontrolador::class, 'login']);
-$router->post('/logout', [logincontrolador::class, 'logout']);
+$router->get('/logout', [logincontrolador::class, 'logout']);
 
 // Crear Cuenta
 $router->get('/registro', [logincontrolador::class, 'registro']);
@@ -74,11 +74,12 @@ $router->post('/admin/testimoniales', [testimonialescontrolador::class, 'index']
 ///// area de clientes /////
 $router->get('/admin/clientes', [clientescontrolador::class, 'index']);  //mostrar clientes
 $router->post('/admin/clientes/crear', [clientescontrolador::class, 'crear']);  //crear clientes
-$router->post('/admin/clientes/actualizar', [clientescontrolador::class, 'actualizar']);
-$router->get('/admin/clientes/detalle', [clientescontrolador::class, 'detalle']);
+//$router->post('/admin/clientes/actualizar', [clientescontrolador::class, 'actualizar']);
+//$router->get('/admin/clientes/detalle', [clientescontrolador::class, 'detalle']);
 $router->get('/admin/clientes/hab_desh', [clientescontrolador::class, 'hab_desh']); //habilitar deshabilitar cliente
 ///// area de configuracion /////
 $router->get('/admin/configuracion', [configcontrolador::class, 'index']);
+$router->post('/admin/negocio/actualizar', [configcontrolador::class, 'actualizar']); //metodo para actualizar negocio
 
 
 
@@ -95,5 +96,10 @@ $router->post('/admin/api/editarServicio', [blockscontrolador::class, 'editarSer
 $router->get('/admin/api/eliminarServicio', [blockscontrolador::class, 'eliminarServicio']);  //desde serviciosadicionales.ts
 $router->get('/admin/api/alltestimoniales', [testimonialescontrolador::class, 'alltestimoniales']);
 $router->post('/admin/api/editarTestimonial', [testimonialescontrolador::class, 'editarTestimonial']);
+
+$router->get('/admin/api/allclientes', [clientescontrolador::class, 'allclientes']); // me trae todos los clientes desde clientes.js
+$router->post('/admin/api/actualizarCliente', [clientescontrolador::class, 'apiActualizarcliente']);  //actualizar cliente en clientes.ts
+$router->post('/admin/api/eliminarCliente', [clientescontrolador::class, 'apiEliminarCliente']); //eliminar cliente en clientes.ts
+$router->post('/admin/api/EditarNota', [clientescontrolador::class, 'apiEditarNota']); //editar la nota del cliente en clientes.ts
 
 $router->comprobarRutas();

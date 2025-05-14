@@ -1,5 +1,5 @@
 <div class="cambiarpassword">
-    <h4 class="dashboard__heading2"><i class="fa-solid fa-user-large"></i><?php echo $titulo; ?> </h4>
+    <h4 class="text-slate-500 mb-4 !text-2xl"><i class="fa-solid fa-user-large mr-4"></i><?php echo $titulo; ?> </h4>
     <div class="cambiarpassword__contenedor">
         <?php require_once __DIR__ .'/../../templates/alertas.php'; ?>
 

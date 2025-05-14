@@ -123,41 +123,6 @@ class clientescontrolador{
         $clientes = clientes::all();
         echo json_encode($clientes);
     }
-    
-
-    public static function apiCrearCliente(){ //api llamada desde el modulo de ventas.ts cuando se crea un cliente
-        session_start();
-        isadmin();
-        $cliente = new clientes($_POST);
-        $direccion = new direcciones($_POST);
-        $alertas = [];
-        if($_SERVER['REQUEST_METHOD'] === 'POST' ){
-            $alertas = $cliente->validar_nuevo_cliente();
-            $documentID = $cliente->validar_regDinamic('identificacion');
-            $alertas = $direccion->validarDireccion();
-            if(empty($alertas) && !$documentID){ //si los campos cumplen los criterios y cliente no existe por documento   
-                //guardar cliente recien creado en bd  
-                $resultado = $cliente->crear_guardar();  
-                if($resultado[0]){
-                    $direccion->idcliente =  $resultado[1];
-                    $r1 = $direccion->crear_guardar();
-                    if($r1[0]){
-                        $alertas['exito'][] = 'Cliente Registrado correctamente';
-                        $alertas['nextID'] = $resultado[1];
-                    }else{
-                        $cliente->eliminar_idregistros('id', [$resultado[1]]);
-                        $alertas['error'][] = 'Hubo un error en el proceso, intentalo nuevamente';
-                    }
-                }else{
-                    $alertas['error'][] = 'Hubo un error en el proceso, intentalo nuevamente';
-                }
-            }else{
-                if($documentID)$cliente::setAlerta('error', 'El cliente ya esta registrado');
-                $alertas = $cliente::getAlertas();
-            }
-        }
-        echo json_encode($alertas);
-    }
 
 
     public static function apiActualizarcliente(){
@@ -180,6 +145,25 @@ class clientescontrolador{
         echo json_encode($alertas);  
     }
 
+    public static function apiEditarNota(){
+        session_start();
+        $alertas = []; 
+        $cliente = clientes::find('id', $_POST['id']);
+        if($_SERVER['REQUEST_METHOD'] === 'POST' ){
+            $cliente->compara_objetobd_post($_POST);
+            $alertas = $cliente->validar_nuevo_cliente();
+            if(empty($alertas)){
+                $r = $cliente->actualizar();
+                if($r){
+                    $alertas['exito'][] = "La nota del cliente actualizado";
+                }else{
+                    $alertas['error'][] = "Error al actualizar la nota del cliente";
+                }
+            }
+        }
+        $alertas['cliente'][] = $cliente;
+        echo json_encode($alertas);  
+    }
 
     public static function apiEliminarCliente(){
         session_start();

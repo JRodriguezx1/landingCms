@@ -1,6 +1,6 @@
 <div class="negocio__contenedor">
     <h4 class="text-center text-gray-600">Informacion Del Negocio</h4>
-    <form class="formulario" action="/admin/adminconfig/actualizar" enctype="multipart/form-data" method="POST">
+    <form class="formulario" action="/admin/negocio/actualizar" enctype="multipart/form-data" method="POST">
         <fieldset class="formulario__fieldset">
             <div class="formulario__campo">
                 <label class="formulario__label" for="nombrenegocio">Nombre</label>
@@ -84,11 +84,11 @@
                     <input id="negocio" class="formulario__input--sociales" type="text" name="twitter" placeholder="twitter" value="<?php //echo $negocio->twitter ?? ''; ?>">
                 </div>
             </div>-->
-            <div class="formulario__campo">
+            <!--<div class="formulario__campo">
                 <label class="formulario__label" for="logo">Logo</label>
                 <input class="formulario__input--file" type="file" id="logo" name="logo">
-                <label><?php echo $negocio->logo??'';?></label>
-            </div>
+                <label><?php //echo $negocio->logo??'';?></label>
+            </div>>-->
         </fieldset>
         <input class="btn-lg btn-blueintense self-end" type="submit" value="Actualizar">
     </form>

@@ -88,7 +88,7 @@
         <div class="bb ze ki xn 2xl:ud-px-0">
           <div class="tc _o">
             <div class="animate_left jn/2">
-              <h1 class="fk vj zp or kk wm wb">Trámites Migratorios - Confianza y Eficiencia.</h1>
+              <h1 class="fk vj zp or kk wm wb"><?php echo $blocks[0]->contenido??''; ?></h1>
               <p class="fq">
               Llevamos a cabo tus gestiones con seriedad y profesionalismo, asegurándonos de obtener tus documentos de forma rápida y legalizada para que puedas realizar cualquier trámite necesario.
               </p>

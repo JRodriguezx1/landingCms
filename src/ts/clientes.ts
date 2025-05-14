@@ -4,7 +4,7 @@
       //const btncrearDireccion = document.querySelector('#crearDireccion');
       const miDialogoCliente = document.querySelector('#miDialogoCliente') as any;
       //const miDialogoCrearDireccion = document.querySelector('#miDialogoCrearDireccion') as any;
-      //const miDialogoUpDireccion = document.querySelector('#miDialogoUpDireccion') as any;
+      const miDialogoNota = document.querySelector('#miDialogoNota') as any;
       //const selectdirecciones = document.querySelector('#selectdirecciones') as HTMLSelectElement;
       //const btnCerrarUpDireccion = document.querySelector('#btnCerrarUpDireccion') as HTMLButtonElement;
       let indiceFila=0, control=0, tablaClientes:HTMLElement;
@@ -28,6 +28,7 @@
         identificacion: string,
         telefono: string,
         email: string,
+        nota: string,
         fecha_nacimiento: string,
         //idservicios:{idempleado:string, idservicio:string}[]
       };
@@ -39,7 +40,6 @@
             const url = "/admin/api/allclientes"; //llamado a la API REST y se trae todos los productos
             const respuesta = await fetch(url); 
             clientes = await respuesta.json(); 
-            console.log(clientes);
         } catch (error) {
             console.log(error);
         }
@@ -77,7 +77,7 @@
         const target = e.target as HTMLElement;
         if((e.target as HTMLElement)?.classList.contains("editarClientes")||(e.target as HTMLElement).parentElement?.classList.contains("editarClientes"))editarClientes(e);
         if(target?.classList.contains("eliminarClientes")||target.parentElement?.classList.contains("eliminarClientes"))eliminarClientes(e);
-        //if(target?.classList.contains("editarEliminarDireccion")||target.parentElement?.classList.contains("editarEliminarDireccion"))upRemoveDir(e);
+        if(target?.classList.contains("editarNota")||target.parentElement?.classList.contains("editarNota"))editarNota(e);
       });
   
       function editarClientes(e:Event){
@@ -119,7 +119,6 @@
                 const url = "/admin/api/actualizarCliente";
                 const respuesta = await fetch(url, {method: 'POST', body: datos}); 
                 const resultado = await respuesta.json(); 
-                console.log(resultado); 
                 if(resultado.exito !== undefined){
                   msjalertToast('success', '¡Éxito!', resultado.exito[0]);
                   /// actualizar el arregle del producto ///
@@ -146,26 +145,17 @@
       });
   
 
-      /*function upRemoveDir(e:Event){ //actualizar o eliminar direccion
+      function editarNota(e:Event){ //actualizar o eliminar direccion
         let idcliente = (e.target as HTMLElement).parentElement!.id, info = (tablaClientes as any).page.info();
         if((e.target as HTMLElement).tagName === 'I')idcliente = (e.target as HTMLElement).parentElement!.parentElement!.id;
-        (async ()=>{
-          try {
-            const url = "/admin/api/direccionesXcliente?id="+idcliente; //llamado a la API REST y se trae las direcciones segun cliente elegido
-            const respuesta = await fetch(url); 
-            const resultado = await respuesta.json(); 
-            direcciones = resultado;
-            addDireccionSelect(resultado);
-          } catch (error) {
-              console.log(error);
-          }
-        })();
-        miDialogoUpDireccion.showModal();
+        uncliente = clientes.find(x=>x.id === idcliente)!;
+        (document.querySelector('#nota')as HTMLInputElement).value = uncliente?.nota!;
+        miDialogoNota.showModal();
         document.addEventListener("click", cerrarDialogoExterno);
-      }*/
+      }
 
 
-       ////// añade direccion al select de direcciones al miDialogoUpDireccion, cuando se desea actualizar o eliminar la direccion de un cliente
+       ////// añade direccion al select de direcciones al miDialogoNota, cuando se desea actualizar o eliminar la direccion de un cliente
       /*function addDireccionSelect<T extends {id:string, idcliente:string, idtarifa:string, tarifa:{id:string, idcliente:string, nombre:string, valor:string}, direccion:string, ciudad:string, departamento:string}>(addrs: T[]):void{
         while(selectdirecciones?.firstChild)selectdirecciones.removeChild(selectdirecciones?.firstChild);
         addrs.forEach(dir =>{
@@ -195,11 +185,31 @@
       });*/
 
 
-      /*document.querySelector('#formUpDireccion')?.addEventListener('submit', e=>{
+      document.querySelector('#formCrearUpdateNota')?.addEventListener('submit', e=>{
           e.preventDefault();
-          // verificar si se oprimio el btn eliminar o actualizar del modal actualizar direccion
-        });
-        */
+          (async ()=>{ 
+            const datos = new FormData();
+            datos.append('id', uncliente!.id);
+            datos.append('nota', $('#nota').val()as string);
+            try {
+                const url = "/admin/api/EditarNota";
+                const respuesta = await fetch(url, {method: 'POST', body: datos}); 
+                const resultado = await respuesta.json(); 
+                if(resultado.exito !== undefined){
+                  msjalertToast('success', '¡Éxito!', resultado.exito[0]);
+                  /// actualizar el arregle del producto ///
+                  clientes.forEach(a=>{if(a.id == uncliente.id)a = Object.assign(a, resultado.cliente[0]);});
+                }else{
+                  msjalertToast('error', '¡Error!', resultado.error[0]);
+                }
+                miDialogoNota.close();
+                document.removeEventListener("click", cerrarDialogoExterno);
+            } catch (error) {
+                console.log(error);
+            }
+          })();//cierre de async()
+      });
+      
 
       function eliminarClientes(e:Event){
         let idcliente = (e.target as HTMLElement).parentElement!.id, info = (tablaClientes as any).page.info();
@@ -238,17 +248,17 @@
       }
 
 
-      //btnCerrarUpDireccion.addEventListener('click', ()=>miDialogoUpDireccion.close());
+      //btnCerrarUpDireccion.addEventListener('click', ()=>miDialogoNota.close());
   
   
       function limpiarformdialog(){
         (document.querySelector('#formCrearUpdateCliente') as HTMLFormElement)?.reset();
       }
       function cerrarDialogoExterno(event:Event) {
-        if (event.target === miDialogoCliente || (event.target as HTMLInputElement).value === 'salir') {
+        if(event.target === miDialogoCliente || event.target === miDialogoNota || (event.target as HTMLInputElement).value === 'salir') {
           miDialogoCliente.close();
           //miDialogoCrearDireccion.close();
-          //miDialogoUpDireccion.close();
+          miDialogoNota.close();
           document.removeEventListener("click", cerrarDialogoExterno);
         }
       }
