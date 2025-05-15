@@ -6,7 +6,7 @@
             <div class="bloques__bloque">
                 <p class="bloques__heading">Visitas Hoy</p>
                 <div class="bloques__contenido">
-                    <p class="sign"><span>$</span><?php echo $day->computarizado??'0'; ?></p>
+                    <p class="sign"><span>$</span><?php echo $visitas->visitashoy??'Er'; ?></p>
                     <i class="idollar fa-solid fa-dollar-sign"></i>
                 </div>
             </div>
@@ -14,7 +14,7 @@
             <div class="bloques__bloque">
                 <p class="bloques__heading">Total Visitas</p>
                 <div class="bloques__contenido">
-                    <p class="plus"><i class="fa-solid fa-plus"></i><?php echo $day->totalservices??'0';?></p>
+                    <p class="plus"><i class="fa-solid fa-plus"></i><?php echo $visitas->totalvisitas??'Er';?></p>
                     <i class="icalender fa-regular fa-calendar-check"></i>
                 </div>
             </div>
@@ -30,7 +30,7 @@
             <div class="bloques__bloque">
                 <p class="bloques__heading">Usuarios</p>
                 <div class="bloques__contenido">
-                    <p class="employee"><i class="fa-solid fa-plus"></i><?php echo $totalempleados; ?></p>
+                    <p class="employee"><i class="fa-solid fa-plus"></i><?php echo $totalusuarios; ?></p>
                     <i class="icard fa-solid fa-address-card"></i>
                 </div>
             </div>
@@ -64,12 +64,7 @@
                     </div>
                 </div>
                 <div class="datos__infocompletado">
-                    <div class="datos__texto">
-                        <p class="text-gray-600 ">Daily Earning</p>
-                        <p class="text-gray-600">This Day</p>
-                        <!--<h3 class="dailyearning"></h3>-->
-                        <a class="btn-xs btn-blue" href="/admin/facturacion">Ver Mas <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+                    
                     <div class="rueda">
                         <div class="afuera">
                             <div class="adentro">

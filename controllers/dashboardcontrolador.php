@@ -5,10 +5,11 @@ namespace Controllers;
 //require __DIR__ . '/../classes/dompdf/autoload.inc.php';
 //require __DIR__ . '/../classes/twilio-php-main/src/Twilio/autoload.php';
 //require __DIR__ . '/../classes/aws/aws-autoloader.php';
+
 use MVC\Router;
+use Model\clientes;
 use Model\usuarios;
-
-
+use Model\visitas;
 //use Dompdf\Dompdf;
 use Twilio\Rest\Client;
 //use Aws\Sns\SnsClient;
@@ -21,7 +22,6 @@ class dashboardcontrolador{
         isadmin();
         date_default_timezone_set('America/Bogota');
         
-        
         /*
         $dompdf = new Dompdf();
         ...
@@ -30,13 +30,13 @@ class dashboardcontrolador{
         */
 
 
-        
-
-
         //$totalempleados = empleados::numregistros();
         //$totalclientes = usuarios::numreg_multicolum(['confirmado'=>1, 'admin'=>0]);
+        $totalclientes = clientes::numregistros();
+        $totalusuarios = usuarios::numregistros();
+        $visitas = visitas::find('id', 1);
         
-        $router->render('admin/dashboard/index', ['titulo'=>'Inicio', 'day'=>1, 'totalclientes'=>1, 'totalempleados'=>1, 'user'=>$_SESSION]);
+        $router->render('admin/dashboard/index', ['titulo'=>'Inicio', 'day'=>1, 'visitas'=>$visitas, 'totalclientes'=>$totalclientes, 'totalusuarios'=>$totalusuarios, 'user'=>$_SESSION]);
     }
 
     public static function perfil(Router $router) {
