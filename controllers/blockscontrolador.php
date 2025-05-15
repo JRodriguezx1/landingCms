@@ -45,14 +45,6 @@ class blockscontrolador{
   }
 
 
-  public static function contadores(Router $router){
-    session_start();
-    isadmin();
-    $alertas = [];
-
-    $router->render('admin/secciones/contadores', ['titulo'=>'Contadores', 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
-  }
-
 
   ///////////////////////////////////  Apis ////////////////////////////////////
   public static function allblocks(){  //api llamado desde bloque.ts me trae todos los bloques

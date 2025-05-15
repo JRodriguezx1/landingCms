@@ -110,6 +110,32 @@ LOCK TABLES `configuraciones` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `contadores`
+--
+
+DROP TABLE IF EXISTS `contadores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contadores` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `numero` int NOT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contadores`
+--
+
+LOCK TABLES `contadores` WRITE;
+/*!40000 ALTER TABLE `contadores` DISABLE KEYS */;
+INSERT INTO `contadores` VALUES (1,'Total de trabajos realizados',260,NULL),(2,'Clientes satisfechos',975,NULL),(3,'Países donde hemos gestionado trámites',724,NULL),(4,'Años de experiencia',89,NULL);
+/*!40000 ALTER TABLE `contadores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `negocio`
 --
 
@@ -188,7 +214,7 @@ CREATE TABLE `serviciosadicionales` (
   `fechacreacion` datetime DEFAULT NULL,
   `fechaupdate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -197,7 +223,7 @@ CREATE TABLE `serviciosadicionales` (
 
 LOCK TABLES `serviciosadicionales` WRITE;
 /*!40000 ALTER TABLE `serviciosadicionales` DISABLE KEYS */;
-INSERT INTO `serviciosadicionales` VALUES (2,'testimonio 1','testimonio de lupe con lulu','solicitud',NULL,NULL);
+INSERT INTO `serviciosadicionales` VALUES (2,'Proceso de Legalización y Apostilla','Después de obtener los documentos, llevamos a cabo un proceso de legalización y apostilla, asegurándonos de que los documentos tengan validez en el extranjero','¡Solicita Tu Trámite Ahora!','2025-05-15 00:00:00',NULL),(3,'Apostilla por el Ministerio de Relaciones Exterior','apostillamos los documentos ante la Cancillería de Venezuela, lo que les otorga validez internacional.','¡Solicita Tu Trámite Ahora!','2025-05-15 05:56:48','2025-05-15 05:56:48'),(4,'Entrega de Documentos \"Personal o por Encomiendas\"','Una vez completado el proceso, entregamos los documentos al cliente personalmente o por empresa de encomienda','¡Solicita Tu Trámite Ahora!','2025-05-15 05:57:07','2025-05-15 05:57:07');
 /*!40000 ALTER TABLE `serviciosadicionales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,13 +238,13 @@ CREATE TABLE `testimoniales` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(55) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
   `titulo` varchar(33) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
-  `comentario` varchar(350) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `comentario` varchar(450) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
   `imagen` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
   `email` varchar(55) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci DEFAULT NULL,
   `fechacreacion` datetime DEFAULT NULL,
   `fechaupdate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,7 +253,7 @@ CREATE TABLE `testimoniales` (
 
 LOCK TABLES `testimoniales` WRITE;
 /*!40000 ALTER TABLE `testimoniales` DISABLE KEYS */;
-INSERT INTO `testimoniales` VALUES (1,'Lupe','quiero a lulu','Yo lupe voy donde lulu',NULL,NULL,NULL,NULL);
+INSERT INTO `testimoniales` VALUES (1,'Yui Sun Yan Hung','quiero a lulu','A través de un familiar los contacte, y la verdad las referencia que me dio mi hermana rebasaron mis expectativas, quede súper satisfecho con su trabajo tan profesional y eficiente... Gracias',NULL,'yuiyanh1942@gmail.com',NULL,NULL),(2,'Cindy Domínguez',' ','Muchas gracias por la gestión. Había tenido Malas experiencias en el pasado, pero llegar acá fue la mejor decisión, me brindaron apoyo y mucha confianza. Realmente tienen un excelente servicio.',NULL,'cindydominguezs.99@gmail.com',NULL,NULL),(3,'Antonio Blanco',' ','Sin tu apoyo, no sé si lo hubiera logrado. Gracias por acompañarme todo el proceso del trámite. Gracias por cada minuto de tu atención y dedicación. Mi corazón tiene una enorme gratitud por todo lo que has hecho hoy día tengo mi pasaporte y visa por tu gestión, sinceramente un excelente servicio, fuiste una recomendación de mi primo y la verdad te recomendaré mil veces por qué es lo mejor de lo mejor.',NULL,'ajbbantonio@gmail.com',NULL,NULL);
 /*!40000 ALTER TABLE `testimoniales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,4 +304,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-14  0:54:30
+-- Dump completed on 2025-05-15  1:02:02

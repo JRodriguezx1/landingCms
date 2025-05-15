@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Model\blocks;
+use Model\contadores;
 use Model\negocio;
 use Model\serviciosadicionales;
 use Model\testimoniales;
@@ -22,7 +23,8 @@ class paginacontrolador{
         $negocio = negocio::find('id', 1);
         $serviciosadicionales = serviciosadicionales::all();
         $testimoniales = testimoniales::all();
-        $router->render('paginas/index', ['titulo'=>'Tramites sin frontera', 'blocks'=>$blocks, 'serviciosadicionales'=>$serviciosadicionales, 'testimoniales'=>$testimoniales, 'negocio'=>$negocio, 'alertas'=>$alertas/*, 'logo'=>negocio::uncampo('id', 1, 'logo')*/]);
+        $contadores = contadores::all();
+        $router->render('paginas/index', ['titulo'=>'Tramites sin frontera', 'blocks'=>$blocks, 'serviciosadicionales'=>$serviciosadicionales, 'testimoniales'=>$testimoniales, 'contadores'=>$contadores, 'negocio'=>$negocio, 'alertas'=>$alertas/*, 'logo'=>negocio::uncampo('id', 1, 'logo')*/]);
     }
 
 }

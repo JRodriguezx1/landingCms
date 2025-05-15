@@ -10,11 +10,10 @@ use Controllers\blockscontrolador;
 use Controllers\logincontrolador; //clase para logueo, registro de usuario, recuperacion, deslogueo etc..
 use Controllers\dashboardcontrolador;
 use Controllers\seccionescontrolador;
-use Controllers\editorpaginacontrolador;
 use Controllers\clientescontrolador;
-use Controllers\direccionescontrolador;
 use Controllers\configcontrolador;
 use Controllers\contactocontrolador;
+use Controllers\contadorescontrolador;
 use Controllers\paginacontrolador;
 use Controllers\testimonialescontrolador;
 // me importa la clase router
@@ -72,7 +71,7 @@ $router->post('/admin/seccion/block/ServiciosAdicionales', [blockscontrolador::c
 $router->get('/admin/testimoniales', [testimonialescontrolador::class, 'index']);  //cunado se visita pagina testimoniales
 $router->post('/admin/testimoniales', [testimonialescontrolador::class, 'index']);  //crear testimoniales
 ///// area de contadores /////
-$router->get('/admin/contadores', [blockscontrolador::class, 'contadores']);  //mostrar contadores
+$router->get('/admin/contadores', [contadorescontrolador::class, 'contadores']);  //mostrar contadores
 ///// area de clientes /////
 $router->get('/admin/clientes', [clientescontrolador::class, 'index']);  //mostrar clientes
 $router->post('/admin/clientes/crear', [clientescontrolador::class, 'crear']);  //crear clientes
@@ -98,6 +97,8 @@ $router->post('/admin/api/editarServicio', [blockscontrolador::class, 'editarSer
 $router->get('/admin/api/eliminarServicio', [blockscontrolador::class, 'eliminarServicio']);  //desde serviciosadicionales.ts
 $router->get('/admin/api/alltestimoniales', [testimonialescontrolador::class, 'alltestimoniales']);
 $router->post('/admin/api/editarTestimonial', [testimonialescontrolador::class, 'editarTestimonial']);
+
+$router->post('/admin/api/updateContador', [contadorescontrolador::class, 'updateContador']);
 
 $router->get('/admin/api/allclientes', [clientescontrolador::class, 'allclientes']); // me trae todos los clientes desde clientes.js
 $router->post('/admin/api/actualizarCliente', [clientescontrolador::class, 'apiActualizarcliente']);  //actualizar cliente en clientes.ts

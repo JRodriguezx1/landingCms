@@ -56,7 +56,7 @@
                 <label class="formulario__label" for="comentario">Comentario</label>
                 <div class="formulario__dato">
                     <input class="formulario__input" type="text" placeholder="Comentario del testimonio" id="comentario" name="comentario" value="<?php echo $nuevotestimonio->comentario??'';?>" required>
-                    <label data-num="336" class="count-charts" for="">336</label>
+                    <label data-num="415" class="count-charts" for="">415</label>
                 </div>
             </div>
             <div class="formulario__campo">
