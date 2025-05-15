@@ -4,7 +4,7 @@ namespace Model;
 
 class negocio extends ActiveRecord {
     protected static $tabla = 'negocio';
-    protected static $columnasDB = ['id', 'nombre', 'ciudad', 'direccion', 'telefono', 'movil', 'email', 'nit', 'ws', 'facebook', 'instagram', /*'tiktok',*/ 'youtube', /*'twitter',*/ 'logo', /*'colorprincipal', 'colorsecundario', 'timeservice'*/];
+    protected static $columnasDB = ['id', 'nombre', 'ciudad', 'direccion', 'telefono', 'movil', 'email', 'nit', 'ws', 'facebook', 'instagram', 'tiktok', 'youtube', /*'twitter',*/ 'logo', /*'colorprincipal', 'colorsecundario', 'timeservice'*/];
     
     public function __construct($args = [])
     {
@@ -19,7 +19,7 @@ class negocio extends ActiveRecord {
         $this->ws = $args['ws'] ?? '';
         $this->facebook = $args['facebook'] ?? '';
         $this->instagram = $args['instagram'] ?? '';
-        //$this->tiktok = $args['tiktok'] ?? '';
+        $this->tiktok = $args['tiktok'] ?? '';
         $this->youtube = $args['youtube'] ?? '';
         //$this->twitter = $args['twitter'] ?? '';
         $this->logo = $args['logo'] ?? '';
@@ -62,6 +62,9 @@ class negocio extends ActiveRecord {
         }
         if(strlen($this->instagram)>77) {
             self::$alertas['error'][] = 'URL de instagram muy extenso';
+        }
+        if(strlen($this->tiktok)>77) {
+            self::$alertas['error'][] = 'URL de tiktok muy extenso';
         }
         /*if(!$this->logo) {
             self::$alertas['error'][] = 'El logo es obligatorio';

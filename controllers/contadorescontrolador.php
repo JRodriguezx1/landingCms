@@ -10,9 +10,8 @@ class contadorescontrolador{
         session_start();
         isadmin();
         $alertas = [];
-        contadores::all();
-
-        $router->render('admin/secciones/contadores', ['titulo'=>'Contadores', 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
+        $contadores = contadores::all();
+        $router->render('admin/secciones/contadores', ['titulo'=>'Contadores', 'contadores'=>$contadores, 'alertas'=>$alertas, 'user'=>$_SESSION/*'negocio'=>negocio::get(1)*/]);   //  'autenticacion/login' = carpeta/archivo
     }
 
 

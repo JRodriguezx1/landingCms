@@ -3,7 +3,6 @@
 namespace Controllers;
 
 use MVC\Router;  //namespace\clase
-use Model\usuarios;
 use Model\testimoniales;
 
 class testimonialescontrolador{

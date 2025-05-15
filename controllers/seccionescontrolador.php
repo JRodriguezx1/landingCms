@@ -2,9 +2,6 @@
 
 namespace Controllers;
 
-use Classes\Email;
-use Model\usuarios; //namespace\clase hija
-//use Model\negocio;
 use Model\sections;
 use MVC\Router;  //namespace\clase
  

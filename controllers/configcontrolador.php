@@ -2,8 +2,6 @@
 
 namespace Controllers;
 
-use Classes\Email;
-use Model\usuarios; //namespace\clase hija
 use Model\negocio;
 use MVC\Router;  //namespace\clase
  
@@ -14,8 +12,6 @@ class configcontrolador{
     isadmin();
     $alertas = [];
     $negocio = negocio::find('id', 1);
-    //$servicios = servicios::all();
-    //$empleados = empleados::all();
     $empleado = new \stdClass();
     $empleado->perfil = '';
 

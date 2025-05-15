@@ -2,14 +2,9 @@
 
 namespace Controllers;
 
-use Classes\Email;
 use Model\ActiveRecord;
 use MVC\Router;  //namespace\clase
-use Model\usuarios;
 use Model\clientes;
-use Model\empleados;
-use Model\direcciones;
-use Model\tarifas;
 
  
 class clientescontrolador{
@@ -52,68 +47,6 @@ class clientescontrolador{
         }
         $clientes = clientes::all();
         $router->render('admin/clientes/index', ['titulo'=>'clientes', 'clientes'=>$clientes, 'alertas'=>$alertas, 'user'=>$_SESSION]);
-    }
-
-
-    public static function actualizar(Router $router){
-        session_start();
-        isadmin();
-        $alertas = [];  
-        if($_SERVER['REQUEST_METHOD'] === 'POST' ){
-            $cliente = usuarios::find('id', $_POST['id']);
-            $cliente->compara_objetobd_post($_POST);
-            $cliente->password2 = $cliente->password;
-            $alertas = $cliente->validar_nueva_cuenta();
-            $alertas = $cliente->validarEmail();
-            if(empty($alertas)){
-                $r = $cliente->actualizar();
-                if($r)$alertas['exito'][] = 'Datos de cliente actualizados';
-            }
-        }
-        $clientes = usuarios::whereArray(['confirmado'=>1, 'admin'=>0]);
-        $router->render('admin/clientes/index', ['titulo'=>'clientes', 'clientes'=>$clientes, 'alertas'=>$alertas, 'user'=>$_SESSION]);
-    }
-
-
-    public static function hab_desh(Router $router){
-        session_start();
-        isadmin();
-        $alertas = [];  
-        $id = $_GET['id'];
-        if(!is_numeric($id))return;
-
-        $cliente = usuarios::find('id', $id);
-        if($cliente){
-            if($cliente->habilitar){
-                $cliente->habilitar = 0;
-                $alertas['exito'][] = 'Cliente bloqueado de la base de datos';
-            }else{
-                $cliente->habilitar = 1;
-                $alertas['exito'][] = 'Cliente habilitado de la base de datos';
-            }
-            $r = $cliente->actualizar();
-        }else{
-            header('Location: /admin/clientes');
-        }
-
-        if(!$r)$alertas['exito'][] = 'hubo un error';
-        
-        $clientes = usuarios::whereArray(['confirmado'=>1, 'admin'=>0]);
-        $router->render('admin/clientes/index', ['titulo'=>'clientes', 'clientes'=>$clientes, 'alertas'=>$alertas, 'user'=>$_SESSION]);
-    }
-
-
-    public static function detalle(Router $router){
-        session_start();
-        isadmin(); 
-        $id = $_GET['id'];
-        if(!is_numeric($id))return;
-
-        $alertas = []; 
- 
-        $cliente = usuarios::find('id', $id);
-        
-        $router->render('admin/clientes/detalle', ['titulo'=>'clientes', 'cliente'=>$cliente, 'alertas'=>$alertas, 'user'=>$_SESSION]);
     }
      
 

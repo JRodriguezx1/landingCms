@@ -4,7 +4,6 @@ namespace Controllers;
 
 use Classes\Email;
 use Model\usuarios; //namespace\clase hija
-//use Model\negocio;
 use MVC\Router;  //namespace\clase
  
 class logincontrolador{

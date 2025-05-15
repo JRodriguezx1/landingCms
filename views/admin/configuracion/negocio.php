@@ -29,7 +29,7 @@
             </div>
             <div class="formulario__campo">
                 <label class="formulario__label" for="movilnegocio">Movil</label>
-                <input id="negocio" class="formulario__input" type="number" min="3000000000" max="3777777777" placeholder="Movil de contacto" id="movilnegocio" name="movil" value="<?php echo $negocio->movil ?? '';?>" required>
+                <input id="negocio" class="formulario__input" type="text" placeholder="Movil de contacto" id="movilnegocio" name="movil" value="<?php echo $negocio->movil ?? '';?>" required>
             </div>
             <div class="formulario__campo">
                 <label class="formulario__label" for="">Correo Electrónico</label>
@@ -51,7 +51,7 @@
             <div class="formulario__campo">
                 <div class="formulario__contenedor-icono">
                     <div class="formulario__icono"><i class="fa-brands fa-whatsapp"></i></div>
-                    <input id="negocio" class="formulario__input--sociales" type="number"  min="3000000000" max="3777777777" name="ws" placeholder="whatsapp" value="<?php echo $negocio->ws ?? '';?>" required>
+                    <input id="negocio" class="formulario__input--sociales" type="number" name="ws" placeholder="whatsapp" value="<?php echo $negocio->ws ?? '';?>" required>
                 </div>
             </div>
             <div class="formulario__campo">
@@ -66,12 +66,12 @@
                     <input id="negocio" class="formulario__input--sociales" type="text" name="instagram" placeholder="Instagram" value="<?php echo $negocio->instagram ?? ''; ?>">
                 </div>
             </div>
-            <!--<div class="formulario__campo">
+            <div class="formulario__campo">
                 <div class="formulario__contenedor-icono">
                     <div class="formulario__icono"><i class="fa-brands fa-tiktok"></i></div>
-                    <input id="negocio" class="formulario__input--sociales" type="text" name="tiktok" placeholder="tiktok" value="<?php //echo $negocio->tiktok ?? ''; ?>">
+                    <input id="negocio" class="formulario__input--sociales" type="text" name="tiktok" placeholder="tiktok" value="<?php echo $negocio->tiktok ?? ''; ?>">
                 </div>
-            </div>-->
+            </div>
             <div class="formulario__campo">
                 <div class="formulario__contenedor-icono">
                     <div class="formulario__icono"><i class="fa-brands fa-youtube"></i></div>

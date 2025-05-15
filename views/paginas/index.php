@@ -91,9 +91,9 @@
               <h1 class="fk vj zp or kk wm wb"><?php echo $blocks[0]->contenido??''; ?></h1>
               <p class="fq"><?php echo  $blocks[1]->contenido??'';?>
               <div class="tc tf yo zf mb">
-                <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
+                <a href="https://api.whatsapp.com/send?phone=<?php echo $negocio->ws??'573147102077';?>" target="_blank" rel="nofollow" class="ek jk lk gh gi hi rg ml il vc _d _l">¡Solicita tu Trámite Ahora!</a>
                 <span class="tc sf">
-                  <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="inline-block ek xj kk wm"> Llámanos <?php echo  $blocks[2]->contenido??'';?> </a>
+                  <a href="https://api.whatsapp.com/send?phone=<?php echo $negocio->ws??'573147102077';?>" target="_blank" rel="nofollow" class="inline-block ek xj kk wm"> Llámanos <?php echo  $blocks[2]->contenido??'';?> </a>
                   <span class="inline-block">Para cualquier pregunta o inquietud</span>
                 </span>
               </div>
@@ -470,82 +470,31 @@
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide">
-                  <div class="i hh rm sg vk xm bi qj">
-                    <!-- Border Shape -->
-                    <span class="rc je md/2 gh xg h q r"></span>
-                    <span class="rc je md/2 mh yg h q p"></span>
+                <?php foreach($testimoniales as $testimonial): ?>
+                  <div class="swiper-slide">
+                    <div class="i hh rm sg vk xm bi qj">
+                      <!-- Border Shape -->
+                      <div class="tc sf rn tn un zf dp">
+                        <div>
+                          <img src="/build/images/icon-quote.svg" alt="Quote" />
+                          <p class="ek ik xj _p kc fb"><?php echo $testimonial->comentario??'';?></p>
 
-                    <div class="tc sf rn tn un zf dp">
-                      <div>
-                        <img src="/build/images/icon-quote.svg" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">A través de un familiar los contacte, y la verdad las referencia que me dio mi hermana rebasaron mis expectativas, quede súper satisfecho con su trabajo tan profesional y eficiente... Gracias</p>
-
-                        <div class="tc yf vf">
-                          <div>
-                            <span class="rc ek xj kk wm zb">Yui Sun Yan Hung</span>
-                            <span class="rc">Fuente: yuiyanh1942@gmail.com</span>
+                          <div class="tc yf vf">
+                            <div>
+                              <span class="rc ek xj kk wm zb"><?php echo $testimonial->nombre??'';?></span>
+                              <span class="rc">Fuente: <?php echo $testimonial->email??'';?></span>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="i hh rm sg vk xm bi qj">
-                    <!-- Border Shape -->
-                    <span class="rc je md/2 gh xg h q r"></span>
-                    <span class="rc je md/2 mh yg h q p"></span>
-
-                    <div class="tc sf rn tn un zf dp">
-                      
-
-                      <div>
-                        <img src="/build/images/icon-quote.svg" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">Muchas gracias por la gestión. Había tenido Malas experiencias en el pasado, pero llegar acá fue la mejor decisión, me brindaron apoyo y mucha confianza. Realmente tienen un excelente servicio.</p>
-
-                        <div class="tc yf vf">
-                          <div>
-                            <span class="rc ek xj kk wm zb">Cindy Domínguez</span>
-                            <span class="rc">Fuente: cindydominguezs.99@gmail.com</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="swiper-slide">
-                  <div class="i hh rm sg vk xm bi qj">
-                    <!-- Border Shape -->
-                    <span class="rc je md/2 gh xg h q r"></span>
-                    <span class="rc je md/2 mh yg h q p"></span>
-
-                    <div class="tc sf rn tn un zf dp">
-                      
-
-                      <div>
-                        <img src="/build/images/icon-quote.svg" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">Sin tu apoyo, no sé si lo hubiera logrado. Gracias por acompañarme todo el proceso del trámite. Gracias por cada minuto de tu atención y dedicación. Mi corazón tiene una enorme gratitud por todo lo que has hecho hoy día tengo mi pasaporte y visa por tu gestión, sinceramente un excelente servicio, fuiste una recomendación de mi primo y la verdad te recomendaré mil veces por qué es lo mejor de lo mejor. </p>
-
-                        <div class="tc yf vf">
-                          <div>
-                            <span class="rc ek xj kk wm zb">Antonio Blanco</span>
-                            <span class="rc">Fuente: ajbbantonio@gmail.com</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <?php endforeach; ?>
 
               </div>
               <!-- If we need navigation -->
               <div class="tc wf xf fg jb">
-                <div
-                  class="swiper-button-prev c tc wf xf ie ld rg _g dh pf ml vr hh rm tl zm rl ym"
-                >
+                <div class="swiper-button-prev c tc wf xf ie ld rg _g dh pf ml vr hh rm tl zm rl ym">
                   <svg class="th lm" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="https://www.instagram.com/tramitessinfronteras7/">
                     <path d="M3.52366 7.83336L7.99366 12.3034L6.81533 13.4817L0.333663 7.00002L6.81533 0.518357L7.99366 1.69669L3.52366 6.16669L13.667 6.16669L13.667 7.83336L3.52366 7.83336Z" fill=""/>
                   </svg>
@@ -572,19 +521,19 @@
         <div class="bb ze i va ki xn br">
           <div class="tc uf sn tn xf un gg">
             <div class="animate_top me/5 ln rj">
-              <h2 data-valor="450" class="count_num gk vj zp or kk wm hc">0+</h2>
+              <h2 data-valor="<?php echo $contadores[0]->numero??'';?>" class="count_num gk vj zp or kk wm hc">0+</h2>
               <p class="ek bk aq">Total de trabajos realizados</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 data-valor="420" class="count_num gk vj zp or kk wm hc">0+</h2>
+              <h2 data-valor="<?php echo $contadores[1]->numero??'';?>" class="count_num gk vj zp or kk wm hc">0+</h2>
               <p class="ek bk aq">Clientes satisfechos</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 data-valor="10" class="count_num gk vj zp or kk wm hc">0+</h2>
+              <h2 data-valor="<?php echo $contadores[2]->numero??'';?>" class="count_num gk vj zp or kk wm hc">0+</h2>
               <p class="ek bk aq">Países donde hemos gestionado trámites</p>
             </div>
             <div class="animate_top me/5 ln rj">
-              <h2 data-valor="10" class="count_num gk vj zp or kk wm hc">0+</h2>
+              <h2 data-valor="<?php echo $contadores[3]->numero??'';?>" class="count_num gk vj zp or kk wm hc">0+</h2>
               <p class="ek bk aq">Años de experiencia</p>
             </div>
           </div>
@@ -619,7 +568,7 @@
 
               <div class="fb">
                 <h4 class="wj kk wm cc">Dirección de correo electrónico</h4>
-                <p><a href="#contanto" rel="nofollow">tramitessinfronteras7@gmail.com</a></p>
+                <p><a href="#contanto" rel="nofollow"><?php echo $negocio->email??'';?></a></p>
               </div>
               <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Office Location</h4>
@@ -627,7 +576,7 @@
               </div> -->
               <div class="fb">
                 <h4 class="wj kk wm cc">Número de teléfono</h4>
-                <p><a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow">+57 314 7102077</a></p>
+                <p><a href="https://api.whatsapp.com/send?phone=<?php echo $negocio->ws??'';?>" target="_blank" rel="nofollow">+57 <?php echo $negocio->movil??'';?></a></p>
               </div>
               <!-- <div class="fb">
                 <h4 class="wj kk wm cc">Skype Email</h4>
@@ -640,21 +589,21 @@
                 <h4 class="wj kk wm qb">Redes Sociales</h4>
                 <ul class="tc wf fg">
                   <li>
-                    <a href="https://www.facebook.com/profile.php?id=61573522004800&mibextid=wwXIfr&rdid=paCMaKgrbjAoYzaa&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A4Y9keyJX%2F%3Fmibextid%3DwwXIfr#" rel="nofollow" class="c tc wf xf ie ld rg ml il tl">
+                    <a href="<?php echo $negocio->facebook??'';?>" target="_blank" rel="nofollow" class="c tc wf xf ie ld rg ml il tl">
                       <svg class="th lm ml il" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.83366 11.3752H9.12533L10.042 7.7085H6.83366V5.87516C6.83366 4.931 6.83366 4.04183 8.667 4.04183H10.042V0.96183C9.74316 0.922413 8.61475 0.833496 7.42308 0.833496C4.93433 0.833496 3.16699 2.35241 3.16699 5.14183V7.7085H0.416992V11.3752H3.16699V19.1668H6.83366V11.3752Z" fill=""/>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.tiktok.com/@tramitessinfronteras70" class="c tc wf xf ie ld rg ml il tl" rel="nofollow">
+                    <a href="<?php echo $negocio->tiktok??'';?>" target="_blank" class="c tc wf xf ie ld rg ml il tl" rel="nofollow">
                       <svg width="16" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#79808a" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/tramitessinfronteras7/" class="c tc wf xf ie ld rg ml il tl" rel="nofollow">
+                    <a href="<?php echo $negocio->instagram??'';?>" target="_blank" class="c tc wf xf ie ld rg ml il tl" rel="nofollow">
                       <svg class="th lm ml il" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.36198 2.58327C4.36174 3.0695 4.16835 3.53572 3.82436 3.87937C3.48037 4.22301 3.01396 4.41593 2.52773 4.41569C2.0415 4.41545 1.57528 4.22206 1.23164 3.87807C0.887991 3.53408 0.69507 3.06767 0.695313 2.58144C0.695556 2.09521 0.888943 1.62899 1.23293 1.28535C1.57692 0.941701 2.04333 0.748781 2.52956 0.749024C3.01579 0.749267 3.48201 0.942654 3.82566 1.28664C4.1693 1.63063 4.36222 2.09704 4.36198 2.58327ZM4.41698 5.77327H0.750313V17.2499H4.41698V5.77327ZM10.2103 5.77327H6.56198V17.2499H10.1736V11.2274C10.1736 7.87244 14.5461 7.56077 14.5461 11.2274V17.2499H18.167V9.98077C18.167 4.32494 11.6953 4.53577 10.1736 7.31327L10.2103 5.77327Z"fill=""/>
                       </svg>
@@ -741,7 +690,7 @@
               <p class="lk">Brindamos asesoría especializada para la renovación de visados en Venezuela, asegurándonos de que los residentes con visados vigentes puedan completar el proceso sin inconvenientes. Esto incluye la gestión del visado de transeúnte y la tramitación de la cédula correspondiente, con vigencia acorde al tiempo aprobado por extranjería (desde 1 hasta 5 años).</p>
             </div>
             <div class="animate_right bf">
-              <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow" class="vc ek kk hh rg ol il cm gi hi">¡Solicita tu Trámite Ahora!</a>
+              <a href="https://api.whatsapp.com/send?phone=<?php echo $negocio->ws??'573147102077';?>" target="_blank" rel="nofollow" class="vc ek kk hh rg ol il cm gi hi">¡Solicita tu Trámite Ahora!</a>
             </div>
           </div>
         </div>
@@ -773,8 +722,9 @@
     <!-- ===== Footer End ===== -->
 
     <div class="btn-ws">
-      <a href="https://api.whatsapp.com/send?phone=573147102077" rel="nofollow"
-      target="_blank"><img loading="lazy" src="/build/images/icons-whatsapp-verde.png" alt="whatsapp-negocio"></a>
+      <a href="https://api.whatsapp.com/send?phone=<?php echo $negocio->ws??'573147102077';?>" rel="nofollow" target="_blank">
+        <img loading="lazy" src="/build/images/icons-whatsapp-verde.png" alt="whatsapp-negocio">
+      </a>
     </div>
 
 
@@ -812,31 +762,11 @@
               // },
               descripcion: 'Después de obtener los documentos, llevamos a cabo un proceso de legalización y apostilla, asegurándonos de que los documentos tengan validez en el extranjero',
               features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
-            },
-            {
-              name: 'Apostilla por el Ministerio de Relaciones Exteriores',
-              // price: {
-              //   monthly: 59,
-              //   annually: 59 * 12 - 100,
-              // },
-              descripcion: 'apostillamos los documentos ante la Cancillería de Venezuela, lo que les otorga validez internacional.',
-              features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
-            },
-            {
-              name: 'Entrega de Documentos "Personal o por  Encomiendas"',
-              // price: {
-              //   monthly: 139,
-              //   annually: 139 * 12 - 100,
-              // },
-              descripcion: 'Una vez completado el proceso, entregamos los documentos al cliente personalmente o por empresa de encomienda',
-              features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
             },*/
-            
           ], $serviciosadicionales)); ?>
         };
 
       };
     </script>
   
-  <!--
-</html>-->
+  <!--</html>-->

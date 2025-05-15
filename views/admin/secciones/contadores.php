@@ -15,31 +15,17 @@
             <div class="w-full lg:w-4/5">
               <div class="flex flex-col flex-1 gap-4 lg:gap-0 lg:flex-row lg:justify-end border rounded-xl bg-white">
                 
-                <div class="flex-1 py-4 ">
-                  <div class="font-manrope font-bold text-4xl text-indigo-600 mb-3 text-center">
-                    <input data-idcontador="1" class="inputcontadores text-center w-32 px-2 border rounded-lg" type="text" value="260" oninput="this.value = parseInt(this.value.replace(/[,.]/g, '')||0)">
+                <?php foreach($contadores as $contador): ?>
+                  <div class="flex-1 py-4 ">
+                    <div class="font-manrope font-bold text-4xl text-indigo-600 mb-3 text-center">
+                      <input data-idcontador="<?php echo $contador->id??'1';?>" class="inputcontadores text-center w-32 px-2 border rounded-lg" type="text" value="<?php echo $contador->numero??'';?>" oninput="this.value = parseInt(this.value.replace(/[,.]/g, '')||0)">
+                    </div>
+                    <span class="text-gray-700 text-center block text-xl"><?php echo $contador->descripcion??'';?></span>
                   </div>
-                  <span class="text-gray-700 text-center block text-xl">Total de trabajos realizados</span>
-                </div>
-                <div class="flex-1 py-4 ">
-                  <div class="font-manrope font-bold text-4xl text-indigo-600 mb-3 text-center">
-                    <input data-idcontador="2" class="inputcontadores text-center w-32 px-2 border rounded-lg" type="text" value="975" oninput="this.value = parseInt(this.value.replace(/[,.]/g, '')||0)">
-                  </div>
-                  <span class="text-gray-700 text-center block text-xl">Clientes satisfechos</span>
-                </div>
-                <div class="flex-1 py-4 ">
-                  <div class="font-manrope font-bold text-4xl text-indigo-600 mb-3 text-center">
-                    <input data-idcontador="3" class="inputcontadores text-center w-32 px-2 border rounded-lg" type="text" value="724" oninput="this.value = parseInt(this.value.replace(/\D/g, '')||0)">
-                  </div>
-                  <span class="text-gray-700 text-center block text-xl">Países donde hemos gestionado trámites</span>
-                </div>
-                <div class="flex-1 py-4">
-                  <div class="font-manrope font-bold text-4xl text-indigo-600 mb-3 text-center">
-                    <input data-idcontador="4" class="inputcontadores text-center w-32 px-2 border rounded-lg" type="text" value="89" onkeypress="return event.charCode >= 48 && event.charCode <= 57" oninput="this.value = this.value.replace(/\D/g, '')|| '1'">
-                  </div>
-                  <span class="text-gray-700 text-center block text-xl">Años de experiencia</span>
-                </div>
+                <?php endforeach; ?>
+                <!-- onkeypress="return event.charCode >= 48 && event.charCode <= 57" oninput="this.value = this.value.replace(/\D/g, '')|| '1'" -->
               </div>
+              
             </div>
           </div>
         </div>

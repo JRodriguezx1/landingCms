@@ -20,10 +20,7 @@ use Controllers\testimonialescontrolador;
 use MVC\Router;  
 
 
-
 $router = new Router();
-
-
 
 // Login
 $router->get('/loginauth', [logincontrolador::class, 'loginauth']);
@@ -75,9 +72,6 @@ $router->get('/admin/contadores', [contadorescontrolador::class, 'contadores']);
 ///// area de clientes /////
 $router->get('/admin/clientes', [clientescontrolador::class, 'index']);  //mostrar clientes
 $router->post('/admin/clientes/crear', [clientescontrolador::class, 'crear']);  //crear clientes
-//$router->post('/admin/clientes/actualizar', [clientescontrolador::class, 'actualizar']);
-//$router->get('/admin/clientes/detalle', [clientescontrolador::class, 'detalle']);
-$router->get('/admin/clientes/hab_desh', [clientescontrolador::class, 'hab_desh']); //habilitar deshabilitar cliente
 ///// area de configuracion /////
 $router->get('/admin/configuracion', [configcontrolador::class, 'index']);
 $router->post('/admin/negocio/actualizar', [configcontrolador::class, 'actualizar']); //metodo para actualizar negocio
