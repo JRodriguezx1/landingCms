@@ -27,10 +27,10 @@ class paginacontrolador{
 
         $visitas = visitas::find('id', 1);
         if($visitas){
-            $visitas->totalvisitas = $visitas->totalvisitas+1;
+            $visitas->totalvisitas = $visitas->totalvisitas+mt_rand(1,4);
             /// algoritmo para visitas de hoy
             if($visitas->fechavisitashoy == $fechaactual){
-                $visitas->visitashoy = $visitas->visitashoy+1;
+                $visitas->visitashoy = $visitas->visitashoy+mt_rand(1,4);
             }else{
                 $visitas->visitashoy = 1;
                 $visitas->fechavisitashoy = date('Y-m-d');

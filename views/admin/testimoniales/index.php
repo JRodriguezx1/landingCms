@@ -55,7 +55,8 @@
             <div class="formulario__campo">
                 <label class="formulario__label" for="comentario">Comentario</label>
                 <div class="formulario__dato">
-                    <input class="formulario__input" type="text" placeholder="Comentario del testimonio" id="comentario" name="comentario" value="<?php echo $nuevotestimonio->comentario??'';?>" required>
+                    <textarea class="block w-full rounded-lg bg-gray-50 px-3 py-1.5 text-xl text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-blue-600" name="comentario" id="comentario" placeholder="Comentario del testimonio" rows="4" required><?php echo $nuevotestimonio->comentario??'';?></textarea>
+                    <!--<input class="formulario__input" type="text" placeholder="Comentario del testimonio" id="comentario" name="comentario" value="<?php //echo $nuevotestimonio->comentario??'';?>" required>  -->
                     <label data-num="415" class="count-charts" for="">415</label>
                 </div>
             </div>

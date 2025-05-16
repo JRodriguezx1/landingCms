@@ -46,7 +46,8 @@
             <div class="formulario__campo">
                 <label class="formulario__label" for="contenido">Contenido</label>
                 <div class="formulario__dato">
-                    <input class="formulario__input" type="text" placeholder="Contenido del servicio" id="contenido" name="contenido" value="<?php echo $nuevoservicio->contenido??'';?>" required>
+                    <textarea class="block w-full rounded-lg bg-gray-50 px-3 py-1.5 text-xl text-gray-900 placeholder:text-gray-400 border border-gray-300 focus:outline-blue-600" name="contenido" id="contenido" placeholder="Contenido del servicio" rows="4" required><?php echo $nuevoservicio->contenido??'';?></textarea>
+                    <!--<input class="formulario__input" type="text" placeholder="Contenido del servicio" id="contenido" name="contenido" value="<?php //echo $nuevoservicio->contenido??'';?>" required>-->
                     <label data-num="244" class="count-charts" for="">244</label>
                 </div>
             </div>
