@@ -29,6 +29,9 @@ class dashboardcontrolador{
         ...
         */
 
+        /*date_default_timezone_set('America/Bogota');
+        $fechaactual = new \DateTime(date('Y-m-d'));
+        debuguear(date('Y-m-d'));*/
 
         //$totalempleados = empleados::numregistros();
         //$totalclientes = usuarios::numreg_multicolum(['confirmado'=>1, 'admin'=>0]);

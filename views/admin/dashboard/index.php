@@ -6,15 +6,15 @@
             <div class="bloques__bloque">
                 <p class="bloques__heading">Visitas Hoy</p>
                 <div class="bloques__contenido">
-                    <p class="sign"><span>$</span><?php echo $visitas->visitashoy??'Er'; ?></p>
-                    <i class="idollar fa-solid fa-dollar-sign"></i>
+                    <p class="sign"><span>#</span><?php echo $visitas->visitashoy??'Er'; ?></p>
+                    <i class="idollar fa-solid fa-mobile-screen-button"></i>
                 </div>
             </div>
 
             <div class="bloques__bloque">
                 <p class="bloques__heading">Total Visitas</p>
                 <div class="bloques__contenido">
-                    <p class="plus"><i class="fa-solid fa-plus"></i><?php echo $visitas->totalvisitas??'Er';?></p>
+                    <p class="plus"><i class="fa-solid fa-arrow-trend-up"></i></i><?php echo $visitas->totalvisitas??'Er';?></p>
                     <i class="icalender fa-regular fa-calendar-check"></i>
                 </div>
             </div>

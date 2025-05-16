@@ -18,7 +18,7 @@ class paginacontrolador{
     public static function index(Router $router) { //metodo para mostrar la pagina inicial
         $alertas = [];
         date_default_timezone_set('America/Bogota');
-        $fechaactual = new \DateTime(date('Y-m-d'));
+        $fechaactual = date('Y-m-d');
         $blocks = blocks::all();
         $negocio = negocio::find('id', 1);
         $serviciosadicionales = serviciosadicionales::all();
@@ -29,6 +29,12 @@ class paginacontrolador{
         if($visitas){
             $visitas->totalvisitas = $visitas->totalvisitas+1;
             /// algoritmo para visitas de hoy
+            if($visitas->fechavisitashoy == $fechaactual){
+                $visitas->visitashoy = $visitas->visitashoy+1;
+            }else{
+                $visitas->visitashoy = 1;
+                $visitas->fechavisitashoy = date('Y-m-d');
+            }
             $r = $visitas->actualizar();
         }else{
             $visitas = new visitas([
@@ -37,7 +43,7 @@ class paginacontrolador{
             ]);
             $visitas->crear_guardar();
         }
-        $totalvisitas = $visitas->totalvisitas;
+        //$totalvisitas = $visitas->totalvisitas;
         //debuguear($totalvisitas);
 
 
