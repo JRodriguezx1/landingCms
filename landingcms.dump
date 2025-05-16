@@ -287,8 +287,34 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Julian DR','Rodriguez','1094912099','3042029683','julianithox1@gmail.com','$2y$10$1UzKplRenZvcKwDTMbtioe/yZXPsPyPAVUsEtOs7zbfpoLEg27/MK','usuario',1,NULL,'Administrador');
+INSERT INTO `usuarios` VALUES (1,'Julian DR','Rodriguez','1094912099','3042029683','julianithox1@gmail.com','$2y$10$qwYJGIFUyZwNADsMjzO5Buc8/cQP/Poe1xY/9uiz4mpRE6xbblxS.','usuario',1,NULL,'Administrador');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `visitas`
+--
+
+DROP TABLE IF EXISTS `visitas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `visitas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `totalvisitas` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `visitashoy` varchar(7) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci NOT NULL,
+  `fechavisitashoy` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `visitas`
+--
+
+LOCK TABLES `visitas` WRITE;
+/*!40000 ALTER TABLE `visitas` DISABLE KEYS */;
+INSERT INTO `visitas` VALUES (1,'5','5','2025-05-15');
+/*!40000 ALTER TABLE `visitas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -304,4 +330,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-15  1:02:02
+-- Dump completed on 2025-05-15 21:06:41

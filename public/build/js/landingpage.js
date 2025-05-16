@@ -25,17 +25,18 @@ function indicadoresContador(){ //funcion que al scrollear me resalta los botone
 
 function contador_animado_num(){  
     let nums = document.querySelectorAll('.count_num');  //selecciona el span que muestra los numeros
-    const intervalo = 2500;
+    const intervalo = 12000;
     nums.forEach( num =>{
-        let num_inicial = 0;
+        let num_inicial = 0, x=3;
         let num_end = parseInt(num.getAttribute('data-valor'));
         let duracion = Math.floor(intervalo/num_end);  // rendondea hacia a bajo 2.7 rendondea a 2
-
+        if(num_end>1000)x= Math.floor(num_end/700);
+        if(num_end>10000)x= Math.floor(num_end/1000);
         let tiempo = setInterval(() => {
-            num_inicial++;
+            num_inicial+=x;
             num.textContent = num_inicial+"+"; 
-            if(num_inicial == num_end){
-                num.textContent = (num_end/1)+"+";
+            if(num_inicial >= num_end){
+                num.textContent = (num_end)+"+";
                 clearInterval(tiempo);
             }
         }, duracion);
